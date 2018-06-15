@@ -3,8 +3,7 @@
 创建EIP后，您可以将EIP作为一个公网IP绑定到需要的资源上。
 
 1.   登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。 
-2.   登录[专有网络管理控制台](https://partners-intl.console.aliyun.com/#/vpc)。 
-3.   单击**申请弹性公网IP**，根据以下信息选择您的配置，然后单击立即支付并完成支付。 
+2.   单击**申请弹性公网IP**，根据以下信息选择您的配置，然后单击立即支付并完成支付。 
 
     |配置|说明|
     |:-|:-|
@@ -12,7 +11,7 @@
 
      -   **预付费**：采用包年包月的售卖方式，按固定带宽计费。
 
-在合同期内，EIP实例只支持升级配置，不支持降级配置或者释放。详细信息参见[预付费](../cn.zh-CN/产品定价/预付费.md#)。
+在合同期内，EIP实例只支持升级配置，不支持释放，降级配置需要[提交工单](https://workorder.console.aliyun.com/console.htm#/ticket/add?productCode=vpc&commonQuestionId=309&isSmart=true)。详细信息参见[预付费](../cn.zh-CN/产品定价/预付费.md#)。
 
     -   **按量付费**：支持按使用流量和按固定带宽两种计费方式。
 
