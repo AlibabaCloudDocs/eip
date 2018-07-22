@@ -1,6 +1,6 @@
 # Overdue instructions {#concept_i5b_yl3_vdb .concept}
 
-If an EIP bill is overdue, your sevice may be affected. Renew your EIP in time to avoid service interruption.
+If an EIP bill is overdue, your service may be affected. Renew your EIP in time to avoid service interruption.
 
 1.  If an EIP bill is overdue, or if your payment isn't received, you will get an email.
 2.  The EIP functions normally within15 days after the bill is overdue.
