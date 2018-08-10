@@ -48,14 +48,14 @@ The EIP usage in this example is as follows:
     -   At 17:00, the bandwidth was changed from 10 Mbps to 20 Mbps.
     -   At 23:00, the bandwidth was changed from 20 Mbps to 15 Mbps.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/6215_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15339001096215_en-US.png)
 
 The total cost of this EIP on that day is USD 7.5465 \(EIP retention fee + traffic fee\).
 
 -   EIP retention fee:
-    -   The EIP has been used for a total of 14.5 hours, so the billing time is taken as 15 hours.
-    -   The EIP retention fee in the China \(Hangzhou\) region is USD 0.0031 per hour.
-    -   The total retention fee for the EIP is 0.0031 x 15 = USD 0.0465.
+
+    No retention fee is collected because the EIP is bound to an ECS instance in a VPC.
+
 -   Traffic fee:
     -   The total traffic consumed by the EIP that day is 60 GB.
     -   The traffic fee in the China \(Hangzhou\) region is USD 0.125 per GB.
