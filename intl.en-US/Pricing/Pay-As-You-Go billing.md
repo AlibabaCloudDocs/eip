@@ -25,12 +25,10 @@ Total cost of an EIP = EIP retention fee + traffic fee.
 
 If the price on the purchase page is different from the price listed in the table, take the price on the purchase page as the standard.
 
-If the price on the purchase page is different from the price listed in the table, take the price on the purchase page as the standard.
-
-|Region|Traffic Fee \(USD/GB\)|Retention Fee \(USD/Hour\)|
-|:-----|:---------------------|:-------------------------|
+|Regions|Traffic Fee \(USD/GB\)|Retention Fee \(USD/Hour\)|
+|:------|:---------------------|:-------------------------|
 |China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), China \(Shenzhen\)|0.125|0.0031|
-|China \(Hong Kong\)|0.1563|0.0088|
+|Hong Kong|0.1563|0.0088|
 |Singapore|0.1172|0.0063|
 |Japan \(Tokyo\)|0.1200|0.0047|
 |US \(Virginia\)|0.0781|0.0047|
@@ -48,13 +46,13 @@ The EIP usage in this example is as follows:
     -   At 17:00, the bandwidth was changed from 10 Mbps to 20 Mbps.
     -   At 23:00, the bandwidth was changed from 20 Mbps to 15 Mbps.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15339001096215_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15344242686215_en-US.png)
 
-The total cost of this EIP on that day is USD 7.5465 \(EIP retention fee + traffic fee\).
+The total cost of this EIP on that day is USD 7.5.
 
 -   EIP retention fee:
 
-    No retention fee is collected because the EIP is bound to an ECS instance in a VPC.
+    Because the EIP is bound to an ECS instance of the VPC network, no EIP retention fee is charged.
 
 -   Traffic fee:
     -   The total traffic consumed by the EIP that day is 60 GB.
