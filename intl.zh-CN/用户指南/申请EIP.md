@@ -2,7 +2,7 @@
 
 创建EIP后，您可以将EIP作为一个公网IP绑定到专有网络类型的ECS实例和SLB实例上及NAT网关。
 
-1.  登录[专有网络控制台](https://vpcnext.aliyun.console.com)。 
+1.  登录[专有网络控制台](https://vpcnext.console.aliyun.com)。 
 2.  单击**申请弹性公网IP**。 
 3.  根据以下信息配置EIP，然后单击**立即购买**完成支付。 
 
