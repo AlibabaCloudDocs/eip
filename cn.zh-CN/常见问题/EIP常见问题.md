@@ -6,6 +6,8 @@
 
 -   公网IP不可以与ECS实例解绑，而EIP可以随时解绑和绑定。
 
+    您可以将ECS的固定公网IP转换为EIP，详情参见[ECS固定公网IP转换为EIP](../../../../cn.zh-CN/用户指南/ECS固定公网IP转换为EIP.md#)。
+
 
 ## 2. EIP为什么在网卡上看不到？ {#section_rd3_w5m_vdb .section}
 
@@ -39,5 +41,5 @@ EIP配置在Internet网关设备上，通过NAT方式映射到了ECS实例的私
 
 ## 8. 为什么EIP无法绑定到NAT网关上？ {#section_a23_w5m_vdb .section}
 
-对于2018年1月26日之前账号下存在NAT带宽包的用户，您仍需使用NAT带宽包为该NAT网关提供公网IP。若要绑定EIP，请提交工单。
+对于2017年11月3日之前账号下存在NAT带宽包的用户，您仍需使用NAT带宽包为该NAT网关提供公网IP。若要绑定EIP，请提交工单。
 
