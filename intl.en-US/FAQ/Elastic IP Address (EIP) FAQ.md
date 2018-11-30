@@ -7,7 +7,7 @@
 -   You cannot unbind a public IP from the ECS instance but you can bind and unbind an EIP whenever Internet communication is not needed.
 
 
-## 2. Why can't I find an EIP on the private NIC? {#section_rd3_w5m_vdb .section}
+## 2. Why cannot I find an EIP on the private NIC? {#section_rd3_w5m_vdb .section}
 
 An EIP is configured on the Internet gateway and mapped to the private NIC of the ECS instance. Therefore, it cannot be found on the private NIC.
 
@@ -23,13 +23,13 @@ An ECS or SLB instance of the VPC network, or a NAT Gateway.
 
 No.
 
-## 6. Why can't I access an EIP I have created? {#section_wd3_w5m_vdb .section}
+## 6. Why cannot I access an EIP I have created? {#section_wd3_w5m_vdb .section}
 
 -   The EIP is not bound to any resources.
 -   If the EIP is bound to an ECS instance, check the security rules of the ECS instance. For example, if the ECS instance is added to a security group that denies the access from port 80, then you cannot access the EIP over port 80.
 -   Check if payment for the EIP is overdue.
 
-## 7. Why can't I bind an EIP to an ECS instance? {#section_gk4_fvm_vdb .section}
+## 7. Why cannot I bind an EIP to an ECS instance? {#section_gk4_fvm_vdb .section}
 
 -   Check the network type of the ECS instance. An EIP can only be bound to an ECS instance of the VPC network.
 -   The regions of the EIP and ECS instance are not the same.
@@ -37,7 +37,5 @@ No.
 -   The ECS instance has been bound to an EIP.
 -   The ECS instance has a public IP that is system allocated.
 
-## 8. Why can't I bind an EIP to a NAT Gateway? {#section_a23_w5m_vdb .section}
-
-If you purchased a NAT bandwidth package before January 26, 2018, you still need to use the NAT bandwidth package to provide public IPs for the NAT Gateway. To bind an EIP, open a ticket.
+## 8. Why cannot I bind an EIP to a NAT Gateway? {#section_a23_w5m_vdb .section}
 
