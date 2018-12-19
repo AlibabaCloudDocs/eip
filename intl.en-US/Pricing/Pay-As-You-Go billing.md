@@ -23,18 +23,18 @@ Total cost of an EIP = EIP retention fee + traffic fee.
 
 ## Pricing {#section_czs_whl_vdb .section}
 
-If the price on the purchase page is different from the price listed in the table, take the price on the purchase page as the standard.
+If the price on the purchase page is different from the price listed in the table, take the price on the [purchase page](https://common-buy.aliyun.com/eip/postpay?spm=5176.11182188.0.0.1ff84882ER5p1s#/buy?request=%7B%22eip_region_no%22:%22cn-huhehaote-nt12-a01%22%7D) as the standard.
 
 |Regions|Traffic Fee \(USD/GB\)|Retention Fee \(USD/Hour\)|
 |:------|:---------------------|:-------------------------|
-|China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), China \(Shenzhen\)|0.125|0.0031|
-|Hong Kong|0.1563|0.0088|
-|Singapore|0.1172|0.0063|
-|Japan \(Tokyo\)|0.1200|0.0047|
-|US \(Virginia\)|0.0781|0.0047|
-|US \(Silicon Valley\)|0.0781|0.0047|
+|China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), China \(Shenzhen\)|0.123|0.0031|
+|Hong Kong|0.153|0.0088|
+|Singapore|0.081|0.0063|
+|Japan \(Tokyo\)|0.12|0.0047|
+|US \(Virginia\)|0.076|0.0047|
+|US \(Silicon Valley\)|0.077|0.0047|
 |Germany \(Frankfurt\)|0.07|0.006|
-|UAE \(Dubai\)|0.299|0.009|
+|UAE \(Dubai\)|0.447|0.009|
 
 ## Billing example {#section_ygt_x3l_vdb .section}
 
@@ -46,7 +46,7 @@ The EIP usage in this example is as follows:
     -   At 17:00, the bandwidth was changed from 10 Mbps to 20 Mbps.
     -   At 23:00, the bandwidth was changed from 20 Mbps to 15 Mbps.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15383009396215_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15452151056215_en-US.png)
 
 The total cost of this EIP on that day is USD 7.5.
 
