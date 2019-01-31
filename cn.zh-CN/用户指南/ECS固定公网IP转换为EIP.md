@@ -1,6 +1,6 @@
 # ECS固定公网IP转换为EIP {#concept_jgg_1rm_vdb .concept}
 
-您可以将专有网络ECS实例的固定公网IP转换为EIP，灵活管理公网IP的使用。
+您可以将专有网络ECS实例的固定公网IP转换为弹性公网IP，灵活管理公网IP的使用。
 
 **说明：** 专有网络类型的ECS实例的公网IP转换为EIP后，无法再转换回固定公网IP。
 
@@ -49,15 +49,10 @@
 要转换的ECS实例必须满足以下要求：
 
 -   仅支持分配了公网IP地址的专有网络类型的ECS实例。
-
 -   仅支持处于已停止（Stopped）或运行中（Running）的状态的ECS实例。
-
 -   如果ECS实例有未生效的变更配置任务，不能进行转换。
-
 -   对于包年包月的ECS实例，在实例到期前24小时内，不能进行转换。
-
--   按固定带宽计费的包年包月ECS实例，不能进行转换。
-
+-   按固定带宽计费的包年包月ECS实例，请先转换成按量计费。
 
 ## 操作步骤 {#section_ghs_tsm_vdb .section}
 
@@ -66,12 +61,12 @@
 1.  登录 ECS管理控制台。
 2.  在左侧导航栏，单击 **实例**。
 3.  选择地域，找到目标ECS实例。
-4.  单击**更多** \> **公网IP转换为弹性公网IP** 。
+4.  单击**更多** \> **网络和安全组** \> **公网IP转换为弹性公网IP** 。
 5.  在弹出的对话框中，单击 **确定**。
 6.  刷新实例列表。
 
     转换成功后，原来的公网IP地址会标注为**弹性**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15350956062253_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15489194712253_zh-CN.png)
 
 
