@@ -47,7 +47,7 @@ The EIP usage in this example is as follows:
     -   At 17:00, the bandwidth was changed from 10 Mbps to 20 Mbps.
     -   At 23:00, the bandwidth was changed from 20 Mbps to 15 Mbps.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15487555476215_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15489906086215_en-US.png)
 
 The total cost of this EIP on that day is USD 7.5.
 
