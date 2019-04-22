@@ -37,7 +37,7 @@
 
     配合使用共享带宽产品，可以大大减少EIP的公网成本。
 
-    详情参见[如何节约公网成本](https://help.aliyun.com/document_detail/67459.html)。
+    详细说明，请参见[如何节约公网成本？](../../../../intl.zh-CN/最佳实践/如何节约公网成本？.md#)
 
 -   简化网络权限管理
 
@@ -59,14 +59,14 @@
 完成以下操作，将专有网络类型的ECS实例的固定公网IP转为EIP：
 
 1.  登录 ECS管理控制台。
-2.  在左侧导航栏，单击 **实例**。
+2.  在左侧导航栏，单击**实例**。
 3.  选择地域，找到目标ECS实例。
 4.  单击**更多** \> **网络和安全组** \> **公网IP转换为弹性公网IP** 。
-5.  在弹出的对话框中，单击 **确定**。
+5.  在弹出的对话框中，单击**确定**。
 6.  刷新实例列表。
 
     转换成功后，原来的公网IP地址会标注为**弹性**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15489194712253_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15558955532253_zh-CN.png)
 
 
