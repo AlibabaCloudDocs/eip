@@ -6,7 +6,6 @@
 -   [为什么在ECS网卡上看不到EIP？](#section_rd3_w5m_vdb)
 -   [一个账号可以申请多少个EIP？](#section_sd3_w5m_vdb)
 -   [EIP当前可以绑定到哪些云产品？](#section_td3_w5m_vdb)
--   [EIP是否支持绑在经典网络的ECS实例上？](#section_ud3_w5m_vdb)
 -   [为什么无法访问EIP？](#section_wd3_w5m_vdb)
 -   [为什么EIP无法绑定到ECS实例上？](#section_gk4_fvm_vdb)
 -   [为什么EIP无法绑定到NAT网关上？](#section_a23_w5m_vdb)
@@ -14,9 +13,7 @@
 -   [已经删除了EIP，为什么还会产生费用？](#section_wsh_44g_qgb)
 -   [EIP实例占用费的收费策略是什么？](#section_v1d_jpg_qgb)
 -   [按流量计费的EIP设置了带宽峰值有什么用？](#section_xry_qqg_qgb)
--   [EIP支持从后付费类型转换为预付费吗？](#section_uwq_1rg_qgb)
 -   [EIP的API调用次数有限制吗？](#section_h4q_1sg_qgb)
--   [预付费类型的EIP支持批量续费吗？](#section_jz4_btg_qgb)
 -   [新申请的EIP的分配策略是什么样的？](#section_xkm_2tg_qgb)
 
 ## EIP与ECS的公网IP有何区别？ {#section_dfd_cvm_vdb .section}
@@ -30,7 +27,7 @@
 
 EIP配置在Internet网关设备上，通过NAT方式映射到了ECS实例的私网网卡，所以在ECS实例的私网网卡上无法查看到EIP。
 
-当把弹性公网IP（EIP）绑定到一个弹性辅助网卡实例上时，您可以选择 EIP网卡可见模式 。此模式下，EIP将替换掉弹性网卡的私网IP，网卡将变为一个纯公网网卡，可以在操作系统的网卡信息中查看到。配置说明，请参见[设置EIP网卡可见](../../../../../intl.zh-CN/用户指南/设置EIP网卡可见.md#)。
+当把弹性公网IP（EIP）绑定到一个弹性辅助网卡实例上时，您可以选择 EIP网卡可见模式 。此模式下，EIP将替换掉弹性网卡的私网IP，网卡将变为一个纯公网网卡，可以在操作系统的网卡信息中查看到。详细说明，请参见[设置EIP网卡可见](../../../../intl.zh-CN/用户指南/设置EIP网卡可见.md#)。
 
 ## 一个账号可以申请多少个EIP？ {#section_sd3_w5m_vdb .section}
 
@@ -39,10 +36,6 @@ EIP配置在Internet网关设备上，通过NAT方式映射到了ECS实例的私
 ## EIP当前可以绑定到哪些云产品？ {#section_td3_w5m_vdb .section}
 
 目前支持绑定EIP的云产品实例包括专有网络类型的ECS和SLB实例、弹性网卡和NAT网关。
-
-## EIP是否支持绑在经典网络的ECS实例上？ {#section_ud3_w5m_vdb .section}
-
-不支持。
 
 ## 为什么无法访问EIP？ {#section_wd3_w5m_vdb .section}
 
@@ -70,7 +63,7 @@ EIP配置在Internet网关设备上，通过NAT方式映射到了ECS实例的私
 
 支持。
 
-但计费类型的切换需要在操作后的第二天零点生效，在生效期间不支持变配带宽峰值。如果必须要变配带宽峰值，可取消计费类型变更，将待生效的订单取消后再做变配带宽峰值操作。操作说明，请参见[取消未生效订单](../../../../../intl.zh-CN/用户指南/取消未生效订单.md#)。
+但计费类型的切换需要在操作后的第二天零点生效，在生效期间不支持变配带宽峰值。如果必须要变配带宽峰值，可取消计费类型变更，将待生效的订单取消后再做变配带宽峰值操作。
 
 ## 已经删除了EIP，为什么还会产生费用？ {#section_wsh_44g_qgb .section}
 
@@ -94,19 +87,9 @@ EIP配置在Internet网关设备上，通过NAT方式映射到了ECS实例的私
 
 按流量计费的EIP实例的带宽峰值不提供任何服务质量承诺。例如一个按流量计费的EIP的带宽峰值设置为200Mbps，不承诺带宽峰值一定可以达到200Mbps。如果希望使用有服务质量承诺的带宽峰值，需要购买按带宽计费的EIP或共享带宽。
 
-## EIP支持从后付费类型转换为预付费吗？ {#section_uwq_1rg_qgb .section}
-
-支持。
-
-在[EIP列表页面](https://vpc.console.aliyun.com/eip/cn-hangzhou/eips)，找到目标EIP，然后单击**更多** \> **转换为预付费模式**。
-
 ## EIP的API调用次数有限制吗？ {#section_h4q_1sg_qgb .section}
 
 有限制，如果对EIP的API调用次数过于频繁会触发API调用次数限速。每用户每天调用API的次数如果大于500就会触发API限速。
-
-## 预付费类型的EIP支持批量续费吗？ {#section_jz4_btg_qgb .section}
-
-支持。您可以在批量续费中心批量续费：[https://renew.console.aliyun.com/center](https://renew.console.aliyun.com/center?spm=5176.2020520128.103.14.5JP3tJ#/renew/eip_pre?_k=03gpfx)
 
 ## 新申请的EIP的分配策略是什么样的？ {#section_xkm_2tg_qgb .section}
 
