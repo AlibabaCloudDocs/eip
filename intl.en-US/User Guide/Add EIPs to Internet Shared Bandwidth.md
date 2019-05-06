@@ -8,7 +8,7 @@ Make sure the following conditions are met before you add EIPs to an Internet Sh
 
 -   The EIP and the Internet Shared Bandwidth instance must be in the same region.
 
--   You will not add more than 50 EIPs to an Internet Shared Bandwidth instance. You can open a ticket to increase the quota.
+-   You will not add more than 100 EIPs to an Internet Shared Bandwidth instance. You can open a ticket to increase the quota.
 
 -   An Internet Shared Bandwidth instance is created. For more information, see [Create an Internet Shared Bandwidth instance](../../../../reseller.en-US/User Guide/Create an Internet Shared Bandwidth instance.md#).
 
