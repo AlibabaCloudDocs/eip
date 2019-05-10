@@ -48,11 +48,21 @@
 
 要转换的ECS实例必须满足以下要求：
 
--   仅支持分配了公网IP地址的专有网络类型的ECS实例。
--   仅支持处于已停止（Stopped）或运行中（Running）的状态的ECS实例。
--   如果ECS实例有未生效的变更配置任务，不能进行转换。
--   对于包年包月的ECS实例，在实例到期前24小时内，不能进行转换。
--   按固定带宽计费的包年包月ECS实例，请先转换成按量计费。
+-   仅支持分配了公网IP地址的VPC类型的ECS实例。
+-   仅支持处于已停止（Stopped）或运行中（Running）的VPC类型的ECS实例。其他状态的VPC类型的ECS实例不支持此操作。
+-   如果VPC类型的ECS实例有未生效的变更配置任务，不支持此操作。
+-   包年包月的VPC类型的ECS实例到期前24小时内，不支持此操作。
+-   仅支持按使用流量计费的VPC类型的预付费实例。固定带宽计费方式不支持此操作。
+-   此功能只支持将公网IP转为EIP，不支持其他转换。
+
+## 使用说明 {#section_u93_s21_tkm .section}
+
+转换为EIP前，您需要了解：
+
+-   转换过程不会影响VPC类型的ECS实例的公网接入，不会造成网络闪断。
+-   转换过程中，IP地址可以保留。
+-   转换前后，公网带宽计费方式不变。
+-   转换后EIP将单独计费，单独产生账单。关于EIP计费，请参见[EIP定价](../../../../intl.zh-CN/产品定价/预付费.md#)。您可以在[费用中心](https://usercenter2.aliyun.com/home)通过**消费记录** \> **使用记录**，选择导出**弹性公网IP**产品的消费记录。
 
 ## 操作步骤 {#section_ghs_tsm_vdb .section}
 
@@ -67,6 +77,6 @@
 
     转换成功后，原来的公网IP地址会标注为**弹性**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15558955532253_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15574739662253_zh-CN.png)
 
 
