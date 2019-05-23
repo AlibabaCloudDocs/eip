@@ -62,7 +62,7 @@
 -   转换过程不会影响VPC类型的ECS实例的公网接入，不会造成网络闪断。
 -   转换过程中，IP地址可以保留。
 -   转换前后，公网带宽计费方式不变。
--   转换后EIP将单独计费，单独产生账单。关于EIP计费，请参见[EIP定价](../../../../intl.zh-CN/产品定价/预付费.md#)。您可以在[费用中心](https://usercenter2.aliyun.com/home)通过**消费记录** \> **使用记录**，选择导出**弹性公网IP**产品的消费记录。
+-   转换后EIP将单独计费，单独产生账单。关于EIP计费，请参见[按量付费](../../../../intl.zh-CN/产品定价/按量付费.md#)。您可以在[费用中心](https://usercenter2.aliyun.com/home)通过**消费记录** \> **使用记录**，选择导出**弹性公网IP**产品的消费记录。
 
 ## 操作步骤 {#section_ghs_tsm_vdb .section}
 
@@ -77,6 +77,6 @@
 
     转换成功后，原来的公网IP地址会标注为**弹性**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15574739662253_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12809/15585899082253_zh-CN.png)
 
 
