@@ -1,18 +1,18 @@
 # Manage quotas {#task_ddf_cf3_wgb .task}
 
-You can query current quota usage in the VPC console. If the remaining quota of a resource is insufficient, you can directly apply for increasing the quota.
+You can query the number of remaining resources in your quota through the VPC console. If the remaining quota number is insufficient for your requirements, you can open a ticket to apply for an increase to your quota.
 
-1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc). 
-2.  In the left-side navigation pane, click**Quota Management**. 
-3.  On the Quota Management page, click the **EIP** tab page to view the usage of the EIP quota. 
-4.  Click **Apply** in the **Actions** column. 
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
+2.  In the left-side navigation pane, click **Quota Management**.
+3.  On the Quota Management page, click the **Elastic IP** tab to view the resource usage of the EIP service under your account.
+4.  To increase your resource quota, click **Apply** in the **Actions** column. Then, enter the following information: 
 
-    -   **Quantity for Application**: Selects the number of EIPs that you can retain.
-    -   **Reason for Application**: Details the reason, scenarios and necessity of the application.
-    -   **Mobile/Landline Phone Number**: your phone number.
-    -   **Email**: your Email address.
-5.  Click **OK**. The system automatically examines whether the application is reasonable. if the application is unreasonable, the application status is**Rejected**. If the application is reasonable, the application status is**Approved**, and the quota is automatically increased to the applied quantity immediately.
+    -   **Quantity for Application**: the number of resources you require.
+    -   **Reason for Application**: your reason for applying for an increase to your quota. We recommend that you include details about your specific scenario.
+    -   **Mobile/Landline Phone Number**: the mobile or landline phone number of the person to contact.
+    -   **Email**: the email address of the person to contact.
+5.  Click **OK**. The system then determines whether the quota application is reasonable. If the system determines the request is unreasonable, the application enters the **Rejected** state. If the request is reasonable, the application enters the **Approved** state, and the quota is automatically upgraded to the specified quota number.
 
-    You can click **Application History** in the **Application History** column to view the application history.
+    To view a history of quota applications, click **Application History** in the **Application History** column.
 
 
