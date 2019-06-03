@@ -5,9 +5,8 @@
 -   您已经创建了弹性网卡。详细信息，请参见[创建弹性网卡](../../../../cn.zh-CN/网络/弹性网卡/创建弹性网卡.md#)。
 -   要绑定的辅助弹性网卡未以普通模式、EIP网卡可见模式绑定EIP。
 
-    如果已经绑定，请先解绑EIP。
+    如果已经绑定，请先解绑EIP。详细信息，请参见[解绑EIP](cn.zh-CN/用户指南/解绑和释放EIP.md#)。
 
--   目前仅华北2（北京）、华北3（张家口）、新加坡、德国（法兰克福）、印度（孟买）地域支持设置多EIP网卡可见模式。
 
 弹性公网IP本质上是一个NAT IP。由于普通模式（NAT模式）下的公网IP存在于网关设备，并不在ECS实例的网卡上，所以在操作系统内看不到公网IP，只能看到网卡上的私网IP。这样给运维带来了一定的复杂度，需要手工维护一份网卡/服务器和公网IP的对应关系。此外，EIP作为NAT ALG（NAT应用层网关）部署时，不支持如H.323、SIP、DNS、RTSP等协议。
 
@@ -18,11 +17,14 @@
 -   EIP可支持全部IP协议类型，支持FTP、H.323、SIP、DNS、RTSP、TFTP等协议。
 
 1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
-2.  在左侧导航栏，单击**弹性公网IP**。
+2.  在左侧导航栏，单击**弹性公网IP**。 
+
+    **说明：** 目前，仅华北3（张家口）、新加坡、德国（法兰克福）、印度（孟买）和英国（伦敦）地域支持设置多EIP网卡可见模式。
+
 3.  在弹性公网IP页面，选择目标EIP的所属地域。
 4.  找到目标EIP，然后单击**操作**列下的**绑定**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155909986433373_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955968733373_zh-CN.png)
 
 5.  在绑定弹性公网IP页面，完成以下配置，然后单击**确定**。 
 
@@ -33,12 +35,12 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/155909986447675_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/155955968747675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155909986433382_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955968733382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
