@@ -17,14 +17,14 @@
 -   EIP可支持全部IP协议类型，支持FTP、H.323、SIP、DNS、RTSP、TFTP等协议。
 
 1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
-2.  在左侧导航栏，单击**弹性公网IP**。 
+2.  在左侧导航栏，单击**弹性公网IP**。
+3.  在弹性公网IP页面，选择目标EIP的所属地域。 
 
     **说明：** 目前，仅华北3（张家口）、新加坡、德国（法兰克福）、印度（孟买）和英国（伦敦）地域支持设置多EIP网卡可见模式。
 
-3.  在弹性公网IP页面，选择目标EIP的所属地域。
 4.  找到目标EIP，然后单击**操作**列下的**绑定**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955968733373_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955986833373_zh-CN.png)
 
 5.  在绑定弹性公网IP页面，完成以下配置，然后单击**确定**。 
 
@@ -35,12 +35,12 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/155955968747675_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/155955986847675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955968733382_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955986833382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
