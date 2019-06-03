@@ -18,10 +18,13 @@
 
 1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
 2.  在左侧导航栏，单击**弹性公网IP**。
-3.  在弹性公网IP页面，选择目标EIP的所属地域。
+3.  在弹性公网IP页面，选择目标EIP的所属地域。 
+
+    **说明：** 目前，仅华北3（张家口）、华南1（深圳）、华北5（呼和浩特）、德国（法兰克福）和 美国（弗吉尼亚）地域支持设置EIP网卡可见模式。
+
 4.  找到目标EIP，然后单击**操作**列下的**绑定**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155909981833373_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955204333373_zh-CN.png)
 
 5.  在绑定弹性公网IP页面，完成以下配置，然后单击**确定**。 
 
@@ -34,11 +37,11 @@
 
     **说明：** 确保选择的辅助弹性网卡未绑定ECS实例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155909981933380_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955204333380_zh-CN.png)
 
 6.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155909981933382_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955204333382_zh-CN.png)
 
 7.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
@@ -50,6 +53,6 @@
 
     您可以看到该实例的本地IP地址已经变成了EIP的地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155909981933443_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955204333443_zh-CN.png)
 
 
