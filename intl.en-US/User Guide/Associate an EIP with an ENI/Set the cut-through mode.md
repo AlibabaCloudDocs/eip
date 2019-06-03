@@ -18,10 +18,13 @@ The **Cut-Through Mode** makes the EIP visible on the network interface and solv
 
 1.  Log on to the [VPC console](https://partners-intl.aliyun.com/login-required#/vpc).
 2.  In the left-side navigation pane, click **Elastic IP Addresses**.
-3.  On the Elastic IP Addresses page, select the region of the target EIP.
-4.  Locate the target EIP and click **Bind** in the **Actions** column. 
+3.  On the Elastic IP Addresses page, select the region of the target EIP. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155928258733373_en-US.png)
+    **Note:** Currently, the cut-through mode is supported only in the China \(Zhangjiakou\), China \(Shenzhen\), China \(Hohhot\), Germany \(Frankfurt\), and US \(Virginia\) regions.
+
+4.  Find the target EIP and click **Bind** in the **Actions** column. 
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955353233373_en-US.png)
 
 5.  On the Bind Elastic IP Address page, complete the following configurations, and then click **OK**. 
 
@@ -34,13 +37,13 @@ The **Cut-Through Mode** makes the EIP visible on the network interface and solv
 
     **Note:** Make sure that the ENI is not associated with any ECS instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155928258733380_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955353233380_en-US.png)
 
 6.  Return to the EIP list page and click the ID of the associated ENI. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155928258733382_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955353233382_en-US.png)
 
-7.  On the network interface list page, locate the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
+7.  On the network interface list page, find the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
 
     **Note:** After you set the cut-through mode, you must enable the DHCP function of the ECS instance with which the ENI is associated to make the cut-through mode take effect.
 
@@ -50,6 +53,6 @@ The **Cut-Through Mode** makes the EIP visible on the network interface and solv
 
     You can see that the local IP address of the ECS instance has changed to the associated EIP.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155928258733443_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155955353233443_en-US.png)
 
 
