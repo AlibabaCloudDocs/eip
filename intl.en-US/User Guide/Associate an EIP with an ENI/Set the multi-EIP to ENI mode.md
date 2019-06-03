@@ -1,13 +1,12 @@
 # Set the multi-EIP to ENI mode {#task_268616 .task}
 
-This topic describes how to set the multi-EIP to ENI mode. When you associate an Elastic IP Address \(EIP\) with a secondary Elastic Network Interface \(ENI\), you can select the **Multi-EIP to ENI Mode**. In this mode, the private and public IP addresses of the ENI are available at the same time, and the EIP is invisible to the ENI.
+This topic describes how to set the multi-EIP to ENI mode. When you associate an Elastic IP Address \(EIP\) with a secondary Elastic Network Interface \(ENI\), you can select the **Multi-EIP to ENI Mode**. In this mode, the private and public IP addresses of the ENI are available at the same time. You can see the EIP in the network interface information of the operating system.
 
 -   A secondary ENI is created. For more information, see [Create an ENI](../../../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#).
 -   The secondary ENI is not associated with any EIP in the NAT or cut-through mode.
 
-    If the secondary ENI is already associated with an EIP, disassociate the EIP first.
+    If the secondary ENI is already associated with an EIP, disassociate the EIP first. For more information, see [Disassociate an EIP](reseller.en-US/User Guide/Disassociate and release an EIP.md#).
 
--   Currently, the multi-EIP to ENI mode is supported only in the China \(Beijing\), China \(Zhangjiakou\), Singapore, Germany \(Frankfurt\), and India \(Mumbai\) regions.
 
 EIPs are a type of NAT IP addresses. Because the public IP address in the NAT mode exists in the NAT Gateway and is not on the network interface of the ECS instance, you cannot see the public IP address in the operating system and can only see the private IP address. This complicates the operation and maintenance, and the relationship between network interfaces or servers and public IP addresses must be maintained manually. Additionally, when the EIP is deployed as a NAT ALG \(NAT application layer gateway\), protocols such as H.323, SIP, DNS, and RTSP are not supported.
 
@@ -19,10 +18,13 @@ The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and
 
 1.  Log on to the [VPC console](https://partners-intl.aliyun.com/login-required#/vpc).
 2.  In the left-side navigation pane, click **Elastic IP Addresses**.
-3.  On the Elastic IP Addresses page, select the region of the target EIP.
+3.  On the Elastic IP Addresses page, select the region of the target EIP. 
+
+    **Note:** Currently, the multi-EIP to ENI mode is supported only in the China \(Zhangjiakou\), Singapore, Germany \(Frankfurt\), India \(Mumbai\), and UK \(London\) regions.
+
 4.  Locate the target EIP and click **Bind** in the **Actions** column. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155928209533373_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155956151533373_en-US.png)
 
 5.  On the Bind Elastic IP Address page, complete the following configurations, and then click **OK**. 
 
@@ -32,12 +34,12 @@ The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and
     |**Mode**|No|Select **Multi-EIP to ENI Mode**.|
     |**Secondary ENI**|Yes|Select the secondary ENI to be associated with the EIP.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/155928209547675_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/155956151547675_en-US.png)
 
 6.  Repeat the preceding steps to associate multiple EIPs to the secondary ENI.
 7.  Return to the EIP list page and click the ID of the associated ENI. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155928209533382_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/155956151633382_en-US.png)
 
 8.  On the Network Interfaces page, locate the target ENI and click **Bind to Instance** to associate the ENI to an ECS instance. 
 
