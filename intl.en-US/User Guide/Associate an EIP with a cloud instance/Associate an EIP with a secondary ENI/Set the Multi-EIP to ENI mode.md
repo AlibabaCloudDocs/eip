@@ -1,6 +1,6 @@
 # Set the Multi-EIP to ENI mode {#task_268616 .task}
 
-This topic describes how to set the Multi-EIP to ENI mode. When you associate an Elastic IP Address \(EIP\) with a secondary Elastic Network Interface \(ENI\), you can select the **Multi-EIP to ENI Mode**. In this mode, the private and public IP addresses of the ENI are available at the same time. You can see the EIP in the network interface information of the operating system.
+This topic describes how to set the Multi-EIP to ENI mode. When you associate multiple Elastic IP Addresses \(EIPs\) with a secondary Elastic Network Interface \(ENI\), you can select the **Multi-EIP to ENI Mode**. In this mode, the private and public IP addresses of the ENI are available at the same time. You can see the EIPs in the network interface information of the operating system.
 
 -   A secondary ENI is created. For more information, see [Create an ENI](../../../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#).
 -   The secondary ENI is not associated with any EIP in the NAT or cut-through mode.
@@ -13,8 +13,8 @@ EIPs are a type of NAT IP address. Because the public IP address in the NAT mode
 The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and solves the preceding problems. In the Multi-EIP to ENI mode:
 
 -   The intranet function of the secondary ENI is still available.
--   The EIP is visible to the ENI. After the operating system is configured with a static IP address, you can run the ifconfig or ipconfig command to obtain the public IP address of the ENI.
--   The EIP supports all IP protocols such as FTP, H.323, SIP, DNS, RTSP, and TFTP.
+-   The EIPs are visible to the ENI. After the operating system is configured with a static IP address, you can run the ifconfig or ipconfig command to obtain the public IP address of the ENI.
+-   The EIPs support all IP protocols such as FTP, H.323, SIP, DNS, RTSP, and TFTP.
 
 1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  In the left-side navigation pane, choose **Elastic IP Addresses**.
@@ -28,17 +28,18 @@ The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and
     |Configuration|Required?|Description|
     |-------------|---------|-----------|
     |**Instance Type**|Yes|Select **Secondary ENI**.|
+    |**Resource Group**|No|Select the resource group to which the EIP belongs.|
     |**Mode**|No|Select **Multi-EIP to ENI Mode**.|
     |**Secondary ENI**|Yes|Select the secondary ENI to be associated with the EIP.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156032338547675_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156142465947675_en-US.png)
 
 6.  Repeat the preceding steps to associate multiple EIPs with the secondary ENI.
 7.  Return to the EIP list page and click the ID of the associated ENI. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156032338533382_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156142465933382_en-US.png)
 
-8.  On the Network Interfaces page, locate the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
+8.  On the Network Interfaces page, find the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
 
     **Note:** After you set the Multi-EIP to ENI mode, you must enable the DHCP function of the ECS instance with which the ENI is associated to make the Multi-EIP to ENI mode take effect.
 
@@ -48,4 +49,5 @@ The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and
 
     After configuring EIPs, you can run the ifconfig or ipconfig command to view the configured EIPs.
 
+10. \(Optional\) After setting the Multi-EIP to ENI mode, you can test the network connectivity. For more information, see [Test network connectivity](../../../../reseller.en-US/Best practices/Associate multiple EIPs with an ENI in the NAT mode.md#section_6l6_t3r_azk).
 

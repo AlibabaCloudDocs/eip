@@ -32,12 +32,12 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156032337047675_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156142464247675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156032337133382_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156142464233382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
@@ -49,4 +49,5 @@
 
     配置EIP地址后，您可以通过ifconfig或ipconfig命令查看配置的EIP。
 
+10. （可选）设置多EIP网卡可见模式后，您可以测试网络连通性。详细信息，请参见[测试网络连通性](../../../../intl.zh-CN/最佳实践/普通模式下网卡多EIP.md#section_6l6_t3r_azk)。
 
