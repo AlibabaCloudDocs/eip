@@ -32,22 +32,18 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156143914647675_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156143918047675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156143914633382_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156143918133382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
     **说明：** 设置多EIP网卡可见模式后，辅助弹性网卡绑定的ECS实例必须开启DHCP功能，多EIP网卡可见模式才生效。
 
-9.  登录ECS实例，为ECS实例配置多个EIP。详细信息，请参见[为Windows实例配置EIP地址](../../../../cn.zh-CN/网络/弹性网卡/分配辅助私网IP地址.md#section_y4b_krk_ggb)和[为Linux实例配置EIP地址](../../../../cn.zh-CN/网络/弹性网卡/分配辅助私网IP地址.md#section_b2x_hlb_3gb)。 
-
-    **说明：** 为ECS实例配置EIP地址需要获取EIP的网关和子网掩码，请提交工单。
-
-    配置EIP地址后，您可以通过ifconfig或ipconfig命令查看配置的EIP。
-
-10. （可选）设置多EIP网卡可见模式后，您可以测试网络连通性。详细信息，请参见[测试网络连通性](../../../../cn.zh-CN/最佳实践/普通模式下网卡多EIP.md#section_6l6_t3r_azk)。
+9.  调用DescribeEipGatewayInfo接口查询EIP的网关和子网掩码。详细信息，请参见[DescribeEipGatewayInfo](../../../../cn.zh-CN/API参考/弹性公网IP/DescribeEipGatewayInfo.md#)。
+10. 登录ECS实例，为ECS实例配置多个EIP。详细信息，请参见[为Windows实例配置EIP地址](../../../../cn.zh-CN/网络/弹性网卡/分配辅助私网IP地址.md#section_y4b_krk_ggb)和[为Linux实例配置EIP地址](../../../../cn.zh-CN/网络/弹性网卡/分配辅助私网IP地址.md#section_b2x_hlb_3gb)。 配置EIP地址后，您可以通过ifconfig或ipconfig命令查看配置的EIP。
+11. （可选）设置多EIP网卡可见模式后，您可以测试网络连通性。详细信息，请参见[测试网络连通性](../../../../cn.zh-CN/最佳实践/普通模式下网卡多EIP.md#section_6l6_t3r_azk)。
 
