@@ -32,12 +32,12 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156108651647675_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156143914647675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156108651733382_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156143914633382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
