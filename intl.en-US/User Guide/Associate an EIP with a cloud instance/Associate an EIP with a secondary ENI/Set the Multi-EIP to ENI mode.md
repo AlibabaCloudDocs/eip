@@ -18,36 +18,37 @@ The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and
 
 1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  In the left-side navigation pane, choose **Elastic IP Addresses**.
-3.  Select the region of the target EIP. 
+3.   Select the region of the target EIP. 
 
     **Note:** Currently, the Multi-EIP to ENI mode is supported only in the China \(Zhangjiakou\), Singapore, Germany \(Frankfurt\), India \(Mumbai\), and UK \(London\) regions.
 
 4.  On the Elastic IP Addresses page, find the target EIP and click **Bind** in the **Actions** column.
-5.  On the Bind Elastic IP Address page, complete the following configurations, and then click **OK**. 
+5.   On the Bind Elastic IP Address page, complete the following configurations, and then click **OK**. 
 
     |Configuration|Required?|Description|
     |-------------|---------|-----------|
-    |**Instance Type**|Yes|Select **Secondary ENI**.|
-    |**Resource Group**|No|Select the resource group to which the EIP belongs.|
-    |**Mode**|No|Select **Multi-EIP to ENI Mode**.|
-    |**Secondary ENI**|Yes|Select the secondary ENI to be associated with the EIP.|
+    | **Instance Type** |Yes|Select **Secondary ENI**.|
+    | **Resource Group** |No|Select the resource group to which the EIP belongs.|
+    | **Mode** |No|Select **Multi-EIP to ENI Mode**.|
+    | **Secondary ENI** |Yes|Select the secondary ENI to be associated with the EIP.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156142465947675_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156154317147675_en-US.png)
 
-6.  Repeat the preceding steps to associate multiple EIPs with the secondary ENI.
-7.  Return to the EIP list page and click the ID of the associated ENI. 
+6.   Repeat the preceding steps to associate multiple EIPs with the secondary ENI. 
+7.   Return to the EIP list page and click the ID of the associated ENI. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156142465933382_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156154317133382_en-US.png)
 
-8.  On the Network Interfaces page, find the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
+8.   On the Network Interfaces page, find the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
 
     **Note:** After you set the Multi-EIP to ENI mode, you must enable the DHCP function of the ECS instance with which the ENI is associated to make the Multi-EIP to ENI mode take effect.
 
-9.  Log on to the ECS instance and configure multiple EIPs for the ECS instance. For more information, see [Configure an EIP for a Windows instance](../../../../reseller.en-US/Network/Elastic Network Interfaces/Assign a secondary private IP address.md#section_y4b_krk_ggb) and [Configure an EIP for a Linux instance](../../../../reseller.en-US/Network/Elastic Network Interfaces/Assign a secondary private IP address.md#section_b2x_hlb_3gb). 
+9.   Call DescribeEipGatewayInfo to obtain the gateway addresses and subnet masks of the EIPs. For more information, see [DescribeEipGatewayInfo](../../../../reseller.en-US/API reference/EIP/DescribeEipGatewayInfo.md#). 
+10.  Log on to the ECS instance and configure multiple EIPs for the ECS instance. For more information, see [Configure an EIP for a Windows instance](../../../../reseller.en-US/Network/Elastic Network Interfaces/Assign a secondary private IP address.md#section_y4b_krk_ggb) and [Configure an EIP for a Linux instance](../../../../reseller.en-US/Network/Elastic Network Interfaces/Assign a secondary private IP address.md#section_b2x_hlb_3gb). 
 
-    **Note:** To configure an EIP for an ECS instance, you must open a ticket to obtain the EIP gateway and subnet mask.
+    **Note:** When you configure EIPs for the ECS instance, change the secondary private IP addresses to EIP addresses and change the gateway addresses and subnet masks of the private IP addresses to the gateway addresses and subnet masks of the EIPs.
 
     After configuring EIPs, you can run the ifconfig or ipconfig command to view the configured EIPs.
 
-10. \(Optional\) After setting the Multi-EIP to ENI mode, you can test the network connectivity. For more information, see [Test network connectivity](../../../../reseller.en-US/Best practices/Associate multiple EIPs with an ENI in the NAT mode.md#section_6l6_t3r_azk).
+11.  \(Optional\) After setting the Multi-EIP to ENI mode, you can test the network connectivity. For more information, see [Test network connectivity](../../../../reseller.en-US/Best practices/Associate multiple EIPs with an ENI in the NAT mode.md#section_6l6_t3r_azk). 
 
