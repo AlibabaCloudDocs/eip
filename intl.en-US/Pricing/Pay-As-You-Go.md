@@ -1,62 +1,65 @@
 # Pay-As-You-Go {#concept_rcd_sgl_vdb .concept}
 
-Elastic IP Addresses \(EIPs\) are billed based on the traffic usage. Each EIP is billed independently.
+ Elastic IP Addresses \(EIPs\) are charged with the traffic-based billing method of Pay-As-You-Go. This topic describes the billing method of EIPs. 
 
-## Billing instructions {#section_tdb_dhl_vdb .section}
+## Billing items {#section_tdb_dhl_vdb .section}
 
-Both the charging and billing cycles are hourly.
+The total fees of an EIP include an instance fee and a traffic fee. EIPs are billed and charged on an hourly basis. Billing periods less than an hour are calculated as an hour.
 
-Total cost of an EIP = EIP retention fee + traffic fee.
+The instance fee and traffic fee are calculated as follows:
 
--   Retention fee = price x retention time. Each EIP is charged independently.
+-   Instance fee = unit price \(USD/hour\) × usage period
 
-    Partial hours are billed as full hours.
+    The usage period refers to the period between the time when the EIP is created and the time when the EIP is released.
 
-    **Note:** The EIP retention fee is free of charge when the EIP is bound to an ECS instance in a VPC. However, for SLB instances and NAT Gateways, the retention fee is still collected.
+-   Traffic fee = unit price \(USD/GB\) × charged traffic
 
--   Traffic fee = price x charged traffic. Each EIP is charged independently.
+    The charged traffic refers to the cumulative outbound traffic of the EIP to be billed in an hour.
 
-    The cumulative outbound traffic of the EIP in an hour is charged. Outbound traffic refers to data transmitted from the Alibaba Cloud data center to the Internet, and the reverse is inbound traffic.
 
-    **Note:** Modifying the bandwidth does not affect the cost. Even so, we recommend that you set the bandwidth based on your actual needs to avoid generating excessive charged traffic due to malicious access.
-
+**Note:** Modifying the peak bandwidth does not affect the unit price. However, we recommend that you set the bandwidth based on your actual needs to avoid generating excessive charged traffic due to malicious access.
 
 ## Pricing {#section_czs_whl_vdb .section}
 
-If the price on the purchase page is different from the price listed in the table, take the price on the purchase page as the standard.
+The following table lists the unit prices of the instance fee and the traffic fee.
 
-|Region|Traffic Fee \(USD/GB\)|Retention Fee \(USD/Hour\)|
-|:-----|:---------------------|:-------------------------|
-|China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), China \(Shenzhen\)|0.123|0.0031|
-|China \(Hong Kong\)|0.153|0.0088|
-|Singapore|0.081|0.0063|
-|Japan \(Tokyo\)|0.087|0.005|
-|US \(Virginia\)|0.076|0.0047|
-|US \(Silicon Valley\)|0.077|0.0047|
-|Germany \(Frankfurt\)|0.07|0.006|
-|UAE \(Dubai\)|0.447|0.009|
-|Australia \(Sydney\)|0.096|0.006|
+**Note:** If the price on the purchase page is different from the price listed in the following table, take the price on the [purchase page](https://common-buy.aliyun.com/?spm=5176.8050872.0.0.2a9c737e2bEyW1&commodityCode=eip_pre#/buy) as the standard.
 
-## Billing example {#section_ygt_x3l_vdb .section}
+|Region|Instance fee \(USD/hour\)|Traffic fee \(USD/GB\)|
+|:-----|-------------------------|:---------------------|
+|China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hohhot\)|0.003|0.123|
+|China \(Qingdao\)|0.003|0.11|
+|Hong Kong|0.009|0.153|
+|Singapore|0.006|0.081|
+|Japan \(Tokyo\)|0.005|0.087|
+|USA \(Virginia\)|0.005|0.076|
+|US \(Silicon Valley\)|0.005|0.077|
+|Germany \(Frankfurt\), UK \(London\)|0.006|0.070|
+|UAE \(Dubai\)|0.009|0.447|
+|Australia \(Sydney\)|0.006|0.096|
+|Malaysia \(Kuala Lumpur\)|0.003|0.077|
+|Indonesia \(Jakarta\), India \(Mumbai\)|0.006|0.090|
 
-The EIP usage in this example is as follows:
+## Example {#section_ygt_x3l_vdb .section}
 
--   Assume that you purchased an EIP in the China \(Hangzhou\) region at 9:30 and set the bandwidth to 10 Mbps.
--   Then you immediately bound this EIP to an ECS instance and used the EIP to access the service deployed on the EC instance.
--   You changed the EIP bandwidth twice that day:
-    -   At 17:00, the bandwidth was changed from 10 Mbps to 20 Mbps.
-    -   At 23:00, the bandwidth was changed from 20 Mbps to 15 Mbps.
+In this example, the following EIP is used:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15560005056215_en-US.png)
+-   Assume that you created an EIP in the China \(Hangzhou\) region at 9:30 of one day and set the peak bandwidth to 10 Mbit/s.
+-   Then you immediately associated this EIP with an ECS instance and used the EIP to access the service deployed on the EC instance.
+-   Assume that you changed the EIP bandwidth twice that day:
+    -   At 17:00, you changed the bandwidth from 10 Mbit/s to 20 Mbit/s.
+    -   At 23:00, you changed the bandwidth from 20 Mbit/s to 15 Mbit/s.
 
-The total cost of this EIP on that day is USD 7.5.
+ ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15615380466215_en-US.png) 
 
--   EIP retention fee:
+For the preceding example, the total cost of this EIP for the day you created it is USD 7.5.
 
-    Because the EIP is bound to an ECS instance of the VPC network, no EIP retention fee is charged.
+-   Instance fee:
+
+    No EIP instance fee is charged. This is because the EIP is associated with an ECS instance of the VPC network.
 
 -   Traffic fee:
     -   The total traffic consumed by the EIP that day is 60 GB.
-    -   The traffic fee in the China \(Hangzhou\) region is USD 0.125 per GB.
-    -   The total traffic fee is 0.125 x 60 = USD 7.5. 
+    -   The unit price of the traffic fee in the China \(Hangzhou\) region is USD 0.125 per GB.
+    -   The traffic fee is calculated through the following formula: 0.125 USD/GB × 60 GB = USD 7.5.
 
