@@ -1,65 +1,13 @@
-# Billing method {#concept_rcd_sgl_vdb .concept}
+# Billing method {#concept_645525 .concept}
 
-Elastic IP Addresses \(EIPs\) are billed based on the traffic usage and with the Pay-As-You-Go method. Each EIP is billed independently.
+Elastic IP Addresses \(EIPs\) are charged and billed on a Pay-As-You-Go basis.
 
-## Billing method {#section_tdb_dhl_vdb .section}
+## Pay-As-You-Go {#section_cby_imx_ale .section}
 
-EIPs are billed and charged on an hourly basis.
+ The billing method of Pay-As-You-Go means you are billed after each EIP is used. Pay-As-You-Go EIPs are charged based on traffic. The Pay-As-You-Go EIP features are as follows:
 
-Total fees of an EIP = EIP retention fee + traffic fee.
+-   You can release a Pay-As-You-Go EIP at any time. After a Pay-As-You-Go EIP is released, the bill for the last day or hour is generated and fees are deducted in the next day or hour. For more information, see [Release an EIP](../../../../reseller.en-US/User Guide/Manage Pay-As-You-Go-billed EIPs/Release an EIP.md#).
+-   After an EIP is associated with an ECS instance in a VPC, the EIP is free from the instance fee. If the EIP is associated with a NAT Gateway, Server Load Balancer \(SLB\) instance, secondary Elastic Network Interface \(ENI\), or High-Availability Virtual IP Address \(HaVip\), the instance fee is charged and billed.
 
--   Retention fee = price × retention time. Each EIP is charged independently.
-
-    The time less than an hour is calculated as an hour.
-
-    **Note:** No EIP retention fee is incurred if the EIP is associated with an ECS instance in a VPC. However, for SLB instances and NAT Gateways, the retention fee is still charged.
-
--   Traffic fee = price × charged traffic. Each EIP is charged independently.
-
-    The cumulative outbound traffic of the EIP in an hour is charged. Inbound traffic is not billed. Outbound traffic refers to data transmitted from the Alibaba Cloud data center to the Internet, and the reverse is inbound traffic.
-
-    **Note:** Modifying the peak bandwidth does not affect the unit price. However, we recommend that you set the bandwidth based on your actual needs to avoid generating excessive charged traffic due to malicious access.
-
-
-## Pricing {#section_czs_whl_vdb .section}
-
-If the price on the purchase page is different from the price listed in the following table, take the price on the purchase page as the standard.
-
-|Region|Traffic fee \(USD/GB\)|Retention fee \(USD/hour\)|
-|:-----|:---------------------|:-------------------------|
-|China \(Hangzhou\), China \(Shanghai\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hohhot\)|0.123|0.0031|
-|China \(Qingdao\)|0.11|0.0031|
-|Hong Kong|0.153|0.009|
-|Singapore|0.081|0.0063|
-|Japan \(Tokyo\)|0.087|0.005|
-|US \(Virginia\)|0.076|0.005|
-|US \(Silicon Valley\)|0.077|0.005|
-|Germany \(Frankfurt\), UK \(London\)|0.070|0.006|
-|UAE \(Dubai\)|0.447|0.009|
-|Australia \(Sydney\)|0.096|0.006|
-|Malaysia \(Kuala Lumpur\)|0.077|0.003|
-|Indonesia \(Jakarta\), India \(Mumbai\)|0.090|0.006|
-
-## Example {#section_ygt_x3l_vdb .section}
-
-In this example, the following EIP is used:
-
--   Assume that you created an EIP in the China \(Hangzhou\) region at 9:30 of one day and set the peak bandwidth to 10 Mbit/s.
--   Then you immediately associated this EIP with an ECS instance and used the EIP to access the service deployed on the EC instance.
--   You changed the EIP bandwidth twice that day:
-    -   At 17:00, you changed the bandwidth from 10 Mbit/s to 20 Mbit/s.
-    -   At 23:00, you changed the bandwidth from 20 Mbit/s to 15 Mbit/s.
-
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15592090156215_en-US.png)
-
-The total cost of this EIP on that day is USD 7.5.
-
--   EIP retention fee:
-
-    Because the EIP is associated with an ECS instance of the VPC network, no EIP retention fee is charged.
-
--   Traffic fee:
-    -   The total traffic consumed by the EIP that day is 60 GB.
-    -   The traffic fee in the China \(Hangzhou\) region is USD 0.125 per GB.
-    -   The total traffic fee is 0.125 x 60 = USD 7.5.
+For more information about the billing method of EIPs, see [Pay-As-You-Go](reseller.en-US/Pricing/Pay-As-You-Go.md#).
 
