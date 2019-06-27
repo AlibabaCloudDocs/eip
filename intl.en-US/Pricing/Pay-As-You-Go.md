@@ -1,6 +1,6 @@
 # Pay-As-You-Go {#concept_rcd_sgl_vdb .concept}
 
- Elastic IP Addresses \(EIPs\) are charged with the traffic-based billing method of Pay-As-You-Go. This topic describes the billing method of EIPs. 
+Elastic IP Addresses \(EIPs\) are charged with the traffic-based billing method of Pay-As-You-Go. This topic describes the billing method of EIPs.
 
 ## Billing items {#section_tdb_dhl_vdb .section}
 
@@ -50,7 +50,7 @@ In this example, the following EIP is used:
     -   At 17:00, you changed the bandwidth from 10 Mbit/s to 20 Mbit/s.
     -   At 23:00, you changed the bandwidth from 20 Mbit/s to 15 Mbit/s.
 
- ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15615380466215_en-US.png) 
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/12818/15616242346215_en-US.png)
 
 For the preceding example, the total cost of this EIP for the day you created it is USD 7.5.
 
