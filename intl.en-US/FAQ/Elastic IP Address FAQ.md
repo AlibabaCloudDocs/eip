@@ -3,6 +3,7 @@
 This topic lists frequently asked questions about Elastic IP Address \(EIP\) and corresponding solutions.
 
 -   [What differences are there between the public IP address and the EIP of an ECS instance?](#section_dfd_cvm_vdb)
+-   [Why is an error of eip frequent purchase reported when I create an EIP?](#section_ti3_ufu_85t)
 -   [Why is the EIP not displayed on the NIC of my ECS instance?](#section_rd3_w5m_vdb)
 -   [How many EIPs can I create under one account?](#section_sd3_w5m_vdb)
 -   [What resources can I associate an EIP with?](#section_td3_w5m_vdb)
@@ -23,11 +24,17 @@ This topic lists frequently asked questions about Elastic IP Address \(EIP\) and
 -   You cannot disassociate a public IP address from an ECS instance, but you can associate and disassociate an EIP to and from an ECS instance at any time.
 
 
+## Why is an error of eip frequent purchase reported when I create an EIP? {#section_ti3_ufu_85t .section}
+
+Cause: Alibaba Cloud finds that you have been frequently creating and changing EIPs recently and therefore triggered security alerts to temporarily restrict your purchase of EIPs.
+
+Solution: Make sure that you do not create EIPs more than the quota specified for your account in the next seven days. The restrictions will be automatically removed after seven days. For more information about how to view the quota of your account, see [Manage quotas](../../../../reseller.en-US/User Guide/Manage quotas.md#).
+
 ## Why is the EIP not displayed on the NIC of my ECS instance? {#section_rd3_w5m_vdb .section}
 
 An EIP is configured on the Internet gateway and mapped to the NIC of the ECS instance through NAT. Therefore, you cannot see the EIP of the ECS instance on the NIC.
 
-However, if you associate an EIP with a secondary Elastic Network Interface \(ENI\), you can select the Cut-Through Mode, which replaces the private IP address of the ENI with the EIP \(the ENI then becomes a pure Internet network interface\). You can then see the EIP in the network interface information of the operating system. For more information, see [Configure the cut-through mode](../../../../reseller.en-US//Configure the cut-through mode.md#).
+However, if you associate an EIP with a secondary Elastic Network Interface \(ENI\), you can select the Cut-Through Mode, which replaces the private IP address of the ENI with the EIP \(the ENI then becomes a pure Internet network interface\). You can then see the EIP in the network interface information of the operating system. For more information, see [Set the cut-through mode](../../../../reseller.en-US/User Guide/Associate an EIP with a cloud instance/Associate an EIP with a secondary ENI/Set the cut-through mode.md#).
 
 ## How many EIPs can I create under one account? {#section_sd3_w5m_vdb .section}
 
