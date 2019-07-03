@@ -1,78 +1,50 @@
 # Elastic IP Address FAQ {#concept_o35_55m_vdb .concept}
 
-This topic lists frequently asked questions about Elastic IP Addresses \(EIPs\) and corresponding solutions.
+This topic lists frequently asked questions about Elastic IP Address \(EIP\) and corresponding solutions.
 
--   General questions
-    -   [What is an EIP?](#section_qzu_vp2_jki)
-    -   [What are the advantages of EIPs?](#section_mgn_p84_nly)
-    -   [What are the differences between the public IP address and the EIP of an ECS instance?](#section_dfd_cvm_vdb)
-    -   [Why is an error of "eip frequent purchase" reported when I create an EIP?](#section_n0q_mn4_66y)
-    -   [Why am I unable to access a created EIP?](#section_v69_jpi_fxd)
-    -   [How are newly created EIPs allocated?](#section_7qp_8nq_isj)
--   FAQ about Subscription EIPs
-    -   [\#section\_owz\_hcc\_124](#section_owz_hcc_124)
-    -   [\#section\_bue\_yuk\_t6s](#section_bue_yuk_t6s)
--   FAQ about Pay-As-You-Go EIPs
-    -   [\#section\_ax5\_ydw\_0dm](#section_ax5_ydw_0dm)
-    -   [Why are fees still incurred after I have deleted the EIP?](#section_1nh_ax9_e2l)
-    -   [Are there benefits to set a peak bandwidth for a Pay-As-You-Go EIP that is billed based on traffic?](#section_am7_sfw_w5y)
-    -   [\#section\_wba\_mrz\_6hb](#section_wba_mrz_6hb)
-    -   [\#section\_sar\_kti\_nbs](#section_sar_kti_nbs)
--   FAQ about EIP restrictions
-    -   [How many EIPs can I create under one account?](#section_hrm_9q9_8fg)
-    -   [Can I associate an EIP with multiple cloud resources at the same time?](#section_12o_yti_nld)
-    -   [How many EIP API calls can I make in one day?](#section_r68_ghp_dft)
--   FAQ about associating EIPs with cloud resources
-    -   [What resources can I associate an EIP with?](#section_274_5mv_ycx)
-    -   [Why am I unable to associate an EIP with a NAT Gateway?](#section_6st_c7i_glg)
-    -   [Why am I unable to associate an EIP with an ECS instance?](#section_49i_4mq_g42)
-    -   [Why is the EIP not displayed on the NIC of my ECS instance?](#section_rd3_w5m_vdb)
+-   [What differences are there between the public IP address and the EIP of an ECS instance?](#section_dfd_cvm_vdb)
+-   [Why is an error of eip frequent purchase reported when I create an EIP?](#section_ti3_ufu_85t)
+-   [Why is the EIP not displayed on the NIC of my ECS instance?](#section_rd3_w5m_vdb)
+-   [How many EIPs can I create under one account?](#section_sd3_w5m_vdb)
+-   [What resources can I associate an EIP with?](#section_td3_w5m_vdb)
+-   [Why am I unable to access a created EIP?](#section_wd3_w5m_vdb)
+-   [Why am I unable to associate an EIP with an ECS instance?](#section_gk4_fvm_vdb)
+-   [Why am I unable to associate an EIP with a NAT Gateway?](#section_a23_w5m_vdb)
+-   [Can I change the billing method of an EIP from traffic-based billing to bandwidth-based billing \(or perform the converse operation\)?](#section_s5w_mrf_qgb)
+-   [Why are fees still incurred after I have deleted the EIP?](#section_wsh_44g_qgb)
+-   [How is the EIP instance occupation fee billed?](#section_v1d_jpg_qgb)
+-   [Are there benefits to set a peak bandwidth for an EIP that is billed based on traffic?](#section_xry_qqg_qgb)
+-   [How many EIP API calls can I make in one day?](#section_h4q_1sg_qgb)
+-   [How are newly created EIPs allocated?](#section_xkm_2tg_qgb)
 
-## What is an EIP? {#section_qzu_vp2_jki .section}
+## What differences are there between the public IP address and the EIP of an ECS instance? {#section_dfd_cvm_vdb .section}
 
-An EIP is a public IP address resource that you can purchase and use independently. Currently, you can associate EIPs with ECS instances, intranet Server Load Balancer \(SLB\) instances, secondary Elastic Network Interfaces \(ENIs\), NAT Gateways, and High-Availability Virtual IP Addresses. The ECS instances, intranet SLB instances, and secondary ENIs must belong to VPC networks.
+-   The public IP address of an ECS instance can be found on the NIC of the ECS instance, whereas an EIP is a NAT IP address that is mapped to the intranet NIC of the ECS instance. Therefore, the EIP cannot be found on the NIC of the ECS instance.
 
-An EIP is also a type of NAT IP address that is located in the public network gateway of Alibaba Cloud, and is mapped to the associated cloud instance through NAT. After a cloud instance is associated with an EIP, the cloud instance can communicate over the Internet through the EIP.
-
-## What are the advantages of EIPs? {#section_mgn_p84_nly .section}
-
-EIPs have the following advantages:
-
--   Purchase and use independently
-
-    You can purchase an EIP as an independent resource instead of purchasing it together with other computing or storage resources.
-
--   Flexible association
-
-    When you need a cloud instance to access the Internet, you can associate an EIP with the instance. You can also disassociate and release the EIP at any time.
-
--   Configurable network capabilities
-
-    You can adjust the bandwidth value of an EIP at any time. The bandwidth change takes effect immediately.
+-   You cannot disassociate a public IP address from an ECS instance, but you can associate and disassociate an EIP to and from an ECS instance at any time.
 
 
-## What are the differences between the public IP address and the EIP of an ECS instance? {#section_dfd_cvm_vdb .section}
-
-The following table lists the differences between an EIP and an ECS public IP address.
-
-|Item|EIP|ECS public IP address|
-|:---|:--|:--------------------|
-|Supported networks|VPC|VPC and classic network|
-|Can the IP address be independently used?|Yes|No|
-|Can the IP address be associated with and disassociated from the ECS instance at any time?|Yes|No|
-|Can the IP address be read on the NIC of the ECS instance?|The IP address can be read on the NIC in the **Cut-Through Mode** or **Multi-EIP to ENI Mode**.| Classic network: Yes
-
- VPC: No
-
- |
-
-## Why is an error of "eip frequent purchase" reported when I create an EIP? {#section_n0q_mn4_66y .section}
+## Why is an error of eip frequent purchase reported when I create an EIP? {#section_ti3_ufu_85t .section}
 
 Cause: Alibaba Cloud finds that you have been frequently creating and changing EIPs recently and therefore triggered security alerts to temporarily restrict your purchase of EIPs.
 
 Solution: Make sure that you do not create EIPs more than the quota specified for your account in the next seven days. The restrictions will be automatically removed after seven days. For more information about how to view the quota of your account, see [Manage quotas](../../../../reseller.en-US/User Guide/Manage quotas.md#).
 
-## Why am I unable to access a created EIP? {#section_v69_jpi_fxd .section}
+## Why is the EIP not displayed on the NIC of my ECS instance? {#section_rd3_w5m_vdb .section}
+
+An EIP is configured on the Internet gateway and mapped to the NIC of the ECS instance through NAT. Therefore, you cannot see the EIP of the ECS instance on the NIC.
+
+However, if you associate an EIP with a secondary Elastic Network Interface \(ENI\), you can select the Cut-Through Mode, which replaces the private IP address of the ENI with the EIP \(the ENI then becomes a pure Internet network interface\). You can then see the EIP in the network interface information of the operating system. For more information, see [Set the cut-through mode](../../../../reseller.en-US/User Guide/Associate an EIP with a cloud instance/Associate an EIP with a secondary ENI/Set the cut-through mode.md#).
+
+## How many EIPs can I create under one account? {#section_sd3_w5m_vdb .section}
+
+You can create up to 20 EIPs under one account. If you require an increase to your quota, you can open a ticket for this request.
+
+## What resources can I associate an EIP with? {#section_td3_w5m_vdb .section}
+
+Currently, you can associate an EIP with an ECS or SLB instance of the VPC network, or a NAT Gateway.
+
+## Why am I unable to access a created EIP? {#section_wd3_w5m_vdb .section}
 
 Possible causes are as follows:
 
@@ -80,61 +52,51 @@ Possible causes are as follows:
 -   If the EIP is associated with an ECS instance, check the security policies of the ECS instance. For example, if the ECS instance is added to a security group that denies the access from port 80, then you cannot access the EIP over port 80.
 -   The bill for the EIP is overdue.
 
-## How are newly created EIPs allocated? {#section_7qp_8nq_isj .section}
-
-By default, newly created EIPs are allocated at random. However, if you release EIPs too frequently, the released addresses are likely to be re-allocated to your EIP quota rather than new EIPs.
-
-## Why are fees still incurred after I have deleted the EIP? {#section_1nh_ax9_e2l .section}
-
-If the deleted EIP was a Pay-As-You-Go EIP, one final bill is generated in the next hour that corresponds to the usage of the EIP until the time at which it is deleted. For example,
-
-If you delete an EIP that is billed according to traffic usage at 10:30, you will be charged for its use between the hour of 10:00 to 11:00.
-
-## Are there benefits to set a peak bandwidth for a Pay-As-You-Go EIP that is billed based on traffic? {#section_am7_sfw_w5y .section}
-
-For a Pay-As-You-Go EIP that is billed based on traffic, we recommend that you set a peak bandwidth value to avoid incurring excessive charges related to outbound traffic.
-
-Note that service quality is not guaranteed for an EIP that is billed based on traffic and for which you set a peak bandwidth value. If you need the peak bandwidth value to be guaranteed, you need to purchase an EIP that is billed based on bandwidth or purchase an Internet Shared Bandwidth instance.
-
-## How many EIPs can I create under one account? {#section_hrm_9q9_8fg .section}
-
-You can create up to 20 EIPs under one account. If you require an increase to your quota, you can open a ticket for this request.
-
-## Can I associate an EIP with multiple cloud resources at the same time? {#section_12o_yti_nld .section}
-
-No. You can only associate an EIP with one cloud resource.
-
-## How many EIP API calls can I make in one day? {#section_r68_ghp_dft .section}
-
-500. In each day, you can make up to 500 EIP API calls.
-
-## What resources can I associate an EIP with? {#section_274_5mv_ycx .section}
-
-Currently, you can associate an EIP with an ECS instance of the VPC network, an intranet SLB instance of the VPC network, an ENI of the VPC network, a NAT Gateway, or an HAVIP.
-
-## Why am I unable to associate an EIP with a NAT Gateway? {#section_6st_c7i_glg .section}
-
-## Why am I unable to associate an EIP with an ECS instance? {#section_49i_4mq_g42 .section}
+## Why am I unable to associate an EIP with an ECS instance? {#section_gk4_fvm_vdb .section}
 
 Possible causes are as follows:
 
 -   The target ECS instance to which you want to associate the EIP is not of the VPC network.
 -   The regions of the EIP and the ECS instance are not the same.
--   The status of the ECS instance does not support the association action. You can associate an EIP only with an ECS instance that is in the running or stopped state.
+-   The state of the ECS instance does not support the association action. You can associate an EIP only with an ECS instance that is in the running or stopped state.
 -   The ECS instance is already associated with an EIP.
+-   The ECS instance has a public IP address that is system allocated.
 
-## Why is the EIP not displayed on the NIC of my ECS instance? {#section_rd3_w5m_vdb .section}
+## Why am I unable to associate an EIP with a NAT Gateway? {#section_a23_w5m_vdb .section}
 
-An EIP is configured on the Internet gateway and mapped to the NIC of the ECS instance through NAT. Therefore, you cannot see the EIP of the ECS instance on the NIC.
+## Can I change the billing method of an EIP from traffic-based billing to bandwidth-based billing \(or perform the converse operation\)? {#section_s5w_mrf_qgb .section}
 
-However, if you associate an EIP with a secondary ENI, you can select the cut-through mode or multi-EIP to ENI mode, which allows you to see the EIP in the network interface information of the operating system.
+Yes.
 
--   Cut-through mode
+Note that changes to the billing method take effect at 00:00 of the next day. During this period of time, you cannot change the peak bandwidth. If you need to change the peak bandwidth, you can cancel the order of the billing method change. After the order is cancelled, you can change the peak bandwidth.
 
-    In the cut-through mode, the EIP replaces the private IP address of the ENI. The ENI becomes a pure Internet network interface and its intranet function is not available any more. You can see the EIP in the ENI of the operating system, and directly obtain the public IP address on the ENI by running the ifconfig or ipconfig command. For more information, see [Set the cut-through mode](../../../../reseller.en-US/User Guide/Associate an EIP with a cloud instance/Associate an EIP with a secondary ENI/Set the cut-through mode.md#).
+## Why are fees still incurred after I have deleted the EIP? {#section_wsh_44g_qgb .section}
 
--   Multi-EIP to ENI mode
+If the deleted EIP was a Pay-As-You-Go-billed EIP, one final bill is generated in the next hour or the next day \(depending on if the billing method is traffic-based or bandwidth-based\) that corresponds to the usage of the EIP until the time at which it is deleted. For example,
 
-    In the multi-EIP to ENI mode, the intranet function of the secondary ENI is still available. The EIPs are visible to the ENI. After the operating system is configured with a static IP address, you can run the ifconfig or ipconfig command to obtain the public IP address of the ENI. For more information, see [Set the Multi-EIP to ENI mode](../../../../reseller.en-US/User Guide/Associate an EIP with a cloud instance/Associate an EIP with a secondary ENI/Set the Multi-EIP to ENI mode.md#).
+-   If you delete an EIP that is billed according to traffic usage at 10:30, you will be charged for its use between the hour of 10:00 to 11:00.
+-   If you delete an EIP that is billed according to bandwidth on January 1, 2019, you will receive a bill for the time from January 1, 2019 to January 2, 2019 after the EIP is deleted.
 
+## How is the EIP instance occupation fee billed? {#section_v1d_jpg_qgb .section}
+
+Depending on the cloud resources and quotas associated with the EIPs, an instance occupation fee may be charged to your account as follows:
+
+-   If the EIP is associated with an ECS instance and you have not exceeded the default quota of 20 EIPs, no instance occupation fee is charged.
+-   If the EIP is associated with other types of cloud resources except ECS instances, including but not limited to NAT Gateways, SLB instances, and ENIs, an instance occupation fee is charged.
+-   An instance occupation fee for an EIP is charged at USD 0.003/hour regardless of whether the billing of the EIP is bandwidth-based or traffic-based.
+-   An EIP instance occupation fee can be charged regardless of whether the EIP is added to an Internet Shared Bandwidth instance.
+
+## Are there benefits to set a peak bandwidth for an EIP that is billed based on traffic? {#section_xry_qqg_qgb .section}
+
+For an EIP that is billed based on traffic, we recommend that you set a peak bandwidth value to avoid incurring excessive charges related to outbound traffic.
+
+Note that service quality is not guaranteed for an EIP that is billed based on traffic and for which you set a peak bandwidth value. If you need the peak bandwidth value to be guaranteed, you need to purchase an EIP that is billed based on bandwidth or purchase an Internet Shared Bandwidth instance.
+
+## How many EIP API calls can I make in one day? {#section_h4q_1sg_qgb .section}
+
+500. In each day, you can make up to 500 EIP API calls.
+
+## How are newly created EIPs allocated? {#section_xkm_2tg_qgb .section}
+
+By default, newly created EIPs are allocated at random. However, if you release EIPs too frequently, the released addresses are likely to be re-allocated to your EIP quota rather than new EIPs.
 
