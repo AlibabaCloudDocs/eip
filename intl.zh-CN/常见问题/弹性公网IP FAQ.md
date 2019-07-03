@@ -13,7 +13,6 @@
     -   [\#section\_owz\_hcc\_124](#section_owz_hcc_124)
     -   [\#section\_bue\_yuk\_t6s](#section_bue_yuk_t6s)
 -   后付费EIP FAQ
-    -   [后付费EIP实例费的收费策略是什么？](#section_ax5_ydw_0dm)
     -   [已经释放了后付费EIP，为什么还会产生费用？](#section_1nh_ax9_e2l)
     -   [为什么要为后付费-按流量计费的EIP设置带宽峰值？](#section_am7_sfw_w5y)
     -   [\#section\_wba\_mrz\_6hb](#section_wba_mrz_6hb)
@@ -83,14 +82,6 @@ EIP与ECS公网IP的区别如下表：
 ## 新申请的EIP的分配策略是什么？ {#section_7qp_8nq_isj .section}
 
 默认是随机分配EIP，但对于频繁申请又释放的用户，会优先分配之前使用过的EIP。
-
-## 后付费EIP实例费的收费策略是什么？ {#section_ax5_ydw_0dm .section}
-
-后付费EIP实例费的收费策略如下：
-
--   当EIP实例绑定至专有网络类型ECS实例后，将免除EIP实例费；而绑定至NAT网关、SLB实例或辅助弹性网卡时，仍正常收取EIP实例费。
--   后付费-按使用流量计费的EIP的实例费是0.02元/小时。
--   EIP实例费和EIP是否加入共享带宽无关。
 
 ## 已经释放了后付费EIP，为什么还会产生费用？ {#section_1nh_ax9_e2l .section}
 
