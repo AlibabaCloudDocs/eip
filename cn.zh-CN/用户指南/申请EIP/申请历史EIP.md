@@ -1,10 +1,10 @@
 # 申请历史EIP {#task_gzr_j35_cgb .task}
 
-您可以根据EIP的IP或者ID申请被释放的历史EIP，但如果要申请的历史EIP已分配给其他用户使用，则无法申请。
+您可以根据EIP的IP或者ID申请本账号下被释放的历史EIP，但如果要申请的历史EIP已分配给其他用户使用，则无法申请。
 
-申请历史EIP后，默认带宽峰值为5Mbps，计费类型为后付费（按使用流量计费）。
+申请历史EIP后，默认带宽峰值为5Mbps，计费方式为后付费-按使用流量计费。
 
-**说明：** 该功能每月每个账号最多可以使用20次。如需提升配额，请提交工单。
+**说明：** 该功能每月每个账号最多可以使用20次。如需提升配额，请[提交工单](https://selfservice.console.aliyun.com/ticket/createIndex.htm)。
 
 1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
 2.  在左侧导航栏，单击**弹性公网IP**。
