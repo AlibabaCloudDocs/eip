@@ -2,6 +2,8 @@
 
 当弹性公网IP（EIP）绑定到一个辅助弹性网卡实例上时，您可以选择**EIP网卡可见模式**。此模式下，EIP将替换辅助弹性网卡的私网IP，辅助弹性网卡将变为一个纯公网网卡，您可以在操作系统的网卡信息中查看EIP。
 
+设置EIP网卡可见模式前，请确保满足以下条件。
+
 -   您已经创建了弹性网卡。详细信息，请参见[创建弹性网卡](../../../../cn.zh-CN/网络/弹性网卡/创建弹性网卡.md#)。
 -   要绑定的弹性网卡未绑定任何ECS实例。
 
@@ -34,22 +36,24 @@
 
     **说明：** 确保选择的辅助弹性网卡未绑定ECS实例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156024624633380_zh-CN.png)
+    ![绑定弹性公网IP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156386261733380_zh-CN.png)
 
 6.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156024624733382_zh-CN.png)
+    ![查看弹性公网IP绑定的弹性网卡。](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156386261733382_zh-CN.png)
 
 7.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
-    **说明：** 设置EIP网卡可见模式后，辅助弹性网卡绑定的ECS实例必须开启DHCP功能，EIP网卡可见模式才生效。
+    **说明：** 
 
+    -   每种实例规格支持绑定的弹性网卡数量不同，详细信息，请参见[实例规格族](../../../../cn.zh-CN/实例/实例规格族.md#)。
+    -   设置EIP网卡可见模式后，辅助弹性网卡绑定的ECS实例必须开启DHCP功能，EIP网卡可见模式才生效。
 8.  使用绑定的EIP登录ECS实例，查看该实例的网络配置。 
 
     **说明：** 确保ECS实例的安全组配置允许远程访问。
 
     您可以看到该实例的本地IP地址已经变成了EIP的地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156024624733443_zh-CN.png)
+    ![查看ECS实例上的弹性公网IP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156386261833443_zh-CN.png)
 
 
