@@ -34,18 +34,18 @@ The **Multi-EIP to ENI Mode** makes the EIP visible on the network interface and
     |**Mode**|No|Select **Multi-EIP to ENI Mode**.|
     |**Secondary ENI**|Yes|Select the secondary ENI to be associated with the EIP.|
 
-    ![Associate an EIP with a secondary ENI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156387641347675_en-US.png)
+    ![Associate an EIP with a secondary ENI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156405168747675_en-US.png)
 
 6.  Repeat the preceding steps to associate multiple EIPs with the secondary ENI.
 7.  Return to the EIP list page and click the ID of the associated ENI. 
 
-    ![View the ENI associated with the EIP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156387641333382_en-US.png)
+    ![View the ENI associated with the EIP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156405168733382_en-US.png)
 
 8.  On the Network Interfaces page, find the target ENI and click **Bind to Instance** to associate the ENI with an ECS instance. 
 
     **Note:** 
 
-    -   The number of ENIs that can be associated with an ECS instance varies according to the specification of the ECS instance. For more information, see [Instance type families](../../../../reseller.en-US/Instances/Instance type families.md#).
+    -   When you associate an ENI that is associated with multiple EIPs in the Multi-EIP to ENI mode with an ECS instance, the ECS instance must be of the following specifications: ecs.c5-618, ecs.d1ne, ecs.db11-se1ne, ecs.ebma1, ecs.ebmc4, ecs.ebmg4, ecs.ebmg5, ecs.ebmg5ne, ecs.ebmgn5i, ecs.ebmgn5t, ecs.ebmhfg4, ecs.ebmhfg5, ecs.ebmi2, ecs.ebmi3, ecs.ebmr4, ecs.ebmr5, ecs.elmd1ne, ecs.elmdb, ecs.f1, ecs.f2, ecs.g5-618, ecs.gn3, ecs.gn5d, ecs.gn5i, ecs.gn5t, ecs.gn6p, ecs.gn6v, ecs.i2, ecs.r1, ecs.re4, ecs.re4e, ecs.sccg5, ecs.sccgn6, ecs.scch5, ecs.x1.i2, ecs.x1.i5, ecs.x1.i6, ecs.x1.i8, ecs.g5, ecs.c5, ecs.r5, ecs.t5, ecs.sn2ne, ecs.se1ne, and ecs.sn1ne. For more information, see [Instance type families](../../../../reseller.en-US/Instances/Instance type families.md#).
     -   After you set the Multi-EIP to ENI mode, you must enable the DHCP function of the ECS instance with which the ENI is associated to make the Multi-EIP to ENI mode take effect.
 9.  Call DescribeEipGatewayInfo to obtain the gateway addresses and subnet masks of the EIPs. For more information, see [DescribeEipGatewayInfo](../../../../reseller.en-US/API reference/EIP/DescribeEipGatewayInfo.md#).
 10. Log on to the ECS instance and configure multiple EIPs for the ECS instance. For more information, see [Configure an EIP for a Windows instance](../../../../reseller.en-US/Network/Elastic Network Interfaces/Assign a secondary private IP address.md#section_y4b_krk_ggb) and [Configure an EIP for a Linux instance](../../../../reseller.en-US/Network/Elastic Network Interfaces/Assign a secondary private IP address.md#section_b2x_hlb_3gb). 
