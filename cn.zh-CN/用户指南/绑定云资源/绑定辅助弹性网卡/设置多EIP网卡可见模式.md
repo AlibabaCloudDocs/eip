@@ -34,18 +34,18 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![EIP绑定弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156386263647675_zh-CN.png)
+    ![EIP绑定弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156404510647675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![查看绑定的弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156386263633382_zh-CN.png)
+    ![查看绑定的弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156404510633382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
     **说明：** 
 
-    -   每种实例规格支持绑定的弹性网卡数量不同，详细信息，请参见[实例规格族](../../../../cn.zh-CN/实例/实例规格族.md#)。
+    -   EIP以多EIP网卡可见模式绑定辅助弹性网卡，辅助弹性网卡绑定到ECS实例，ECS实例必须为以下实例规格族：ecs.c5-618、ecs.d1ne、ecs.db11-se1ne、ecs.ebma1、ecs.ebmc4、ecs.ebmg4、ecs.ebmg5、ecs.ebmg5ne、ecs.ebmgn5i、ecs.ebmgn5t、ecs.ebmhfg4、ecs.ebmhfg5、ecs.ebmi2、ecs.ebmi3、ecs.ebmr4、ecs.ebmr5、ecs.elmd1ne、ecs.elmdb、ecs.f1、ecs.f2、ecs.g5-618、ecs.gn3、ecs.gn5d、ecs.gn5i、ecs.gn5t、ecs.gn6p、ecs.gn6v、ecs.i2、ecs.r1、ecs.re4、ecs.re4e、ecs.sccg5、ecs.sccgn6、ecs.scch5、ecs.x1.i2、ecs.x1.i5、ecs.x1.i6、ecs.x1.i8、ecs.g5、ecs.c5、ecs.r5、ecs.t5、ecs.sn2ne、ecs.se1ne、ecs.sn1ne。详细信息，请参见[实例规格族](../../../../cn.zh-CN/实例/实例规格族.md#)。
     -   设置多EIP网卡可见模式后，辅助弹性网卡绑定的ECS实例必须开启DHCP功能，多EIP网卡可见模式才生效。
 9.  调用DescribeEipGatewayInfo接口查询EIP的网关和子网掩码。详细信息，请参见[DescribeEipGatewayInfo](../../../../cn.zh-CN/API参考/弹性公网IP/DescribeEipGatewayInfo.md#)。
 10. 登录ECS实例，为ECS实例配置多个EIP。详细信息，请参见[为Windows实例配置EIP地址](../../../../cn.zh-CN/网络/弹性网卡/分配辅助私网IP地址.md#section_y4b_krk_ggb)和[为Linux实例配置EIP地址](../../../../cn.zh-CN/网络/弹性网卡/分配辅助私网IP地址.md#section_b2x_hlb_3gb)。 
