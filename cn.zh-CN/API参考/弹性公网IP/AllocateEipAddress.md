@@ -1,12 +1,16 @@
 # AllocateEipAddress {#doc_api_Vpc_AllocateEipAddress .reference}
 
-使用AllocateEipAddress接口申请弹性公网IP（EIP）。
+调用AllocateEipAddress接口申请弹性公网IP（EIP）。
+
+## API描述 {#description .section}
+
+请确保在使用该接口前，已充分了解EIP的收费方式和价格。详细信息，请参见[计费概述](~~122035~~)。
 
 调用本接口后将在指定的地域内随机获取一个状态为**Available**的弹性公网IP。弹性公网IP在传输层目前只支持ICMP、TCP和UDP协议，不支持IGMP和SCTP等协议。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=AllocateEipAddress)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=AllocateEipAddress&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -23,71 +27,88 @@
  -   **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
 -   **true**：开启自动付费，自动支付订单。
 
- **说明：** **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+ **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+
+ **InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
-|Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为5。
+|Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为**5**。
 
  |
-|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001xxxxxxxx|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001\*\*\*\*|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
 
  |
 |ISP|String|否|BGP|线路类型，默认值为**BGP**。
 
- **说明：** 如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
+ -   对于已开通单线带宽白名单的用户，ISP字段可以设置为**ChinaTelecom**、**ChinaUnicom**和**ChinaMobile**，用来开通中国电信、中国联通、中国移动的单线EIP。
+-   如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
 
  |
 |InstanceChargeType|String|否|PostPaid|EIP的付费方式，取值：
 
- -   **PrePaid**：预付费。
--   **PostPaid**（默认值）：后付费。
+ **PrePaid**：预付费。
+
+ **PostPaid**（默认值）：后付费。
+
+ 当取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。
+
+ 预付费和后付费的详细信息，请参见[预付费](~~27767~~)和[后付费](~~72142~~)。
 
  |
-|InternetChargeType|String|否|PayByBandwidth|EIP的计费方式，取值：
+|InternetChargeType|String|否|PayByTraffic|EIP的计费方式，取值：
 
- -   **PayByBandwidth**（默认值）：按带宽计费。
--   **PayByTraffic**：按流量计费。
+ **PayByBandwidth**（默认值）：按带宽计费。
+
+ **PayByTraffic**：按流量计费。
+
+ 当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。详细信息，请参见[预付费](~~27767~~)。
+
+ 当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。详细信息，请参见[按使用流量](~~72142~~)和[按固定带宽](~~72142~~)。
 
  |
 |Netmode|String|否|Public|网络类型，默认值为**Public**。
 
  |
-|Period|Integer|否|10|购买时长。取值：
+|Period|Integer|否|1|购买时长。
 
- -   当选择按月付费时，取值范围为**1-9**。
--   当选择按年付费时，取值范围为**1-3**。**InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+ -   当**PricingCycle**取值**Month**时，**Period**取值范围为**1-9**。
+-   当**PricingCycle**取值**Year**时，**Period**取值范围为**1-3**。
+
+ **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
  |
 |PricingCycle|String|否|Month|预付费的计费周期，取值：
 
- -   **Month**（默认值）：按月付费
+ -   **Month**（默认值）：按月付费。
 -   **Year**：按年付费。
 
-**说明：** **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+**InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
+
+ **InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
-|ResourceGroupId|String|否|rg-acfmxazxxxxxxxx|企业资源组ID。
+|ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|企业资源组ID。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |EipAddress|String|12.xx.xx.78|分配的EIP。
 
  |
-|AllocationId|String|eip-25877c70xxxxxxxx|EIP的ID。
+|AllocationId|String|eip-25877c70gddh\*\*\*\*|EIP的ID。
 
  |
-|OrderId|Long|10|订单号。只有预付费时返回。
+|OrderId|Long|10|订单号，仅预付费时返回。
 
  |
 |RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。
 
  |
-|ResourceGroupId|String|rg-acfmxazxxxxxxxx|企业资源组ID。
+|ResourceGroupId|String|rg-acfmxazfdgdg\*\*\*\*|企业资源组ID。
 
  |
 
@@ -97,9 +118,9 @@
 
 ``` {#request_demo}
 
-https://vpc.aliyuncs.com/?Action=AllocateEipAddress
-&RegionId=cn-beijing
-&公共请求参数
+http(s)://[Endpoint]/?Action=AllocateEipAddress
+&RegionId=cn-hangzhou
+&<公共请求参数>
 
 ```
 
@@ -109,11 +130,10 @@ https://vpc.aliyuncs.com/?Action=AllocateEipAddress
 
 ``` {#xml_return_success_demo}
 <AllocateEipAddressResponse>
-  <AllocationId>eip-25877c70xxxxxxxx</AllocationId>
-  <EipAddress>123.xx.xx.206</EipAddress>
-  <RequestId>B6B9F518-60F8-4D81-9242-1207B356754D</RequestId>
+      <AllocationId>eip-25877c70gfdkh****</AllocationId>
+      <EipAddress>123.xx.xx.206</EipAddress>
+      <RequestId>B6B9F518-60F8-4D81-9242-1207B356754D</RequestId>
 </AllocateEipAddressResponse>
-
 ```
 
 `JSON` 格式
@@ -122,7 +142,7 @@ https://vpc.aliyuncs.com/?Action=AllocateEipAddress
 {
 	"RequestId":"B6B9F518-60F8-4D81-9242-1207B356754D",
 	"EipAddress":"123.xx.xx.206",
-	"AllocationId":"eip-25877c70xxxxxxxx"
+	"AllocationId":"eip-25877c70gfdkh****"
 }
 ```
 
@@ -138,5 +158,5 @@ https://vpc.aliyuncs.com/?Action=AllocateEipAddress
 |400|ReserveIpFail|Reserve eip failed.|EIP预留失败。|
 |400|InvalidRegion.NotSupport|The specified region does not support.|该 RegionId 不支持此操作。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
