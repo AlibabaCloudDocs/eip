@@ -1,21 +1,21 @@
 # 设置EIP普通模式 {#task_268615 .task}
 
-在普通模式（NAT模式）下，弹性网卡的私网IP和公网IP同时可用，EIP在弹性网卡上不可见。
+普通模式（NAT模式）下，弹性网卡的私网IP和公网IP同时可用，EIP在弹性网卡上不可见。
 
 设置EIP网卡可见模式前，请确保满足以下条件：
 
--   辅助弹性网卡实例的地域必须和EIP的地域相同。
+-   辅助弹性网卡实例的网络类型必须是专有网络。
 -   辅助弹性网卡实例的地域必须和EIP的地域相同。
 -   要绑定的辅助弹性网卡未绑定任何ECS实例。
 
-    如果已经绑定，请先解绑，在设置EIP网卡可见模式后，再绑定到ECS实例上。详细信息，请参见[分离弹性网卡](../../../../cn.zh-CN/网络/弹性网卡/分离弹性网卡.md#)。
+    如果已经绑定，请先解绑，在设置EIP网卡可见模式后，再绑定到ECS实例上。详细信息，请参见[分离弹性网卡](../../../../intl.zh-CN/网络/弹性网卡/分离弹性网卡.md#)。
 
 
 EIP普通模式下：
 
 -   辅助弹性网卡支持绑定的EIP数量取决于辅助弹性网卡的私网IP数量。
 -   EIP以NAT模式和弹性网卡绑定，弹性网卡的私网IP和公网IP同时可用。
--   EIP在操作系统内部不可见，需要通过DescribeEipAddresses接口查询出具体网卡上绑定的公网IP地址。详细信息，请参见[DescribeEipAddresses](../../../../cn.zh-CN/API参考/弹性公网IP/DescribeEipAddresses.md#)。
+-   EIP在操作系统内部不可见，需要通过DescribeEipAddresses接口查询出具体网卡上绑定的公网IP地址。详细信息，请参见[DescribeEipAddresses](../../../../intl.zh-CN/API参考/弹性公网IP/DescribeEipAddresses.md#)。
 -   不支持需要做NAT ALG的协议，如H.323，SIP，DNS，RTSP，TFTP等协议。
 
 1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
@@ -31,6 +31,6 @@ EIP普通模式下：
     |绑定模式|否|选择**普通模式**。|
     |辅助弹性网卡|是|选择要绑定的辅助弹性网卡。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221988/156516362247638_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221988/156802402947638_zh-CN.png)
 
 
