@@ -1,14 +1,16 @@
 # 设置多EIP网卡可见模式 {#task_268616 .task}
 
-当多个弹性公网IP（EIP）绑定到一个辅助弹性网卡实例上时，您可以选择**多EIP网卡可见模式**。此模式下，弹性网卡的私网IP和公网IP同时可用，您可以在操作系统的网卡信息中查看EIP。
+多EIP网卡可见模式下，弹性网卡的私网IP和公网IP同时可用，您可以在操作系统的网卡信息中查看EIP。
 
-设置多EIP网卡可见模式前，请确保满足以下条件。
+设置多EIP网卡可见模式前，请确保满足以下条件：
 
--   您已经创建了弹性网卡。详细信息，请参见[创建弹性网卡](../../../../intl.zh-CN/网络/弹性网卡/创建弹性网卡.md#)。
--   要绑定的辅助弹性网卡未以普通模式、EIP网卡可见模式绑定EIP。
+-   辅助弹性网卡实例的网络类型必须是专有网络。
+-   辅助弹性网卡实例的地域必须和EIP的地域相同。
+-   要绑定的辅助弹性网卡未绑定任何ECS实例。
 
-    如果已经绑定，请先解绑EIP。详细信息，请参见[解绑EIP](intl.zh-CN/用户指南/解绑EIP.md#)。
+    如果已经绑定，请先解绑，在设置EIP网卡可见模式后，再绑定到ECS实例上。详细信息，请参见[分离弹性网卡](../../../../intl.zh-CN/网络/弹性网卡/分离弹性网卡.md#)。
 
+-   在多EIP网卡可见模式下，辅助弹性网卡支持绑定10个EIP。如需提升配额，请[提交工单](https://workorder-intl.console.aliyun.com/?spm=5176.11182188.console-base-top.dworkorder.18ae48822ifKdZ#/ticket/add?productId=1218)。
 
 弹性公网IP本质上是一个NAT IP。由于普通模式（NAT模式）下的公网IP存在于网关设备，并不在ECS实例的网卡上，所以在操作系统内看不到公网IP，只能看到网卡上的私网IP。这样给运维带来了一定的复杂度，需要手工维护一份网卡/服务器和公网IP的对应关系。此外，EIP作为NAT ALG（NAT应用层网关）部署时，不支持如H.323、SIP、DNS、RTSP等协议。
 
@@ -34,12 +36,12 @@
     |**绑定模式**|否|选择**多EIP网卡可见模式**。|
     |**辅助弹性网卡**|是|选择要绑定的辅助弹性网卡。|
 
-    ![EIP绑定弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156405166547675_zh-CN.png)
+    ![EIP绑定弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/221990/156802430747675_zh-CN.png)
 
 6.  重复以上步骤，依次绑定多个EIP到辅助弹性网卡。
 7.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![查看绑定的弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156405166533382_zh-CN.png)
+    ![查看绑定的弹性网卡](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156802430733382_zh-CN.png)
 
 8.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
