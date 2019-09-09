@@ -1,14 +1,16 @@
 # 设置EIP网卡可见模式 {#task_ajy_m5p_yfb .task}
 
-当弹性公网IP（EIP）绑定到一个辅助弹性网卡实例上时，您可以选择**EIP网卡可见模式**。此模式下，EIP将替换辅助弹性网卡的私网IP，辅助弹性网卡将变为一个纯公网网卡，您可以在操作系统的网卡信息中查看EIP。
+EIP网卡可见模式下，EIP将替换辅助弹性网卡的私网IP，辅助弹性网卡将变为一个纯公网网卡，您可以在操作系统的网卡信息中查看EIP。
 
-设置EIP网卡可见模式前，请确保满足以下条件。
+设置EIP网卡可见模式前，请确保满足以下条件：
 
--   您已经创建了弹性网卡。详细信息，请参见[创建弹性网卡](../../../../intl.zh-CN/网络/弹性网卡/创建弹性网卡.md#)。
--   要绑定的弹性网卡未绑定任何ECS实例。
+-   辅助弹性网卡实例的网络类型必须是专有网络。
+-   辅助弹性网卡实例的地域必须和EIP的地域相同。
+-   要绑定的辅助弹性网卡未绑定任何ECS实例。
 
     如果已经绑定，请先解绑，在设置EIP网卡可见模式后，再绑定到ECS实例上。详细信息，请参见[分离弹性网卡](../../../../intl.zh-CN/网络/弹性网卡/分离弹性网卡.md#)。
 
+-   一个辅助弹性网卡仅支持绑定一个EIP。
 
 弹性公网IP本质上是一个NAT IP。由于普通模式（NAT模式）下的公网IP存在于网关设备，并不在ECS实例的网卡上，所以在操作系统内看不到公网IP，只能看到网卡上的私网IP。这样给运维带来了一定的复杂度，需要手工维护一份网卡/服务器和公网IP的对应关系。此外，EIP作为NAT ALG（NAT应用层网关）部署时，不支持如H.323、SIP、DNS、RTSP等协议。
 
@@ -36,11 +38,11 @@
 
     **说明：** 确保选择的辅助弹性网卡未绑定ECS实例。
 
-    ![绑定弹性公网IP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156387643033380_zh-CN.png)
+    ![绑定弹性公网IP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156802404733380_zh-CN.png)
 
 6.  绑定成功后，单击绑定的弹性网卡链接。 
 
-    ![查看弹性公网IP绑定的弹性网卡。](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156387643033382_zh-CN.png)
+    ![查看弹性公网IP绑定的弹性网卡。](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156802404733382_zh-CN.png)
 
 7.  在弹性网卡列表页面，单击**绑定实例**将弹性网卡绑定到ECS实例上。 
 
@@ -54,6 +56,6 @@
 
     您可以看到该实例的本地IP地址已经变成了EIP的地址。
 
-    ![查看ECS实例上的弹性公网IP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156387643033443_zh-CN.png)
+    ![查看ECS实例上的弹性公网IP](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/65386/156802404733443_zh-CN.png)
 
 
