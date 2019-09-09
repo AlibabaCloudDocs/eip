@@ -1,9 +1,10 @@
 # Overdue payments {#concept_i5b_yl3_vdb .concept}
 
-If an EIP bill is overdue, your service may be affected. Therefore, we recommend that you renew your EIP in time to avoid service interruptions.
+This topic describes the procedure and related consequences when an Elastic IP Address \(EIP\) bill is overdue. To avoid possible interruptions to your services, we recommend that you renew your EIPs in a timely manner.
 
-1.  If an EIP bill is overdue, or if your payment is not received, you will get an email.
+1.  If the payment of an EIP is not received in time, you will be notified by email.
 2.  The EIP functions normally within the 15 days after the bill is overdue.
-3.  The EIP service will be suspended after the bill is overdue for more than 15 days.
-4.  If you renew your EIP within 15 days after the service is suspended, the service is automatically restored. Otherwise, the EIP address will be released 15 days after the service is suspended. The account owner will receive an email notification.
+3.  If you do not renew the EIP within 15 days after the bill becomes overdue, the EIP is suspended and its bandwidth reduces to 1 KB.
+4.  If you add the required funds to your account within 15 days after the EIP is suspended, the EIP is restored.
+5.  If you do not add the required funds, the suspended EIP is released after 15 days. When the EIP is released, an email notification is sent to your account.
 
