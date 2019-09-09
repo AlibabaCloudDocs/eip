@@ -16,3 +16,8 @@
     |**购买数量**|根据业务需要，选择购买EIP的数量。|
 
 
+**相关文档**  
+
+
+[AllocateEipAddress](../../../../intl.zh-CN/API参考/弹性公网IP/AllocateEipAddress.md#)
+
