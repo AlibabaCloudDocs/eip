@@ -22,7 +22,13 @@
 |RegionId|String|是|cn-hangzhou|弹性公网IP所属的地域ID。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|AutoPay|Boolean|否|false| 是否自动付费，该参数可不填。
+|AutoPay|Boolean|否|false|是否自动付费，取值：
+
+ **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
+
+ **true**：开启自动付费，自动支付订单。
+
+ 当**InstanceChargeType**参数的值为**PrePaid**时，该参数必选；当**InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
 |Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为**5**。
@@ -37,19 +43,47 @@
 -   如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
 
  |
-|InstanceChargeType|String|否|PostPaid| EIP的付费方式，必须取值**PostPaid**（后付费），且**InternetChargeType**必须取值**PayByTraffic**。后付费的详细信息，请参见[后付费](~~72142~~)。
+|InstanceChargeType|String|否|PostPaid|EIP的计费方式，取值：
+
+ **PrePaid**：包年包月。
+
+ **PostPaid**（默认值）：按量计费。
+
+ 当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**；当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。
+
+ 包年包月和按量计费的详细信息，请参见[包年包月](~~27767~~)和[按量计费](~~72142~~)。
 
  |
-|InternetChargeType|String|否|PayByTraffic| EIP的计费方式，必须取值为**PayByTraffic**（按流量计费）。详细信息，请参见[按使用流量](~~72142~~)。
+|InternetChargeType|String|否|PayByTraffic|EIP的计量方式，取值：
+
+ **PayByBandwidth**（默认值）：按带宽计费。
+
+ **PayByTraffic**：按流量计费。
+
+ 当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。详细信息，请参见[包年包月](~~27767~~)。
+
+ 当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。详细信息，请参见[按使用流量](~~72142~~)和[按固定带宽](~~72142~~)。
 
  |
-|Netmode|String|否|Public|网络类型，默认值为**Public**。
+|Netmode|String|否|public|网络类型，默认值为**public**。
 
  |
-|Period|Integer|否|1| 购买时长，该参数不填。
+|Period|Integer|否|1|购买时长。
+
+ 当**PricingCycle**取值**Month**时，**Period**取值范围为**1~9**。
+
+ 当**PricingCycle**取值**Year**时，**Period**取值范围为**1~3**。
+
+ 如果**InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
  |
-|PricingCycle|String|否|Month| 预付费的计费周期，该参数可不填。
+|PricingCycle|String|否|Month|包年包月的计费周期，取值：
+
+ **Month**（默认值）：按月付费。
+
+ **Year**：按年付费。
+
+ 当**InstanceChargeType**参数的值为**PrePaid**时，该参数必选；当**InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
 |ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|企业资源组ID。
@@ -66,7 +100,7 @@
 |AllocationId|String|eip-25877c70gddh\*\*\*\*|EIP的ID。
 
  |
-|OrderId|Long|10|订单号，仅预付费时返回。
+|OrderId|Long|10|订单号，仅**InstanceChargeType**取值为**PrePaid**时返回。
 
  |
 |RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。
@@ -122,5 +156,5 @@ http(s)://[Endpoint]/?Action=AllocateEipAddress
 |400|ReserveIpFail|Reserve eip failed.|EIP预留失败。|
 |400|InvalidRegion.NotSupport|The specified region does not support.|该 RegionId 不支持此操作。|
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
