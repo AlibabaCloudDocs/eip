@@ -35,7 +35,7 @@
  |
 |ChargeType|String|否|PostPaid| 弹性公网IP的计费方式，取值：
 
- **PostPaid**：后付费。
+ **PostPaid**：按量计费。
 
  |
 |EipAddress|String|否|116.xx.xx.28|EIP的IP地址。指定后可查看指定IP地址的EIP的信息。
@@ -90,6 +90,9 @@
 |EipAddresses| | |EIP的详细信息。
 
  |
+|EipAddress| | |EIP的详细信息。
+
+ |
 |AllocationId|String|eip-2zeerraiwb7ujxxxxxxxx|EIP的ID。
 
  |
@@ -97,6 +100,9 @@
 
  |
 |AvailableRegions| |cn-hangzhou|地域ID。
+
+ |
+|AvailableRegion| | |地域ID。
 
  |
 |Bandwidth|String|5|EIP的带宽峰值，单位为Mbps。
@@ -148,6 +154,9 @@
 
  |
 |OperationLocks| | |锁定详情。
+
+ |
+|LockReason| | |锁定详情。
 
  |
 |LockReason|String|financial|锁定类型，取值：
