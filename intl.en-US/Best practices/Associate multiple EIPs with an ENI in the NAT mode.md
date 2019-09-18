@@ -6,13 +6,8 @@ This topic describes how to associate multiple Elastic IP Addresses \(EIPs\) wit
 
 If you want to associate multiple EIPs with a secondary ENI in the NAT mode, the following requirements must be met:
 
--   You have obtained the permission to associate multiple EIPs with a secondary ENI in the NAT mode by opening a ticket.
 -   An ECS instance is created. For more information, see [Create an instance by using the wizard](../../reseller.en-US/Instances/Create an instance/Create an instance by using the wizard.md#).
 -   A secondary ENI is created. For more information, see [Create an ENI](../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#).
-
-## Limit {#section_n30_2j0_2cd .section}
-
-Currently, multiple EIPs associated with one secondary ENI in the NAT mode are supported only in the China \(Beijing\), China \(Zhangjiakou\), Singapore, Germany \(Frankfurt\), and India \(Mumbai\) regions.
 
 ## Step 1 Assign multiple secondary private IP addresses to the ENI {#section_nbm_39r_jyz .section}
 
@@ -26,7 +21,7 @@ To assign multiple secondary private IP addresses to the ENI, follow these steps
 
     **Note:** You can manually enter private IP addresses, which must fall into the **IPv4 Private CIDR**. If you do not enter any IP addresses, the system will automatically assign IP addresses from the **IPv4 Private CIDR**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83258/156142478447047_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83258/156876984647047_en-US.png)
 
 6.  Click **Modify**.
 
@@ -57,7 +52,7 @@ After associating the ENI with an ECS instance, you need to configure secondary 
 
 After configuring secondary private IP addresses, you can run the ip address command to view the configured secondary private IP addresses.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/222560/156142478447722_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/222560/156876984647722_en-US.png)
 
 ## Step 5 Test the network connectivity {#section_6l6_t3r_azk .section}
 
@@ -69,6 +64,6 @@ In this example, an ECS instance with the Linux operating system is created and 
 
     If the ping test succeeds, it indicates that the EIPs have been associated with the secondary private IP addresses of the ENI.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/222560/156142478549832_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/222560/156876984749832_en-US.png)
 
 
