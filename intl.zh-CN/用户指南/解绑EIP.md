@@ -1,10 +1,18 @@
-# 解绑EIP {#task_bh5_dll_vdb .task}
+# 解绑EIP
 
-当您的云资源不需要公网通信时，您可以将云资源与EIP解绑。EIP解绑后，仍需要支付EIP占有费。
+如果您的云资源不需要公网通信，您可以将云资源与弹性公网IP（EIP）解绑。EIP解绑后，仍需要支付EIP占有费。
 
-1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
-2.  在左侧导航栏，单击**弹性公网IP**。
-3.  选择弹性公网IP的地域。
-4.  在弹性公网IP页面，找到目标弹性公网IP，单击**操作**列下的**解绑**。 如果您的EIP绑定了NAT网关，且NAT网关添加了DNAT或SNAT条目，单击**操作**列下的**更多操作** \> **强制解绑NAT**。
-5.  在弹出的对话框中，单击**确定**。
+1.  登录[弹性公网IP管理控制台](https://vpc.console.aliyun.com/eip)。
+
+2.  在顶部菜单栏处，选择弹性公网IP的地域。
+
+3.  在**弹性公网IP**页面，找到目标弹性公网IP，单击**操作**列下的**解除绑定**。
+
+4.  在弹出的对话框，单击**确定**。
+
+
+**相关文档**  
+
+
+[UnassociateEipAddress](/intl.zh-CN/API参考/弹性公网IP/UnassociateEipAddress.md)
 
