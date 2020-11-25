@@ -1,45 +1,40 @@
-# ReleaseEipAddress {#doc_api_Vpc_ReleaseEipAddress .reference}
+# ReleaseEipAddress
 
-使用ReleaseEipAddress接口释放指定的弹性公网IP（EIP）。
+调用ReleaseEipAddress接口释放指定的弹性公网IP（EIP）。
 
-**说明：** 只有处于**Available**状态的EIP才可以被释放。
+## API描述
 
-## 调试 {#api_explorer .section}
+释放EIP前，请确保满足以下条件：
+
+-   只有处于**Available**状态的EIP才可以被释放。
+-   仅按量计费类型的EIP支持释放，包年包月类型的EIP不支持释放。
+
+## 调试
 
 [您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=ReleaseEipAddress&type=RPC&version=2016-04-28)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ReleaseEipAddress|要执行的操作。
+|Action|String|是|ReleaseEipAddress|要执行的操作，取值：**ReleaseEipAddress**。 |
+|AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|要释放的EIP的ID。 |
+|RegionId|String|是|cn-hangzhou|要释放的EIP所在的地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
 
- 取值： **ReleaseEipAddress**。
-
- |
-|AllocationId|String|是|eip-2zeerraiwb7uj6i0d0fo3|要释放的弹性公网IP的ID。
-
- |
-|RegionId|String|是|cn-hangzhou|弹性公网IP所在的地域。 您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
-
- |
-
-## 返回数据 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|748C38F6-9A3D-482E-83FB-DB6C39C68AEA|请求ID。
+|RequestId|String|748C38F6-9A3D-482E-83FB-DB6C39C68AEA|请求ID。 |
 
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
+```
 
-https://vpc.aliyuncs.com/?Action=ReleaseEipAddress
-&AllocationId=eip-25877c70x
+http(s)://vpc.aliyuncs.com/?Action=ReleaseEipAddress
+&AllocationId=eip-2zeerraiwb7uj6i0d****
 &<公共请求参数>
 
 ```
@@ -48,22 +43,21 @@ https://vpc.aliyuncs.com/?Action=ReleaseEipAddress
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
-<<?xml version="1.0" encoding="UTF-8" ?>
+```
 <ReleaseEipAddressResponse>
-    <RequestId>748C38F6-9A3D-482E-83FB-DB6C39C68AEA</RequestId>
+      <RequestId>748C38F6-9A3D-482E-83FB-DB6C39C68AEA</RequestId>
 </ReleaseEipAddressResponse>
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
 	"RequestId":"748C38F6-9A3D-482E-83FB-DB6C39C68AEA"
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
 |HttpCode|错误码|错误信息|描述|
 |--------|---|----|--|
