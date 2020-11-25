@@ -1,58 +1,41 @@
-# DescribeEipGatewayInfo {#doc_api_Vpc_DescribeEipGatewayInfo .reference}
+# DescribeEipGatewayInfo
 
 调用DescribeEipGatewayInfo接口查询EIP的网关和掩码信息。
 
+## API描述
+
 仅支持查询以多EIP网卡可见模式绑定辅助弹性网卡的EIP的网关和掩码信息。
 
-## 调试 {#apiExplorer .section}
+## 调试
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeEipGatewayInfo)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeEipGatewayInfo&type=RPC&version=2016-04-28)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeEipGatewayInfo|要执行的操作，取值：**DescribeEipGatewayInfo**。
+|Action|String|是|DescribeEipGatewayInfo|要执行的操作，取值：**DescribeEipGatewayInfo**。 |
+|InstanceId|String|是|eni-bp1d66qjxb3qoin3\*\*\*\*|要查询的EIP绑定的辅助弹性网卡的ID。 |
+|RegionId|String|是|cn-zhangjiakou|要查询的EIP所属的地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
 
- |
-|InstanceId|String|是|eni-bp1d66qjxb3qoin3xxxx|绑定EIP的弹性网卡的实例ID。
-
- |
-|RegionId|String|是|cn-zhangjiakou|EIP的所属地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
-
- |
-
-## 返回数据 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|操作状态码。
+|Code|String|200|操作状态码。 |
+|EipInfos|Array| |EIP详细信息。 |
+|EipInfo| | |EIP详细信息。 |
+|Ip|String|47.xx.xx.236|EIP的IP地址。 |
+|IpGw|String|47.xx.xx.1|EIP的网关地址。 |
+|IpMask|String|255.255.255.0|EIP的子网掩码。 |
+|Message|String|successful|传递的操作信息。 |
+|RequestId|String|C0FD0EED-F90D-4479-803D-DD62335357E5|请求ID。 |
 
- |
-|EipInfos| | |EIP详细信息。
-
- |
-|Ip|String|47.xx.xx.236|EIP的IP地址。
-
- |
-|IpGw|String|47.xx.xx.1|EIP的网关地址。
-
- |
-|IpMask|String|255.255.255.0|EIP的子网掩码。
-
- |
-|Message|String|successful|传递的操作信息。
-
- |
-|RequestId|String|C0FD0EED-F90D-4479-803D-DD62335357E5|请求ID。
-
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
+```
 
 http(s)://vpc.aliyuncs.com/?Action=DescribeEipGatewayInfo
 &InstanceId=eni-bp1d66qjxb3qoin3****
@@ -65,25 +48,24 @@ http(s)://vpc.aliyuncs.com/?Action=DescribeEipGatewayInfo
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <DescribeEipGatewayInfoResponse>
-  <Message>successful</Message>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
-  <EipInfos>
-    <EipInfo>
-      <IP>47.xx.xx.236</IP>
-      <IpMask>255.255.255.0</IpMask>
-      <IpGw>47.xx.xx.1</IpGw>
-    </EipInfo>
-  </EipInfos>
-  <Code>200</Code>
+	  <Message>successful</Message>
+	  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+	  <EipInfos>
+		    <EipInfo>
+			      <IP>47.xx.xx.236</IP>
+			      <IpMask>255.255.255.0</IpMask>
+			      <IpGw>47.xx.xx.1</IpGw>
+		    </EipInfo>
+	  </EipInfos>
+	  <Code>200</Code>
 </DescribeEipGatewayInfoResponse>
-
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
 	"Message":"successful",
 	"RequestId":"0ED8D006-F706-4D23-88ED-E11ED28DCAC0",
@@ -100,7 +82,7 @@ http(s)://vpc.aliyuncs.com/?Action=DescribeEipGatewayInfo
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
 |HttpCode|错误码|错误信息|描述|
 |--------|---|----|--|
