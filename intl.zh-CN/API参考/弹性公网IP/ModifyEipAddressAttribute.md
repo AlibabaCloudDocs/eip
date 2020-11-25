@@ -1,53 +1,40 @@
-# ModifyEipAddressAttribute {#doc_api_Vpc_ModifyEipAddressAttribute .reference}
+# ModifyEipAddressAttribute
 
 调用ModifyEipAddressAttribute接口修改指定EIP的名称、描述信息和带宽峰值。
 
-## 调试 {#api_explorer .section}
+## 调试
 
 [您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=ModifyEipAddressAttribute&type=RPC&version=2016-04-28)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ModifyEipAddressAttribute|要执行的操作。
+|Action|String|是|ModifyEipAddressAttribute|要执行的操作，取值：**ModifyEipAddressAttribute**。 |
+|AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|要修改的EIP的ID。 |
+|RegionId|String|是|cn-hangzhou|EIP所属的地域ID。 |
+|Bandwidth|String|否|100|EIP的带宽峰值，取值：**1**~**200**，单位为Mbps。 |
+|Description|String|否|abc|EIP的描述信息。
 
- 取值： **ModifyEipAddressAttribute**。
+ 长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。 |
+|Name|String|否|Test123|EIP的名称。
 
- |
-|AllocationId|String|是|eip-2zeerraiwb7uj6i0d0fo3|弹性公网IP的ID。
+ 长度为2~128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（\_）和短横线（-）。但不能以`http://`或`https://`开头。 |
 
- |
-|RegionId|String|是|cn-hangzhou|路由表所属的VPC的地域ID。
-
- |
-|Bandwidth|String|否|100|EIP的带宽峰值，单位为Mbps。
-
- |
-|Description|String|否|描述|EIP的描述信息。 长度为 2-256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
-
- |
-|Name|String|否|Test123|EIP的名称。 长度为 2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://`或`https://`开头。
-
- |
-
-## 返回数据 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。
+|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。 |
 
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
+```
 
-https://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
-&AllocationId=eip-25877c70xxxxxxxx
-&Name=eip1
+http(s)://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
+&AllocationId=eip-2zeerraiwb7uj6i0d****
 &<公共请求参数>
 
 ```
@@ -56,7 +43,7 @@ https://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <ModifyEipAddressAttributeResponse>
       <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </ModifyEipAddressAttributeResponse>
@@ -64,13 +51,13 @@ https://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
 	"RequestId":"0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
 |HttpCode|错误码|错误信息|描述|
 |--------|---|----|--|
