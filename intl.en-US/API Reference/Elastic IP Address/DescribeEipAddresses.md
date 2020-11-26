@@ -1,291 +1,285 @@
-# DescribeEipAddresses {#doc_api_Vpc_DescribeEipAddresses .reference}
+# DescribeEipAddresses
 
-Queries the created EIPs in a specified region.
+You can call this operation to query the Elastic IP addresses \(EIPs\) that are created in a specified region.
 
-## Debug {#api_explorer .section}
+## Debugging
 
-[Use OpenAPI Explorer to perform debug operations and generate SDK code examples.](https://api.aliyun.com/#product=Vpc&api=DescribeEipAddresses&type=RPC&version=2016-04-28)
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Vpc&api=DescribeEipAddresses&type=RPC&version=2016-04-28)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
-|Parameter|Type|Required?|Example value|Description|
-|---------|----|---------|-------------|-----------|
-|Action|String|Yes|DescribeEipAddresses| The name of this action. Value: **DescribeEipAddresses**
+|Parameter|Type|Required|Example|Description|
+|---------|----|--------|-------|-----------|
+|Action|String|Yes|DescribeEipAddresses|The operation that you want to perform. Set the value to **DescribeEipAddresses**. |
+|RegionId|String|Yes|cn-hangzhou|The ID of the region where the EIPs are created. You can call the [DescribeRegions](~~36063~~) operation to query the region ID. |
+|IncludeReservationData|Boolean|No|true|Specifies whether to return data of orders that have not taken effect. Valid values:
 
- |
-|RegionId|String|Yes|cn-hangzhou| The ID of the region to be queried. To query the region ID, call [DescribeRegions](~~36063~~).
+ -   **false**: Data of orders that have not taken effect is not returned. This is the default value.
+-   **true**: Data of orders that have not taken effect is returned. |
+|Status|String|No|Available|The status of the EIP. Valid values:
 
- |
-|AllocationId|String|No|eip-2zeerraiwb7ujxxxxxxxx| Optional. The ID of the EIP to be queried.
+ -   **Associating**: The EIP is being bound to an instance.
+-   **Unassociating**: The EIP is being unbound from an instance.
+-   **InUse**: The EIP is allocated and in use.
+-   **Available**: The EIP is available for use. |
+|EipAddress|String|No|116.xx.xx.28|The IP address of the EIP to be queried.
 
- |
-|AssociatedInstanceId|String|No|i-2zebb08phycxxxxxxxx| Optional. The ID of the cloud instance associated with the EIP.
+ You can enter the IP addresses of up to 50 EIPs. Separate multiple IP addresses with commas \(,\).
 
- |
-|AssociatedInstanceType|String|No|EcsInstance| Optional. The type of the cloud instance associated with the EIP.
+ **Note:** If both the **EipAddress** and **AllocationId** parameters are set, you can enter the IP addresses of 50 EIPs in **EipAddress**, and enter the IDs of the 50 EIPs in **AllocationId**. |
+|AllocationId|String|No|eip-2zeerraiwb7ujxscd\*\*\*\*|The ID of the EIP instance to be queried.
 
- -   **EcsInstance** \(default\): ECS instances of the VPC network
--   **SlbInstance**: Server Load Balancer \(SLB\) instances of the VPC network
--   **Nat**: NAT Gateways
--   **HaVip**: High-Availability Virtual IP Addresses \(HaVips\)
+ You can enter IDs of up to 50 EIP instances. Separate the instance IDs with commas \(,\).
 
-Each ECS instance, SLB instance, and HaVip can only be associated with one EIP. One NAT Gateway can be associated with multiple EIPs.
+ **Note:** If both the **EipAddress** and **AllocationId** parameters are specified, you can enter the IDs of up to 50 EIP instances in **AllocationId**, and enter the IP addresses of the 50 EIPs in **EipAddress**. |
+|SegmentInstanceId|String|No|eipsg-t4nr90yik5oy38xdy\*\*\*\*|The ID of the instance with which the contiguous EIP is associated. |
+|ResourceGroupId|String|No|rg-acfmxazb4pcdvf\*\*\*\*|The ID of the resource group to which the EIP belongs. |
+|PageNumber|Integer|No|10|The number of the page to return. Default value: **1**. |
+|PageSize|Integer|No|10|The number of entries to return on each page. Maximum value: **100**. Default value: **10**. |
+|ISP|String|No|BGP|The type of connection. Valid values:
+
+ -   **BGP**: BGP \(Multi-ISP\) lines.
+
+Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers \(ISPs\), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+
+-   **BGP\_PRO**: BGP \(Multi-ISP\) Pro lines.
+
+BGP \(Multi-ISP\) Pro lines are provided to optimize data transmission to mainland China and improve connection quality for international services. Compared with traditional BGP \(Multi-ISP\) lines, BGP \(Multi-ISP\) Pro lines can be used to establish direct connection without using international ISPs services and reduce network latency.
 
 
- |
-|ChargeType|String|No|PostPaid| Optional. The billing method of the EIP. Value:
+ BGP \(Multi-ISP\) lines are supported in all regions. BGP \(Multi-ISP\) Pro lines are supported only in China \(Hong Kong\).
 
- **Postpaid**: Pay-As-You-Go
-
- |
-|EipAddress|String|No|116.xx.xx.28| Optional. The IP address of the EIP. If you specify this parameter, you can view the information of a specific EIP.
-
- |
-|Filter.1.Key|String|No|Filter.1.Name| Optional. The filter condition.
-
- |
-|Filter.1.Value|String|No|value1| Optional. The value of the corresponding filter condition.
-
- |
-|Filter.2.Key|String|No|Filter.2.Description| Optional. The filter condition.
-
- |
-|Filter.2.Value|String|No|value2| Optional. The value of the corresponding filter condition.
-
- |
-|ISP|String|No|BGP| Optional. The service provider. The value is usually BGP.
-
- |
-|IncludeReservationData|Boolean|No|true| Optional. Indicates whether to include orders that have not taken effect. Default value: False.
-
- |
-|LockReason|String|No|financial| Optional. The reason why the EIP is locked. Valid values:
+ **Note:** If your account is in the BGP \(single line\) whitelist, you can set the ISP field to**ChinaTelecom**,**ChinaUnicom**, or**ChinaMobile**. This parameter is required if you are connected to China East 1 Finance. Set the value to **BGP\_FinanceCloud**. |
+|Filter.1.Key|String|No|CreationStartTime|The filter key used to query resources. Set the value to **CreationStartTime** to specify the start time when resources were created. |
+|Filter.2.Key|String|No|CreationEndTime|The filter key used to query resources. Set the value to **CreationEndTime** to specify the end time when resources were created. |
+|Filter.1.Value|String|No|2018-01-22T09:12Z|The filter value used to query resources. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC. |
+|Filter.2.Value|String|No|2018-01-22T09:15Z|The filter value used to query resources. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC. |
+|LockReason|String|No|financial|The reason why the EIP is locked. Valid values:
 
  -   **financial**: The EIP is locked due to overdue payments.
--   **security**: The EIP is locked for security reasons.
+-   **security**: The EIP is locked for security reasons. |
+|AssociatedInstanceType|String|No|EcsInstance|The type of the instance to which you want to bind the EIP. Valid value:
 
- |
-|PageNumber|Integer|No|10| Optional. The page number. Default value: **1**
+ -   **EcsInstance**: an Elastic Compute Service \(ECS\) instance in a VPC network. This is the default value.
+-   **SlbInstance**: an Server Load Balancer \(SLB\) instance in a VPC network.
+-   **Nat**: a NAT gateway.
+-   **HaVip**: a High-Availability Virtual IP Address \(HaVip\).
+-   **NetworkInterface**: a secondary Elastic Network Interface \(ENI\).
 
- |
-|PageSize|Integer|No|10| Optional. The number of entries per page in the case of a paged query result. Maximum value: **50**. Default value: **10**
+Only one EIP can be bound to each ECS instance, SLB instance, or HaVip. You can bind multiple EIPs to a NAT gateway. The number of EIPs that you can bind to a secondary ENI depends on the EIP binding mode. For more information, see [Elastic IP Address overview](~~88991~~). |
+|AssociatedInstanceId|String|No|i-2zebb08phyccdvf\*\*\*\*|The ID of the instance associated with the EIP. |
+|ChargeType|String|No|PostPaid|The billing method of the EIP. Valid values:
 
- |
-|ResourceGroupId|String|No|rg-acfmxazb4pxxxxxxxx| Optional. The ID of the resource group.
+ **PostPaid**: pay-as-you-go. |
+|DryRun|Boolean|No|false|Specifies whether to precheck only this request. Valid values:
 
- |
-|Status|String|No|Available| Optional. The status of the EIP. Valid values:
+ -   **true**: The request is checked but instances are not queried. The system checks whether your AccessKey pair is valid, whether RAM users are authorized, and whether required parameters are specified. An error message is returned if you fail the check. If you pass the check, the DryRunOperation error code is returned.
+-   **false**: The request is checked. This is the default value. If you pass the check, a 2XX HTTP status code is returned and resource availability is queried. |
 
- -   **Associating**: The EIP is being associated with a cloud instance.
--   **Unassociating**: The EIP is being disassociated from a cloud instance.
--   **InUse**: The EIP is already allocated.
--   **Available**: The EIP is available.
+## Response parameters
 
- |
+|Parameter|Type|Example|Description|
+|---------|----|-------|-----------|
+|EipAddresses|Array| |Details about the queried EIP. |
+|EipAddress| | | |
+|AllocationId|String|eip-2zeerraiwb7ujcdvf\*\*\*\*|The ID of the EIP. |
+|AllocationTime|String|2019-04-23T01:37:38Z|The time when the EIP was created. |
+|AvailableRegions|List|cn-hangzhou|The ID of the region to which the EIP belongs. |
+|Bandwidth|String|5|The peak bandwidth of the EIP. Unit: Mbit/s. |
+|BandwidthPackageBandwidth|String|50|The bandwidth value of the EIP Bandwidth Plan to which the EIP is added. |
+|BandwidthPackageId|String|cbwp-bp1ego3i4j07ccdvf\*\*\*\*|The ID of the EIP Bandwidth Plan. |
+|BandwidthPackageType|String|CommonBandwidthPackage|The type of the bandwidth. Only **CommonBandwidthPackage** \(EIP Bandwidth Plan\) is returned. |
+|ChargeType|String|PostPaid|The billing method of the EIP.
 
-## Response parameters {#resultMapping .section}
+ -   **PrePaid**: subscription.
+-   **PostPaid**: pay-as-you-go. |
+|DeletionProtection|Boolean|true|Indicates whether deletion protection is enabled.
 
-|Parameter|Type|Example value|Description|
-|---------|----|-------------|-----------|
-|EipAddresses| | | A list of EIPs.
+ -   **true**: enabled.
+-   **false**: disabled. |
+|Descritpion|String|abc|The description of the EIP. |
+|EipBandwidth|String|101|The bandwidth of the EIP before it is added to or after it is removed from the EIP Bandwidth Plan. |
+|ExpiredTime|String|2019-04-29T02:00Z|The expiration date. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC. Format: YYYY-MM-DDThh:mmZ. |
+|HDMonitorStatus|String|false|Indicates whether fine-grained monitoring is enabled for the EIP.
 
- |
-|AllocationId|String|eip-2zeerraiwb7ujxxxxxxxx| The ID of the EIP.
+ -   **false**: Fine-grained monitoring is disabled for the EIP.
+-   **true**: Fine-grained monitoring is enabled for the EIP. |
+|HasReservationData|String|false|Indicates whether renewal data is included.
 
- |
-|AllocationTime|String|2019-04-23T01:37:38Z| The time when the EIP is created.
+ This parameter returns **true** only when the parameter **IncludeReservationData** is set to **true**, and some orders have not taken effect. |
+|ISP|String|BGP|The Internet service provider. |
+|InstanceId|String|i-bp15zckdt37cdvf\*\*\*\*|The ID of the instance to which the EIP is bound. |
+|InstanceRegionId|String|cn-hangzhou|The region ID of the bound resource. |
+|InstanceType|String|EcsInstance|The type of the instance to which the EIP is bound.
 
- |
-|AvailableRegions| |cn-hangzhou| The ID of the region to which the EIP belongs.
+ -   **EcsInstance**: an ECS instance in a VPC.
+-   **SlbInstance**: an SLB instance in a VPC.
+-   **Nat**: a NAT gateway.
+-   **HaVip**: a High-Availability Virtual IP Address \(HaVip\).
+-   **NetworkInterface**: a secondary ENI. |
+|InternetChargeType|String|PayByBandwidth|The metering method of the EIP.
 
- |
-|Bandwidth|String|5| The peak bandwidth of the EIP. Unit: Mbit/s
-
- |
-|BandwidthPackageId|String|cbwp-bp1ego3i4j07cxxxxxxxx| The ID of the Internet Shared Bandwidth instance to which the EIP is added.
-
- |
-|BandwidthPackageType|String|CommonBandwidthPackage| The type of the Internet Shared Bandwidth instance.
-
- |
-|ChargeType|String|PostPaid| The billing method of the EIP.
-
- |
-|Descritpion|String|Overview| The description of the EIP.
-
- |
-|EipBandwidth|String|101| The bandwidth of the EIP before the EIP is added to or after the EIP is removed from the Internet Shared Bandwidth instance.
-
- |
-|ExpiredTime|String|2019-04-29T02:37:38Z| The time when the EIP expires, which follows the ISO 8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-
- |
-|HDMonitorStatus|String|false| Indicates whether high granularity monitoring is enabled for the EIP.
-
- |
-|HasReservationData|String|wweayhddrhht| The value is **true** only when the request parameter**IncludeReservationData** is set to **true** and orders that have not taken effect exit.
-
- |
-|ISP|String|BGP| The service provider. The value is usually BGP.
-
- |
-|InstanceId|String|vpc-bp15zckdt37xxxxxxxx| The ID of the cloud instance that is associated with the EIP.
-
- |
-|InstanceRegionId|String|cn-hangzhou| The region ID of the cloud instance that is associated with the EIP.
-
- |
-|InstanceType|String|EcsInstance| The type of the cloud instance that is associated with the EIP.
-
- |
-|InternetChargeType|String|PayByBandwidth| The billing method of the EIP.
-
- |
-|IpAddress|String|101.xx.xx.36| The IP address of the EIP.
-
- |
-|Name|String|Elastic IP| The name of the EIP.
-
- |
-|OperationLocks| | | The details of a locked EIP.
-
- |
-|LockReason|String|financial| The reason why the EIP is locked. Valid values:
+ -   **PayByBandwidth**: Fees are charged based on bandwidth usage.
+-   **PayByTraffic**: Fees are charged based on data transfer. |
+|IpAddress|String|101.xx.xx.36|The IP address of the EIP. |
+|Name|String|test|The name of the EIP. |
+|Netmode|String|public|The network type of the EIP. |
+|OperationLocks|Array| |The details about the lock. |
+|LockReason| | | |
+|LockReason|String|financial|The reason why the instance was locked.
 
  -   **financial**: The EIP is locked due to overdue payments.
--   **security**: The EIP is locked for security reasons.
+-   **security**: The EIP is locked for security reasons. |
+|RegionId|String|cn-hangzhou|The ID of the region where the EIP is created. |
+|ReservationActiveTime|String|2019-03-11T16:00:00Z|The time when the renewal takes effect. |
+|ReservationBandwidth|String|12|The bandwidth after the EIP is renewed. |
+|ReservationInternetChargeType|String|PayByBandwidth|The billing method that you choose when you renew the EIP.
 
- |
-|RegionId|String|cn-hangzhou| The ID of the region to which the EIP belongs.
+ -   **PayByBandwidth**: Fees are charged based on bandwidth usage.
+-   **PayByTraffic**: Fees are charged based on data transfer. |
+|ReservationOrderType|String|RENEWCHANGE|The type of the renewal order.
 
- |
-|ReservationActiveTime|String|2019-03-11T16:00:00Z| The time when a renewal takes effect.
+ -   **RENEWCHANGE**: upgrade or downgrade.
+-   **TEMP\_UPGRADE**: temporary upgrade.
+-   **UPGRADE** : upgrade. |
+|ResourceGroupId|String|rg-acfmxazcdxs\*\*\*\*|The ID of the resource group. |
+|SecondLimited|Boolean|false|Indicates whether level-2 traffic throttling is configured.
 
- |
-|ReservationBandwidth|String|12| The bandwidth of the EIP after the renewal.
+ -   **true**: Level-2 traffic throttling is configured.
+-   **false**: Level-2 traffic throttling is not configured. |
+|SegmentInstanceId|String|eipsg-t4nr90yik5oy38xdyjth8|The ID of the instance to which the contiguous EIP is bound.
 
- |
-|ReservationInternetChargeType|String|PayByBandwidth| The payment method of the renewal.
+ This parameter value is returned only when the EIP belongs to a continuous CIDR block. |
+|Status|String|Associating|The status of the EIP.
 
- |
-|ReservationOrderType|String|RENEWCHANGE| The type of the renewal order. Valid values:
+ -   **Associating**: The EIP is being bound to an instance.
+-   **Unassociating**: The EIP is being unbound from an instance.
+-   **InUse**: The EIP is allocated and in use.
+-   **Available**: The EIP is available for use. |
+|TotalCount|Integer|10|The total number of entries. |
+|PageNumber|Integer|10|The current page number. |
+|PageSize|Integer|10|The number of entries returned per page. |
+|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|The ID of the request. |
 
- -   **RENEWCHANGE**: Change the specification.
--   **TEMP\_UPGRADE**: Temporarily upgrade the EIP.
--   **UPGRADE**: Upgrade the EIP.
+## Examples
 
- |
-|ResourceGroupId|String|rg-acfmxazxxxxxxxx| The ID of the resource group.
-
- |
-|Status|String|Associating| The status of the EIP. Valid values:
-
- -   **Associating**: The EIP is being associated with a cloud instance.
--   **Unassociating**: The EIP is being disassociated from a cloud instance.
--   **InUse**: The EIP is already allocated.
--   **Available**: The EIP is available.
-
- |
-|TotalCount|Integer|10| The total number of queried entries.
-
- |
-|PageNumber|Integer|10| The current page number.
-
- |
-|PageSize|Integer|10| The number of entries per page.
-
- |
-|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF| The request ID.
-
- |
-
-## Examples {#demo .section}
-
-Request example
-
-``` {#request_demo}
-
-https://vpc.aliyuncs.com/?Action=DescribeEipAddresses
-&RegionId=cn-hangzhou
-&CommonParameters
+Sample requests
 
 ```
+https://vpc.aliyuncs.com/?Action=DescribeEipAddresses
+&RegionId=cn-hangzhou
+&Common request parameter
+```
 
-Response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DescribeEipAddressesResponse>
-	  <RequestId>7EEF2D6B-D207-4197-AE37-01279C888757</RequestId>
-	  <PageNumber>1</PageNumber>
-	  <EipAddresses>
-		    <EipAddress>
-			      <ChargeType>PostPaid</ChargeType>
-			      <AllocationTime>2018-01-15T11:17:30Z</AllocationTime>
-			      <ResourceGroupId>rg-acfmxazxxxxxxxxx</ResourceGroupId>
-			      <InstanceId></InstanceId>
-			      <Description></Description>
-			      <IpAddress>59.110.xx.xx</IpAddress>
-			      <AllocationId>eip-2ze88m67qx5zxxxxx</AllocationId>
-			      <InternetChargeType>PayByTraffic</InternetChargeType>
-			      <InstanceType></InstanceType>
-			      <Name></Name>
-			      <Status>Available</Status>
-			      <BandwidthPackageId></BandwidthPackageId>
-			      <InstanceRegionId></InstanceRegionId>
-			      <BandwidthPackageType></BandwidthPackageType>
-			      <RegionId>cn-beijing</RegionId>
-			      <OperationLocks></OperationLocks>
-			      <ExpiredTime></ExpiredTime>
-			      <AvailableRegions>
-				        <AvailableRegion>cn-beijing</AvailableRegion>
-			      </AvailableRegions>
-              <Bandwidth>1</Bandwidth>
-		    </EipAddress>
-	  </EipAddresses>
-	  <TotalCount>1</TotalCount>
-	  <PageSize>10</PageSize>
+  <PageNumber>1</PageNumber>
+  <EipAddresses>
+        <EipAddress>
+              <HDMonitorStatus>OFF</HDMonitorStatus>
+              <BandwidthPackageBandwidth>5</BandwidthPackageBandwidth>
+              <HasReservationData>false</HasReservationData>
+              <InstanceId>ngw-bp1kpih7t3izsxezx****</InstanceId>
+              <ISP>BGP</ISP>
+              <InternetChargeType>PayByBandwidth</InternetChargeType>
+              <EipBandwidth>199</EipBandwidth>
+              <BandwidthPackageType>CommonBandwidthPackage</BandwidthPackageType>
+              <PrivateIpAddress></PrivateIpAddress>
+              <SecondLimited>false</SecondLimited>
+              <Bandwidth>5</Bandwidth>
+              <ChargeType>PostPaid</ChargeType>
+              <AllocationTime>2019-12-26T05:06:56Z</AllocationTime>
+              <ResourceGroupId>rg-acfmxazb4ph****</ResourceGroupId>
+              <Descritpion>abc</Descritpion>
+              <IpAddress>47.xx.xx.184</IpAddress>
+              <AllocationId>eip-bp1utfpg4zlhyodba****</AllocationId>
+              <Mode>NAT</Mode>
+              <InstanceType>Nat</InstanceType>
+              <Name>vmeixme</Name>
+              <SegmentInstanceId></SegmentInstanceId>
+              <Status>InUse</Status>
+              <InstanceRegionId>cn-hangzhou</InstanceRegionId>
+              <BandwidthPackageId>cbwp-bp1k042riiv5aqkkq****</BandwidthPackageId>
+              <RegionId>cn-hangzhou</RegionId>
+              <DeletionProtection>false</DeletionProtection>
+              <OperationLocks>
+        </OperationLocks>
+              <ExpiredTime></ExpiredTime>
+              <AvailableRegions>
+                    <AvailableRegion>cn-hangzhou</AvailableRegion>
+              </AvailableRegions>
+        </EipAddress>
+  </EipAddresses>
+  <TotalCount>1</TotalCount>
+  <PageSize>10</PageSize>
+  <RequestId>27CEB319-8242-46A8-B96B-998BCDF87D97</RequestId>
 </DescribeEipAddressesResponse>
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"DescribeEipAddressesResponse":{
-		"PageNumber":"1",
-		"EipAddresses":{
-			"EipAddress":{
-				"ChargeType":"PostPaid",
-				"Status":"Available",
-				"RegionId":"cn-beijing",
-				"ResourceGroupId":"rg-acfmxazxxxxxxxx",
-				"AllocationTime":"2018-01-15T11:17:30Z",
-				"IpAddress":"59.110.xx.xx",
-				"AllocationId":"eip-2ze88m67qx5zxxxxx",
-				"AvailableRegions":{
-					"AvailableRegion":"cn-beijing"
+	"PageNumber": 1,
+	"EipAddresses": {
+		"EipAddress": [
+			{
+				"HDMonitorStatus": "OFF",
+				"BandwidthPackageBandwidth": "5",
+				"HasReservationData": false,
+				"InstanceId": "ngw-bp1kpih7t3izsxezx****",
+				"ISP": "BGP",
+				"InternetChargeType": "PayByBandwidth",
+				"EipBandwidth": "199",
+				"BandwidthPackageType": "CommonBandwidthPackage",
+				"PrivateIpAddress": "",
+				"SecondLimited": false,
+				"Bandwidth": "5",
+				"ChargeType": "PostPaid",
+				"AllocationTime": "2019-12-26T05:06:56Z",
+				"ResourceGroupId": "rg-acfmxazb4ph****",
+				"Descritpion": "abc",
+				"IpAddress": "47.xx.xx.184",
+				"AllocationId": "eip-bp1utfpg4zlhyodba****",
+				"Mode": "NAT",
+				"InstanceType": "Nat",
+				"Name": "vmeixme",
+				"SegmentInstanceId": "",
+				"Status": "InUse",
+				"InstanceRegionId": "cn-hangzhou",
+				"BandwidthPackageId": "cbwp-bp1k042riiv5aqkkq****",
+				"RegionId": "cn-hangzhou",
+				"DeletionProtection": false,
+				"OperationLocks": {
+					"LockReason": []
 				},
-				"InternetChargeType":"PayByTraffic",
-				"Bandwidth":"1"
+				"ExpiredTime": "",
+				"AvailableRegions": {
+					"AvailableRegion": [
+						"cn-hangzhou"
+					]
+				}
 			}
-		},
-		"TotalCount":"1",
-		"PageSize":"10",
-		"RequestId":"7EEF2D6B-D207-4197-AE37-01279C888757"
-	}
+		]
+	},
+	"TotalCount": 1,
+	"PageSize": 10,
+	"RequestId": "27CEB319-8242-46A8-B96B-998BCDF87D97"
 }
 ```
 
-## Errors {#section_r0v_nsw_3qr .section}
+## Error codes
 
-|HTTP status code|Error code|Error message|Description|
-|----------------|----------|-------------|-----------|
-|404|Forbidden.RegionNotFound|Specified region is not found during access authentication.|The specified region does not exist. Please check if the specified region is correct.|
-|404|InvalidFilterKey.NotFound| |The specified filter key is invalid.|
-|404|InvalidFilterValue| |The specified filter value is invalid.|
-|404|InvalidLockReason.NotFound|The specified LockReason is not found|The reason why the EIP is locked is unknown.|
-|400|InvalidIAssociatedInstanceType.ValueNotSupported|The specified value of AssociatedInstanceType is not supported.|The specified value of AssociatedInstanceType is invalid.|
-|400|InvalidChargeType.ValueNotSupported|The specified ChargeType is not supported.|The specified billing method is not supported. Please select another billing method.|
+|HttpCode|Error code|Error message|Description|
+|--------|----------|-------------|-----------|
+|404|Forbidden.RegionNotFound|Specified region is not found during access authentication.|The error message returned because the specified region does not exist. Check whether the region is valid.|
+|404|InvalidLockReason.NotFound|The specified LockReason is not found|The error message returned because the EIP is locked for an unknown reason.|
+|400|InvalidIAssociatedInstanceType.ValueNotSupported|The specified value of AssociatedInstanceType is not supported.|The error message returned because the AssociatedInstanceType value is invalid. Check whether the value is supported.|
+|400|InvalidChargeType.ValueNotSupported|The specified ChargeType is not supported.|The error message returned because the specified billing method is not supported. Select another billing method.|
+
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Vpc).
 
