@@ -28,7 +28,7 @@
  当**PricingCycle**取值**Year**时，**Period**取值范围为**1~5**。
 
  如果**InstanceChargeType**参数的值为**PrePaid**时，该参数必选，如果**InstanceChargeType**参数的值为**PostPaid**时，该参数不填。 |
-|ISP|String|否|BGP|线路类型，取值：
+|ISP|String|否|BGP|线路类型，目前只支持在创建按量付费实例时指定线路类型，取值：
 
  -   **BGP**：BGP（多线）线路。
 
@@ -42,40 +42,38 @@ BGP（多线）精品线路是一种优化海外回国流量的公网线路，�
  目前，全部地域都支持BGP（多线）线路EIP，仅中国（香港）地域支持BGP（多线）精品线路EIP。
 
  **说明：** 如果是开通了单线带宽白名单的用户，ISP字段可以设置为**ChinaTelecom**（中国电信）、**ChinaUnicom**（中国联通）和**ChinaMobile**（中国移动）；如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。 |
-|ActivityId|Long|否|None|特殊活动ID，无需配置此参数。 |
+|ActivityId|Long|否|123456|特殊活动ID，无需配置此参数。 |
 |Netmode|String|否|public|网络类型，取值为**public**（公网）。 |
 |AutoPay|Boolean|否|false|是否自动付费，取值：
 
- **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
-
- **true**：开启自动付费，自动支付订单。
+ -   **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
+-   **true**：开启自动付费，自动支付订单。
 
  当**InstanceChargeType**参数的值为**PrePaid**时，该参数必选；当**InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。 |
 |PricingCycle|String|否|Month|包年包月的计费周期，取值：
 
- **Month**（默认值）：按月付费。
+ -   **Month**（默认值）：按月付费。
+-   **Year**：按年付费。
 
- **Year**：按年付费。
-
- 当**InstanceChargeType**参数的值为**PrePaid**时，该参数必选；当**InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。 |
+当**InstanceChargeType**参数的值为**PrePaid**时，该参数必选；当**InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。 |
 |InstanceChargeType|String|否|PostPaid|EIP的计费方式，取值：
 
- **PrePaid**：包年包月。
-
- **PostPaid**（默认值）：按量计费。
+ -   **PrePaid**：包年包月。
+-   **PostPaid**（默认值）：按量计费。
 
  当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**；当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。 |
 |InternetChargeType|String|否|PayByTraffic|EIP的计量方式，取值：
 
- **PayByBandwidth**（默认值）：按带宽计费。
-
- **PayByTraffic**：按流量计费。
+ -   **PayByBandwidth**（默认值）：按带宽计费。
+-   **PayByTraffic**：按流量计费。
 
  当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。
 
  当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。 |
 |ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|资源组ID。 |
 |ClientToken|String|否|0c593ea1-3bea-11e9-b96b-88e9fe637760|保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。**ClientToken**只支持ASCII字符，且不能超过64个字符。更多详情，请参见[如何保证幂等性](~~36569~~)。 |
+|Name|String|否|EIP1|EIP实例名称。 |
+|Description|String|否|test|EIP实例描述。 |
 
 ## 返回数据
 
@@ -92,24 +90,26 @@ BGP（多线）精品线路是一种优化海外回国流量的公网线路，�
 请求示例
 
 ```
-http(s)://vpc.aliyuncs.com/?Action=AllocateEipAddress
+http(s)://[Endpoint]/?Action=AllocateEipAddress
 &RegionId=cn-hangzhou
 &<公共请求参数>
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<RequestId>4EC47282-1B74-4534-BD0E-403F3EE64CAF</RequestId>
-<ResourceGroupId>rg-acfmxazfdgdg****</ResourceGroupId>
-<AllocationId>eip-25877c70gddh****</AllocationId>
-<EipAddress>12.xx.xx.78</EipAddress>
-<OrderId>10</OrderId>
+<AllocateEipAddressResponse>
+  <RequestId>4EC47282-1B74-4534-BD0E-403F3EE64CAF</RequestId>
+  <ResourceGroupId>rg-acfmxazfdgdg****</ResourceGroupId>
+  <AllocationId>eip-25877c70gddh****</AllocationId>
+  <EipAddress>12.xx.xx.78</EipAddress>
+  <OrderId>10</OrderId>
+</AllocateEipAddressResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
