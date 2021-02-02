@@ -1,15 +1,80 @@
-# Release an EIP {#task_592765 .task}
+# Release an EIP
 
-This topic describes how to release an Elastic IP Address \(EIP\). After you release an EIP, no fees are charged on the EIP.
+This topic describes how to release an elastic IP address \(EIP\). After you release an EIP, you are no longer charged for it.
 
-Before you release an EIP, make sure that the following conditions are met:
+Take note of the following limits before you release an EIP:
 
--   The billing method of the EIP to be released must be Pay-As-You-Go. Subscription-billed EIPs cannot be released.
--   The EIP is not associated with any cloud instances. If the EIP is associated with a cloud instance, disassociate the EIP first. For more information, see [Disassociate an EIP from a cloud instance](reseller.en-US/User Guide/Disassociate an EIP from a cloud instance.md#).
+-   You can only release pay-as-you-go EIPs. You cannot release subscription EIPs.
+-   You cannot release EIPs that are locked due to security issues.
 
-1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
-2.  In the left-side navigation pane, choose **Elastic IP Addresses**.
-3.  Select the region of the target EIP.
-4.  On the Elastic IP Addresses page, find the target EIP, and choose **More** \> **Release** in the **Actions** column.
-5.  In the displayed dialog box, click **OK**.
+After you release an EIP, you are no longer charged for the EIP. However, you may still receive bills.
+
+-   Bills for pay-by-data-transfer EIPs are generated on an hourly basis. The bill for data usage within the current hour is generated the next hour.
+
+    For example, if you release an EIP at 10:30, you will receive a bill at 11:00. The bill covers fees that are charged from 10:00 to 11:00.
+
+-   Bills for pay-by-bandwidth EIPs are generated on a daily basis. A bill is generated at 00:00 every day and contains fees that are charged during the last day.
+
+    For example, if you release an EIP on January 1, 2019, you will receive a bill at 00:00, January 2, 2019. The bill covers fees that were charged during January 1, 2019.
+
+
+## Prerequisites
+
+Before you release an EIP, make sure that the following requirements are met:
+
+-   The EIP is not associated with an EIP bandwidth plan. For more information, see [Disassociate an EIP from an EIP bandwidth plan](/intl.en-US/User Guide/Manage Pay-As-You-Go-billed EIPs/Disassociate an EIP from an EIP bandwidth plan.md).
+-   The EIP is not associated with a cloud resource. For more information, see [Disassociate an EIP from a cloud resource](/intl.en-US/User Guide/Disassociate an EIP from a cloud resource.md).
+
+## Release an EIP
+
+1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
+
+2.  In the upper-left corner, select the region where your EIP is created.
+
+3.  On the **Elastic IP Addresses** page, find the EIP and choose **![More](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1576420061/p140904.png)** \> **Release** in the **Actions** column.
+
+4.  In the **Release Elastic IP** dialog box, click **OK**.
+
+    If you release an EIP that belongs to a contiguous EIP group, all EIPs in the group are released. Select **I have read and understood the preceding information, and want to release the continuous EIP group and all EIPs in it** and then click **OK**.
+
+
+## Enable deletion protection
+
+You can enable deletion protection to avoid releasing an EIP by mistake.
+
+1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
+
+2.  In the upper-left corner, select the region where your EIP is created.
+
+3.  On the **Elastic IP Addresses** page, find the EIP and click its ID.
+
+4.  On the Instance Information tab, click **Enable Deletion Protection**.
+
+    After you enable deletion protection for an EIP, you cannot release the EIP.
+
+
+## Disable deletion protection
+
+You can disable deletion protection when you want to release an EIP.
+
+1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
+
+2.  In the upper-left corner, select the region where your EIP is created.
+
+3.  You can disable deletion protection in one of the following methods:
+
+    -   Method 1:
+        1.  On the **Elastic IP Addresses** page, find the EIP and click its ID.
+        2.  On the Instance Information tab, click **Disable Deletion Protection**.
+    -   Method 2:
+
+        On the **Elastic IP Addresses** page, find the EIP, move the pointer over ![delete](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4683412161/p236782.png), and then click **Disable Deletion Protection** in the pop-up box.
+
+
+**Related topics**  
+
+
+[ReleaseEipAddress](/intl.en-US/API reference/EIP/ReleaseEipAddress.md)
+
+[ReleaseEipSegmentAddress](/intl.en-US/API reference/EIP/ReleaseEipSegmentAddress.md)
 
