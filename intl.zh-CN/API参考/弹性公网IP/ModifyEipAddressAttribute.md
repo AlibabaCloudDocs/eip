@@ -1,6 +1,6 @@
 # ModifyEipAddressAttribute
 
-调用ModifyEipAddressAttribute接口修改指定EIP的名称、描述信息和带宽峰值。
+调用ModifyEipAddressAttribute接口修改指定后付费类型EIP的名称、描述信息和带宽峰值。该接口不支持修改预付费类型EIP的名称、描述信息和带宽峰值。
 
 ## 调试
 
@@ -11,37 +11,38 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|ModifyEipAddressAttribute|要执行的操作，取值：**ModifyEipAddressAttribute**。 |
-|AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|要修改的EIP的ID。 |
+|AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|需要要修改的后付费类型EIP的ID。 |
+|Bandwidth|String|否|100|需要修改EIP的带宽峰值，取值：
+
+ -   **1**~**200**，按使用流量计费，单位为Mbps。
+-   **1**~**500**，按固定带宽计费，单位为Mbps。 |
 |RegionId|String|是|cn-hangzhou|EIP所属的地域ID。 |
-|Bandwidth|String|否|100|EIP的带宽峰值，取值：**1**~**200**，单位为Mbps。 |
-|Description|String|否|abc|EIP的描述信息。
+|Name|String|否|Test123|需要修改的EIP的名称。
+
+ 长度为2~128个字符，必须以字母或中文开头，可包含数字、半角句号（.）、下划线（\_）和短划线（-）。但不能以`http://`或`https://`开头。 |
+|Description|String|否|abc|需要修改的EIP描述信息。
 
  长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。 |
-|Name|String|否|Test123|EIP的名称。
-
- 长度为2~128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（\_）和短横线（-）。但不能以`http://`或`https://`开头。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。 |
+|RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0|请求ID。 |
 
 ## 示例
 
 请求示例
 
 ```
-
 http(s)://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
 &AllocationId=eip-2zeerraiwb7uj6i0d****
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <ModifyEipAddressAttributeResponse>
@@ -49,11 +50,11 @@ http(s)://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
 </ModifyEipAddressAttributeResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
-{
-	"RequestId":"0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
+{ 
+    "RequestId": "0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
 }
 ```
 
