@@ -19,7 +19,7 @@
 |--|--|----|---|--|
 |Action|String|是|ReleaseEipAddress|要执行的操作，取值：**ReleaseEipAddress**。 |
 |AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|要释放的EIP的ID。 |
-|RegionId|String|是|cn-hangzhou|要释放的EIP所在的地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
+|RegionId|String|是|cn-hangzhou|要释放的EIP所在的地域ID。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
 
 ## 返回数据
 
@@ -32,16 +32,14 @@
 请求示例
 
 ```
-
-http(s)://vpc.aliyuncs.com/?Action=ReleaseEipAddress
+http(s)://[Endpoint]/?Action=ReleaseEipAddress
 &AllocationId=eip-2zeerraiwb7uj6i0d****
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <ReleaseEipAddressResponse>
@@ -49,11 +47,11 @@ http(s)://vpc.aliyuncs.com/?Action=ReleaseEipAddress
 </ReleaseEipAddressResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
-	"RequestId":"748C38F6-9A3D-482E-83FB-DB6C39C68AEA"
+  "RequestId": "748C38F6-9A3D-482E-83FB-DB6C39C68AEA"
 }
 ```
 
