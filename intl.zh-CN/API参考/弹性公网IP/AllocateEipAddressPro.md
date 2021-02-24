@@ -11,10 +11,10 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|AllocateEipAddressPro|要执行的操作，取值：**AllocateEipAddressPro**。 |
-|RegionId|String|是|cn-hangzhou|要指定申请的EIP所在的地域。
+|RegionId|String|是|cn-hangzhou|要指定申请的EIP所在的地域ID。
 
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
-|IpAddress|String|否|12.xx.xx.23|要指定申请的EIP的IP地址。
+|IpAddress|String|否|12.XX.XX.23|要指定申请的EIP的IP地址。
 
  **IpAddress**和**InstanceId**参数仅需传入一个，如果都不传，系统会随机申请EIP。 |
 |InstanceId|String|否|eip-25877c70gddh\*\*\*\*|要指定申请的EIP的实例ID。
@@ -22,7 +22,7 @@
  **IpAddress**和**InstanceId**参数仅需传入一个，如果都不传，系统会随机申请EIP。 |
 |Bandwidth|String|否|5|要指定申请的EIP的带宽峰值，单位为Mbps。
 
- 默认为**5**Mbps。 |
+ 默认为**5** Mbps。 |
 |Period|Integer|否|1|购买时长。
 
  -   当**PricingCycle**取值**Month**时，**Period**取值范围为**1~9**。
@@ -69,14 +69,14 @@
 
  当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。 |
 |ResourceGroupId|String|否|rg-resourcegroup\*\*\*\*|要指定申请的EIP所属的资源组ID。 |
-|ClientToken|String|否|0c593ea1-3bea-11e9-b96b-88e9fe637760|保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。 |
+|ClientToken|String|否|0c593ea1-3bea-11e9-b96b-88e9fe6\*\*\*\*|保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。`ClientToken`只支持ASCII字符，且不能超过64个字符。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |AllocationId|String|eip-25877c70gddh\*\*\*\*|EIP的ID。 |
-|EipAddress|String|123.xx.xx.206|指定申请的EIP的IP地址。 |
+|EipAddress|String|12.XX.XX.23|指定申请的EIP的IP地址。 |
 |OrderId|Long|20190000|订单ID。 |
 |RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。 |
 |ResourceGroupId|String|rg-resourcegroup\*\*\*\*|资源组ID。 |
@@ -93,27 +93,27 @@ http(s)://[Endpoint]/?Action=AllocateEipAddressPro
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <AllocateEipAddressProResponse>
-      <RequestId>473469C7-AA6F-4DC5-B3DB-A3DC0DE3C83E</RequestId>
-      <AllocationId>eip-25877c70gddh****</AllocationId>
-      <EipAddress>123.xx.xx.206</EipAddress>
-      <OrderId>20190000</OrderId>
-      <ResourceGroupId>rg-resourcegroup****</ResourceGroupId>
+  <ResourceGroupId>rg-resourcegroup****</ResourceGroupId>
+  <RequestId>4EC47282-1B74-4534-BD0E-403F3EE64CAF</RequestId>
+  <AllocationId>eip-25877c70gddh****</AllocationId>
+  <EipAddress>12.XX.XX.23</EipAddress>
+  <OrderId>20190000</OrderId>
 </AllocateEipAddressProResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
-	"RequestId":"473469C7-AA6F-4DC5-B3DB-A3DC0DE3C83E",
-    "AllocationId":"eip-25877c70gddh****",
-    "EipAddress":"123.xx.xx.206",
-    "OrderId":"20190000",
-    "ResourceGroupId":"rg-resourcegroup****"
+    "ResourceGroupId": "rg-resourcegroup****",
+    "RequestId": "4EC47282-1B74-4534-BD0E-403F3EE64CAF",
+    "AllocationId": "eip-25877c70gddh****",
+    "EipAddress": "12.XX.XX.23",
+    "OrderId": 20190000
 }
 ```
 
