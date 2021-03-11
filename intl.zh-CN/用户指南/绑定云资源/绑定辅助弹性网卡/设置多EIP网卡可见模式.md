@@ -4,7 +4,7 @@
 
 开始前，请确保满足以下条件：
 
--   目前，多EIP网卡可见模式不再接受公测，已公测的用户可以继续使用。
+-   目前，多EIP网卡可见模式不再对未使用的用户开放，已公测的用户可以继续使用。
 -   您已经创建了专有网络类型的辅助弹性网卡，且辅助弹性网卡的地域与EIP的地域相同。更多信息，请参见[创建弹性网卡](/intl.zh-CN/网络/弹性网卡/创建弹性网卡.md)。
 -   要绑定的辅助弹性网卡未绑定任何ECS实例。
 
@@ -24,7 +24,7 @@ EIP本质上是一个NAT IP。由于普通模式（NAT模式）下的公网IP存
 
 2.  在顶部菜单栏处，选择EIP的地域。
 
-    **说明：** 目前，仅华南1（深圳）、华东2（上海）、华北2（北京）、华北3（张家口）、西南1（成都）、新加坡、德国（法兰克福）、印度（孟买）、美国（弗吉利亚）和英国（伦敦）地域支持设置多EIP网卡可见模式。
+    **说明：** 您可以在华南1（深圳）、华东2（上海）、华北2（北京）、华北3（张家口）、西南1（成都）、新加坡、德国（法兰克福）、印度（孟买）、美国（弗吉利亚）和英国（伦敦）地域设置多EIP网卡可见模式。
 
 3.  在**弹性公网IP**页面，找到目标EIP，单击**操作**列下的**绑定资源**。
 
@@ -46,7 +46,7 @@ EIP本质上是一个NAT IP。由于普通模式（NAT模式）下的公网IP存
 
     **说明：**
 
-    -   EIP以多EIP网卡可见模式绑定辅助弹性网卡，辅助弹性网卡绑定到ECS实例，ECS实例必须为以下实例规格族：ecs.c5-618、ecs.d1ne、ecs.db11-se1ne、ecs.ebma1、ecs.ebmc4、ecs.ebmg4、ecs.ebmg5、ecs.ebmg5ne、ecs.ebmgn5i、ecs.ebmgn5t、ecs.ebmhfg4、ecs.ebmhfg5、ecs.ebmi2、ecs.ebmi3、ecs.ebmr4、ecs.ebmr5、ecs.elmd1ne、ecs.elmdb、ecs.f1、ecs.f2、ecs.g5-618、ecs.gn3、ecs.gn5d、ecs.gn5i、ecs.gn5t、ecs.gn6p、ecs.gn6v、ecs.i2、ecs.r1、ecs.re4、ecs.re4e、ecs.sccg5、ecs.sccgn6、ecs.scch5、ecs.x1.i2、ecs.x1.i5、ecs.x1.i6、ecs.x1.i8、ecs.g5、ecs.c5、ecs.r5、ecs.t5、ecs.sn2ne、ecs.se1ne、ecs.sn1ne。详细信息，请参见[实例规格族](/intl.zh-CN/实例/实例规格族.md)。
+    -   EIP以多EIP网卡可见模式绑定辅助弹性网卡，辅助弹性网卡绑定到ECS实例，ECS实例必须为以下实例规格族：ecs.c5-618、ecs.d1ne、ecs.db11-se1ne、ecs.ebma1、ecs.ebmc4、ecs.ebmg4、ecs.ebmg5、ecs.ebmg5ne、ecs.ebmgn5i、ecs.ebmgn5t、ecs.ebmhfg4、ecs.ebmhfg5、ecs.ebmi2、ecs.ebmi3、ecs.ebmr4、ecs.ebmr5、ecs.elmd1ne、ecs.elmdb、ecs.f1、ecs.f2、ecs.g5-618、ecs.gn3、ecs.gn5d、ecs.gn5i、ecs.gn5t、ecs.gn6p、ecs.gn6v、ecs.i2、ecs.r1、ecs.re4、ecs.re4e、ecs.sccg5、ecs.sccgn6、ecs.scch5、ecs.x1.i2、ecs.x1.i5、ecs.x1.i6、ecs.x1.i8、ecs.g5、ecs.c5、ecs.r5、ecs.t5、ecs.sn2ne、ecs.se1ne、ecs.sn1ne。更多信息，请参见[实例规格族](/intl.zh-CN/实例/实例规格族.md)。
     -   设置多EIP网卡可见模式后，辅助弹性网卡绑定的ECS实例必须开启DHCP功能，多EIP网卡可见模式才生效。
 8.  调用DescribeEipGatewayInfo接口查询EIP的网关和子网掩码。更多信息，请参见[DescribeEipGatewayInfo](/intl.zh-CN/API参考/弹性公网IP/DescribeEipGatewayInfo.md)。
 
