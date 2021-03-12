@@ -11,7 +11,7 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|UnassociateEipAddress|要执行的操作，取值：**UnassociateEipAddress**。 |
-|AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|要解绑的EIP的ID。 您可以通过调用[DescribeRegions](36063)接口获取地域ID。 |
+|AllocationId|String|是|eip-2zeerraiwb7uj6i0d\*\*\*\*|要解绑的EIP的ID。 您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
 |Force|Boolean|否|false|当EIP绑定了NAT网关，且NAT网关添加了DNAT或SNAT条目时，是否强制解绑EIP，取值：
 
  -   **false**（默认值）：不强制解绑EIP。
