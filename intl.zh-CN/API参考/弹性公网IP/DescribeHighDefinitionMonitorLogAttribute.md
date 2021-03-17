@@ -14,21 +14,21 @@
 |InstanceId|String|是|eip-wz9fi6qboho9fwgx7\*\*\*\*|查询高精度秒级监控的实例ID。 |
 |RegionId|String|是|cn-hangzhou|实例所在的地域ID。
 
-您可以通过调用[DescribeRegions](36063)接口获取地域ID。 |
-|InstanceType|String|否|EIP|实例的类型。 |
+ 您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。 |
+|InstanceType|String|否|EIP|实例的类型，仅取值为**EIP**。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|InstanceId|String|eip-wz9fi6qboho9fwgx7\*\*\*\*| |
-|InstanceType|String|EIP| |
-|LogProject|String|hdmonitor-cn-shenzhen-1658206966225390|日志服务LogProjec的名称。 |
-|LogStore|String|hdmonitor|日志服务Logstore的名称。 |
+|InstanceId|String|eip-wz9fi6qboho9fwgx7\*\*\*\*|要查看高精度秒级监控的实例ID。 |
+|InstanceType|String|EIP|要查看高精度秒级监控的实例类型，仅可以取值为**EIP**。 |
+|LogProject|String|hdmonitor-cn-shenzhen-1658206966225390|日志服务LogProject的名称。 |
+|LogStore|String|hdmonitor|日志服务LogStore的名称。 |
 |RequestId|String|54B48E3D-DF70-471B-AA93-08E683A1B457|请求ID。 |
 |Success|String|true|结果是否调用成功。
 
--   **true**：调用成功。
+ -   **true**：调用成功。
 -   **false**：调用失败。 |
 
 ## 示例
@@ -71,6 +71,8 @@ http(s)://[Endpoint]/?Action=DescribeHighDefinitionMonitorLogAttribute
 ```
 
 ## 错误码
+
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
 访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
