@@ -4,7 +4,7 @@
 
 ## API描述
 
-请确保在使用该接口前，已充分了解EIP的收费方式和价格。更多信息，请参见[计费概述](~~122035~~)。
+请确保在使用该接口前，您已充分了解EIP的收费方式和价格。更多信息，请参见[计费概述](~~122035~~)。
 
 调用本接口后将在指定的地域内随机获取一个状态为**Available**的弹性公网IP。弹性公网IP在传输层目前只支持ICMP、TCP和UDP协议，不支持IGMP和SCTP等协议。
 
@@ -36,7 +36,7 @@ BGP（多线）线路在全球有多达89条优质BGP线路，在中国内地的
 
 -   **BGP\_PRO**：BGP（多线）精品线路。
 
-BGP（多线）精品线路是一种优化海外回国流量的公网线路，可以提高国际业务访问质量。相比普通BGP（多线）线路， BGP（多线）精品线路通过底层网络直连回国，无需绕行国际运营商出口，时延更低。
+BGP（多线）精品线路是一种优化海外回中国内地流量的公网线路，可以提高国际业务访问质量。相比普通BGP（多线）线路， BGP（多线）精品线路在为中国内地终端客户（不包括中国内地数据中心）提供服务时，通过底层网络直连回中国内地，无需绕行国际运营商出口，时延更低。
 
 
  目前，全部地域都支持BGP（多线）线路EIP，仅中国（香港）地域支持BGP（多线）精品线路EIP。
@@ -72,10 +72,10 @@ BGP（多线）精品线路是一种优化海外回国流量的公网线路，�
  当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。 |
 |ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|资源组ID。 |
 |ClientToken|String|否|0c593ea1-3bea-11e9-b96b-88e9fe637760|保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。**ClientToken**只支持ASCII字符，且不能超过64个字符。更多信息，请参见[如何保证幂等性](~~36569~~)。 |
-|Name|String|否|EIP1|EIP实例名称。
+|Name|String|否|EIP1|EIP实例的名称。
 
  **说明：** 创建预付费的EIP实例时，不支持设置该参数。 |
-|Description|String|否|test|EIP实例描述。
+|Description|String|否|test|EIP实例的描述。
 
  **说明：** 创建预付费的EIP实例时，不支持设置该参数。 |
 
@@ -84,7 +84,7 @@ BGP（多线）精品线路是一种优化海外回国流量的公网线路，�
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |EipAddress|String|12.XX.XX.78|分配的EIP。 |
-|AllocationId|String|eip-25877c70gddh\*\*\*\*|EIP的ID。 |
+|AllocationId|String|eip-25877c70gddh\*\*\*\*|EIP实例的ID。 |
 |OrderId|Long|10|订单号，仅**InstanceChargeType**取值为**PrePaid**时返回。 |
 |RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。 |
 |ResourceGroupId|String|rg-acfmxazfdgdg\*\*\*\*|资源组ID。 |
@@ -117,11 +117,13 @@ http(s)://[Endpoint]/?Action=AllocateEipAddress
 
 ```
 {
-    "ResourceGroupId": "rg-acfmxazfdgdg****",
-    "RequestId": "4EC47282-1B74-4534-BD0E-403F3EE64CAF",
-    "AllocationId": "eip-25877c70gddh****",
-    "EipAddress": "12.XX.XX.78",
-    "OrderId": 10
+    "AllocateEipAddressResponse": {
+        "ResourceGroupId": "rg-acfmxazfdgdg****",
+        "RequestId": "4EC47282-1B74-4534-BD0E-403F3EE64CAF",
+        "AllocationId": "eip-25877c70gddh****",
+        "EipAddress": "12.XX.XX.78",
+        "OrderId": 10
+    }
 }
 ```
 
