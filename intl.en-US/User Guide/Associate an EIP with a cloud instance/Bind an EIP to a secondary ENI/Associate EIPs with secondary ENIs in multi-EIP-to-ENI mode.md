@@ -4,7 +4,7 @@ This topic describes how to associate multiple elastic IP addresses \(EIPs\) wit
 
 Before you start, make sure that the following requirements are met:
 
--   The multi-EIP-to-ENI mode is available to only users who have used this mode in public preview.
+-   Currently, multi-EIP-to-ENI mode is not open for all users, but only for who has already registered in public review.
 -   A secondary ENI is created and deployed in a virtual private cloud \(VPC\). The secondary ENI and EIP are deployed in the same region. For more information, see [Create an ENI](/intl.en-US/Network/Elastic Network Interfaces/Create an ENI.md).
 -   The secondary ENI is not associated with an ECS instance.
 
