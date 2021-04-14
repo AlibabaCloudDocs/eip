@@ -4,11 +4,11 @@ You can associate elastic IP addresses \(EIPs\) with elastic network interfaces 
 
 Each ENI is assigned a private IP address. After you associate an EIP with an ENI, the ENI is capable of sending and receiving network traffic through both a private IP address and a public IP address. Alibaba Cloud provides a solution for migrating EIPs between two Elastic Compute Service \(ECS\) instances without affecting the reliability and availability of your workloads. If you migrate an ENI that is associated with an EIP from an ECS instance to another ECS instance, both the private and public IP addresses of the ENI are migrated.
 
-![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5141838161/p10409.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0776838161/p10409.png)
 
 You can associate an ECS instance with multiple ENIs. You can associate each ENI with an EIP. This way, the ECS instance has multiple public IP addresses. You can also use EIPs with security groups to control external access.
 
-![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5141838161/p10410.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0776838161/p10410.png)
 
 ## Association modes
 
