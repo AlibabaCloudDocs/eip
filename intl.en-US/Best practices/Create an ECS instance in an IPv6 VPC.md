@@ -2,8 +2,6 @@
 
 This topic describes how to create a virtual private cloud \(VPC\) with an IPv6 CIDR block and create an Elastic Compute Service \(ECS\) instance assigned with an IPv6 address in the VPC.
 
-**Note:** VPCs that simultaneously support IPv4 and IPv6 CIDR blocks are in public preview and available only in the following regions: China \(Hangzhou\), China \(Shanghai\), China \(Shenzhen\), China \(Beijing\), China \(Hohhot\), China \(Chengdu\), China \(Hong Kong\), and Singapore \(Singapore\).. To use VPCs of the preceding types, [submit a ticket](https://page.aliyun.com/form/act608662110/index.htm?spm=5176.11182174.0.0.5a1c4882UFiAde).
-
 ## Prerequisites
 
 To deploy cloud resources in a VPC, you must have network subnetting prepared first. For more information, see [Plan and design a VPC](/intl.en-US/Quick Start/Plan and design a VPC.md).
@@ -20,7 +18,7 @@ To create a VPC and VSwitch, perform the following steps:
 
     The VPC and the cloud resources that you want to deploy must be in the same region. In this topic, **China \(Hohhot\)** is selected.
 
-    **Note:** The following regions support IPv6 gateways: China \(Hangzhou\), China \(Shanghai\), China \(Shenzhen\), China \(Beijing\), China \(Hohhot\), China \(Chengdu\), China \(Hong Kong\), and Singapore \(Singapore\)..
+    **Note:** The following regions support IPv6 gateways: China \(Hangzhou\), China \(Shanghai\), China \(Shenzhen\), China \(Beijing\), China \(Zhangjiakou\), China \(Hohhot\), China \(Chengdu\), China \(Hong Kong\), and Singapore \(Singapore\)..
 
 3.  On the VPCs page, click **Create VPC**.
 
@@ -40,7 +38,7 @@ To create a VPC and VSwitch, perform the following steps:
 
 **Note:**
 
-    -   The following regions support IPv6 CIDR blocks: China \(Hangzhou\), China \(Shanghai\), China \(Shenzhen\), China \(Beijing\), China \(Hohhot\), China \(Chengdu\), China \(Hong Kong\), and Singapore \(Singapore\)..
+    -   The following regions support IPv6 CIDR blocks: China \(Hangzhou\), China \(Shanghai\), China \(Shenzhen\), China \(Beijing\), China \(Zhangjiakou\), China \(Hohhot\), China \(Chengdu\), China \(Hong Kong\), and Singapore \(Singapore\)..
     -   After you create a VPC, you cannot change its IPv6 CIDR block. |
     |**Description**|Enter a description for the VPC. The description must be 2 to 256 characters in length and cannot start with `http://` or `https://`. |
     |**Resource Group**|Select the resource set to which the VPC belongs.|
