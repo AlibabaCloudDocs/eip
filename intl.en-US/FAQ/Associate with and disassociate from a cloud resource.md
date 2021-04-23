@@ -8,7 +8,7 @@ This topic provides answers to some frequently asked questions about associating
 -   [Can I associate an EIP with a cloud resource that is deployed in another zone?](#section_m0l_vvo_hts)
 -   [How many EIPs can I associate with one cloud resource?](#section_n2w_txw_ezn)
 -   [Can I associate an EIP with an SLB instance?](#section_n0f_o8t_tfe)
--   [Why am I unable to see the associated SLB instance in the EIP console?](#section_92e_zg7_cex)
+-   [Why am I unable to view the associated SLB instance in the EIP console?](#section_92e_zg7_cex)
 -   [Why am I unable to associate an EIP with a NAT gateway?](#section_oml_rxp_5uc)
 -   [If an ECS instance is associated with an EIP, can I use the DNAT feature of NAT Gateway to provide services to the Internet?](#section_wa9_tjs_eb2)
 -   [Why am I unable to associate an EIP with an ECS instance?](#section_77i_2nv_smy)
@@ -47,18 +47,18 @@ Zones do not apply to EIPs. If a cloud resource and an EIP are deployed in the s
 
 -   HAVIPs
 
-    Each HAVIP can be associated with only one EIP.
+    You can associate an HAVIP with only one EIP.
 
 -   SLB instances
 
-    Each internal-facing SLB instance can be associated with only one EIP.
+    You can associate an internal-facing SLB instance with only one EIP.
 
 
 ## Can I associate an EIP with an SLB instance?
 
-You can associate an EIP with only an internal-facing SLB instance instead of an Internet-facing SLB instance. Each internal-facing SLB instance can be associated with only one EIP. You must associate an EIP with an internal-facing SLB instance in the EIP console instead of the SLB console.
+You can associate an EIP with only an internal-facing SLB instance instead of an Internet-facing SLB instance. You can associate an internal-facing SLB instance with only one EIP. You must associate an EIP with an internal-facing SLB instance in the EIP console instead of the SLB console.
 
-## Why am I unable to see the associated SLB instance in the EIP console?
+## Why am I unable to view the associated SLB instance in the EIP console?
 
 Possible reasons are:
 
@@ -67,7 +67,7 @@ Possible reasons are:
 
 ## Why am I unable to associate an EIP with a NAT gateway?
 
-If you purchased a NAT bandwidth plan before January 26, 2018, you must use the NAT bandwidth plan to provide public IP addresses to the NAT gateway. To associate an EIP with a NAT gateway, submit a ticket.
+If you had purchased a NAT bandwidth plan before January 26, 2018, you must use the NAT bandwidth plan to provide public IP addresses for the NAT gateway. To associate an EIP with a NAT gateway, [submit a ticket](https://workorder-intl.console.aliyun.com/#/ticket/createIndex).
 
 ## If an ECS instance is associated with an EIP, can I use the DNAT feature of NAT Gateway to provide services to the Internet?
 
