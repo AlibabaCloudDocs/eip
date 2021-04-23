@@ -18,7 +18,6 @@ Before you associate an EIP with a secondary ENI in NAT mode, make sure that the
     |Parameter|Description|
     |---------|-----------|
     |**Instance Type**|Select **Secondary ENI**.|
-    |**Resource Group**|Select the resource group to which the secondary ENI belongs.|
     |**Binding mode**|Select **Normal**.In Normal \(NAT\) Mode:
 
     -   The number of EIPs that can be associated with a secondary ENI depends on the number of the private IP addresses of the secondary ENI.
