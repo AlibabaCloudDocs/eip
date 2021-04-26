@@ -1,6 +1,6 @@
 # Release an EIP
 
-This topic describes how to release an elastic IP address \(EIP\). After you release an EIP, you are no longer charged for it.
+This topic describes how to release an elastic IP address \(EIP\) that you no longer need. After you release an EIP, you are no longer charged for it.
 
 Take note of the following limits before you release an EIP:
 
@@ -9,7 +9,7 @@ Take note of the following limits before you release an EIP:
 
 After you release an EIP, you are no longer charged for the EIP. However, you may still receive bills.
 
--   Bills for pay-by-data-transfer EIPs are generated on an hourly basis. The bill for data usage within the current hour is generated the next hour.
+-   Bills for pay-by-data-transfer EIPs are generated on an hourly basis. The bill for data transfer within the current hour is generated at the next hour.
 
     For example, if you release an EIP at 10:30, you will receive a bill at 11:00. The bill covers fees that are charged from 10:00 to 11:00.
 
@@ -29,7 +29,7 @@ Before you release an EIP, make sure that the following requirements are met:
 
 1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
 
-2.  In the upper-left corner, select the region where your EIP is created.
+2.  In the top navigation bar, select the region where the EIP is deployed.
 
 3.  On the **Elastic IP Addresses** page, find the EIP and choose **![More](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1576420061/p140904.png)** \> **Release** in the **Actions** column.
 
@@ -40,17 +40,22 @@ Before you release an EIP, make sure that the following requirements are met:
 
 ## Enable deletion protection
 
-You can enable deletion protection to avoid releasing an EIP by mistake.
+You can enable deletion protection to prevent releasing an EIP by mistake.
 
 1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
 
-2.  In the upper-left corner, select the region where your EIP is created.
+2.  In the top navigation bar, select the region where the EIP is deployed.
 
-3.  On the **Elastic IP Addresses** page, find the EIP and click its ID.
-
-4.  On the Instance Information tab, click **Enable Deletion Protection**.
+3.  Select one of the following methods to enable deletion protection.
 
     After you enable deletion protection for an EIP, you cannot release the EIP.
+
+    -   Method 1
+        1.  On the **Elastic IP Addresses** page, find the EIP and click its ID.
+        2.  On the Instance Information tab, click **Enable Deletion Protection**.
+    -   Method 2
+
+        On the **Elastic IP Addresses** page, select one or more EIPs, and choose **More** \> **Enable Deletion Protection**.
 
 
 ## Disable deletion protection
@@ -59,16 +64,20 @@ You can disable deletion protection when you want to release an EIP.
 
 1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
 
-2.  In the upper-left corner, select the region where your EIP is created.
+2.  In the top navigation bar, select the region where the EIP is deployed.
 
-3.  You can disable deletion protection in one of the following methods:
+3.  Select one of the following methods to disable deletion protection.
 
-    -   Method 1:
+    -   Method 1
         1.  On the **Elastic IP Addresses** page, find the EIP and click its ID.
         2.  On the Instance Information tab, click **Disable Deletion Protection**.
     -   Method 2:
 
-        On the **Elastic IP Addresses** page, find the EIP, move the pointer over ![delete](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4683412161/p236782.png), and then click **Disable Deletion Protection** in the pop-up box.
+        On the **Elastic IP Addresses** page, find the EIP, move the pointer over ![Deletion protection](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0881349161/p208122.png), and then click **Disable Deletion Protection** in the pop-up box.
+
+    -   Method 3
+
+        On the **Elastic IP Addresses** page, select one or more EIPs, and choose **More** \> **Disable Deletion Protection**.
 
 
 **Related topics**  
