@@ -20,64 +20,64 @@ After you call this operation, an EIP in the **Available** state is randomly all
 |RegionId|String|Yes|cn-hangzhou|The ID of the region where you want to create an EIP. You can call the [DescribeRegions](~~36063~~) operation to query region IDs. |
 |Bandwidth|String|No|5|The maximum bandwidth of the EIP. Valid values: **1** to **200**. Unit: Mbit/s.
 
- Default value: **5**. |
+Default value: **5**. |
 |Period|Integer|No|1|The subscription duration of the EIP.
 
- If **PricingCycle** is set to **Month**, **Period** can be set from**1**to **9**.
+If**PricingCycle** is set to **Month**, **Period** can be set from**1**to **9**.
 
- If **PricingCycle** is set to **Year**, **Period** can be set from**1**to**5**.
+If**PricingCycle** is set to **Year**, **Period** can be set from**1**to**5**.
 
- This parameter is required when **InstanceChargeType** is set to **PrePaid**. If **InstanceChargeType** is set to **PostPaid**, ignore this parameter. |
+This parameter is required when **InstanceChargeType** is set to **PrePaid**. If **InstanceChargeType** is set to **PostPaid**, ignore this parameter. |
 |ISP|String|No|BGP|The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
 
- -   **BGP**: BGP \(Multi-ISP\) lines.
+-   **BGP**: BGP \(Multi-ISP\) lines.
 
 Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers \(ISPs\), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
 
 -   **BGP\_PRO**: BGP \(Multi-ISP\) Pro lines.
 
-BGP \(Multi-ISP\) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with BGP \(Multi-ISP\), when BGP \(Multi-ISP\) Pro provides services to clients in China \(excluding data centers\), cross-border connections are established without using international ISP services. This reduces network latency.
+BGP \(Multi-ISP\) Pro lines optimize data transmission to mainland China and improve connection quality for international services. Compared with BGP \(Multi-ISP\), when BGP \(Multi-ISP\) Pro provides services to clients in mainland China \(excluding data centers\), cross-border connections are established without using international ISP services. This reduces network latency.
 
 
- BGP \(Multi-ISP\) lines are supported in all regions. BGP \(Multi-ISP\) Pro lines are supported only in the China \(Hong Kong\) region.
+BGP \(Multi-ISP\) lines are supported in all regions. BGP \(Multi-ISP\) Pro lines are supported only in the China \(Hong Kong\) region.
 
- **Note:** If your account is included in the BGP \(single line\) whitelist, you can set the ISP field to **ChinaTelecom**, **ChinaUnicom**, or **ChinaMobile**. If your workloads are deployed in China East 1 Finance. Set the value to **BGP\_FinanceCloud**. |
+**Note:** If your account is included in the BGP \(single line\) whitelist, you can set the ISP field to **ChinaTelecom**,**ChinaUnicom**, or **ChinaMobile**. If your workloads are deployed in China East 1 Finance. Set the value to **BGP\_FinanceCloud**. |
 |ActivityId|Long|No|123456|The promotion code. Ignore this parameter. |
 |Netmode|String|No|public|The type of the network. Set the value to **public** \(Internet\). |
 |AutoPay|Boolean|No|false|Specify whether to enable automatic payments. Valid values:
 
- -   **false**: disables automatic payments. After an order is generated, you must go to the order center to complete the payment.
+-   **false**: disables automatic payments. After an order is generated, you must go to the order center to complete the payment.
 -   **true**: enables automatic payments. After an order is generated, the system automatically deducts you account balance to pay for the order.
 
- This parameter is required if **InstanceChargeType** is set to **PrePaid**. This parameter is not required if **InstanceChargeType** is set to **PostPaid**. |
+This parameter is required if **InstanceChargeType** is set to **PrePaid**. This parameter is not required if **InstanceChargeType** is set to **PostPaid**. |
 |PricingCycle|String|No|Month|The billing cycle of the subscription EIP. Valid values:
 
- -   **Month**: Bills are paid on a monthly basis. This is the default value.
+-   **Month**: Bills are paid on a monthly basis. This is the default value.
 -   **Year**: Bills are paid on an annual basis.
 
 This parameter is required if **InstanceChargeType** is set to **PrePaid**. This parameter is not required if **InstanceChargeType** is set to **PostPaid**. |
 |InstanceChargeType|String|No|PostPaid|The billing method of the EIP. Valid values:
 
- -   **PrePaid**: subscription.
+-   **PrePaid**: subscription.
 -   **PostPaid**: pay-as-you-go. This is the default value.
 
- If**InstanceChargeType** is set to **PrePaid**, set **InternetChargeType** to **PayByBandwidth**. If**InstanceChargeType** is set to **PostPaid**, set **InternetChargeType** to **PayByBandwidth** or **PayByTraffic**. |
+If**InstanceChargeType** is set to **PrePaid**, set **InternetChargeType** to **PayByBandwidth**. If**InstanceChargeType** is set to **PostPaid**, set **InternetChargeType** to **PayByBandwidth** or **PayByTraffic**. |
 |InternetChargeType|String|No|PayByTraffic|The metering method of the EIP. Valid values:
 
- -   **PayByBandwidth**: pay-by-bandwidth. This is the default value.
+-   **PayByBandwidth**: pay-by-bandwidth. This is the default value.
 -   **PayByTraffic**: pay-by-data-transfer.
 
- If**InstanceChargeType** is set to **PrePaid**, **InternetChargeType** must be set to **PayByBandwidth**.
+If**InstanceChargeType** is set to **PrePaid**, **InternetChargeType** must be set to **PayByBandwidth**.
 
- If**InstanceChargeType** is set to**PostPaid**, **InternetChargeType** can be set to **PayByBandwidth** or **PayByTraffic**. |
+If**InstanceChargeType** is set to**PostPaid**, **InternetChargeType** can be set to **PayByBandwidth** or **PayByTraffic**. |
 |ResourceGroupId|String|No|rg-acfmxazffggds\*\*\*\*|The ID of the resource group. |
 |ClientToken|String|No|0c593ea1-3bea-11e9-b96b-88e9fe637760|The client token that is used to ensure the idempotence of the request. You can use the client to generate the value, but you must ensure that it is unique among different requests. The **ClientToken** value can contain only ASCII characters and cannot exceed 64 characters in length. For more information, see [How can I ensure idempotence?](~~36569~~). |
 |Name|String|No|EIP1|The name of the EIP.
 
- **Note:** This parameter is not available when you create a subscription EIP. |
+**Note:** This parameter is not available when you create a subscription EIP. |
 |Description|String|No|test|The description of the EIP.
 
- **Note:** This parameter is not available when you create a subscription EIP. |
+**Note:** This parameter is not available when you create a subscription EIP. |
 
 ## Response parameters
 
