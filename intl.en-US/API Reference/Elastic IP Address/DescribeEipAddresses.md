@@ -14,53 +14,53 @@ Queries elastic IP addresses \(EIPs\) created in a specific region.
 |RegionId|String|Yes|cn-hangzhou|The region ID of the EIPs. You can call the [DescribeRegions](~~36063~~)operation to query the most recent region list. |
 |IncludeReservationData|Boolean|No|true|Specify whether to return data of orders that have not taken effect. Valid values:
 
- -   **false**: Data of orders that have not taken effect is not returned. This is the default value.
+-   **false**: Data of orders that have not taken effect is not returned. This is the default value.
 -   **true**: Data of orders that have not taken effect is returned. |
 |Status|String|No|Available|The state of the EIP. Valid values:
 
- -   **Associating**: The EIP is being associated.
+-   **Associating**: The EIP is being associated.
 -   **Unassociating**: The EIP is being disassociated.
 -   **InUse**: The EIP is allocated.
 -   **Available**: The EIP is available. |
 |EipAddress|String|No|116.XX.XX.28|The IP address of the EIP that you want to query.
 
- You can enter the IP addresses of up to 50 EIPs. Separate multiple IP addresses with commas \(,\).
+You can enter the IP addresses of up to 50 EIPs. Separate multiple IP addresses with commas \(,\).
 
- **Note:** If both the **EipAddress** and **AllocationId** parameters are set, you can enter the IP addresses of 50 EIPs in **EipAddress**, and enter the IDs of the 50 EIPs in **AllocationId**. |
+**Note:** If both the **EipAddress** and **AllocationId** parameters are set, you can enter the IP addresses of 50 EIPs in **EipAddress**, and enter the IDs of the 50 EIPs in **AllocationId**. |
 |AllocationId|String|No|eip-2zeerraiwb7ujxscd\*\*\*\*|The ID of the EIP that you want to query.
 
- You can enter IDs of up to 50 EIPs. Separate multiple IDs with commas \(,\).
+You can enter IDs of up to 50 EIPs. Separate multiple IDs with commas \(,\).
 
- **Note:** If both the **EipAddress** and **AllocationId** parameters are set, you can enter the IDs of up to 50 EIP instances in **AllocationId**, and enter the IP addresses of the 50 EIPs in **EipAddress**. |
+**Note:** If both the **EipAddress** and **AllocationId** parameters are set, you can enter the IDs of up to 50 EIP instances in **AllocationId**, and enter the IP addresses of the 50 EIPs in **EipAddress**. |
 |SegmentInstanceId|String|No|eipsg-t4nr90yik5oy38xdy\*\*\*\*|The IDs of contiguous EIPs. |
 |ResourceGroupId|String|No|rg-acfmxazb4pcdvf\*\*\*\*|The ID of the resource group to which the EIPs belongs. |
 |PageNumber|Integer|No|10|The number of the page to return. Default value: **1**. |
 |PageSize|Integer|No|10|The number of entries to return on each page. Maximum value: **100**. Default value: **10**. |
 |ISP|String|No|BGP|The line type. Valid values:
 
- -   **BGP**: BGP \(Multi-ISP\) lines.
+-   **BGP**: BGP \(Multi-ISP\) lines.
 
 Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet service providers \(ISPs\), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
 
 -   **BGP\_PRO**: BGP \(Multi-ISP\) Pro lines.
 
-BGP \(Multi-ISP\) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with BGP \(Multi-ISP\), when BGP \(Multi-ISP\) Pro provides services to clients in China \(excluding data centers\), cross-border connections are established without using international ISP services. This reduces network latency.
+BGP \(Multi-ISP\) Pro lines optimize data transmission to mainland China and improve connection quality for international services. Compared with BGP \(Multi-ISP\), when BGP \(Multi-ISP\) Pro provides services to clients in mainland China \(excluding data centers\), cross-border connections are established without using international ISP services. This reduces network latency.
 
 
- BGP \(Multi-ISP\) lines are supported in all regions. BGP \(Multi-ISP\) Pro lines are supported only in the China \(Hong Kong\) region.
+BGP \(Multi-ISP\) lines are supported in all regions. BGP \(Multi-ISP\) Pro lines are supported only in the China \(Hong Kong\) region.
 
- **Note:** If your Alibaba Cloud account is included in the BGP \(single line\) whitelist, you can set the ISP field to **ChinaTelecom**, **ChinaUnicom**, or **ChinaMobile**. If your workloads are deployed in China East 1 Finance. Set the value to **BGP\_FinanceCloud**. |
+**Note:** If your Alibaba Cloud account is included in the BGP \(single line\) whitelist, you can set the ISP field to **ChinaTelecom**,**ChinaUnicom**, or **ChinaMobile**. If your workloads are deployed in China East 1 Finance. Set the value to **BGP\_FinanceCloud**. |
 |Filter.1.Key|String|No|CreationStartTime|The filter key used to query resources. Set the value to **CreationStartTime** \(the start time when resources are created\). |
 |Filter.2.Key|String|No|CreationEndTime|The filter key used to query resources. Set the value to **CreationEndTime** \(the end time when resources are created\). |
 |Filter.1.Value|String|No|2018-01-22T09:12Z|The filter value used to query resources. Specify the time in the ISO 8601 standard in YYYY-MM-DDThh:mmZ format. The time must be in UTC. |
 |Filter.2.Value|String|No|2018-01-22T09:15Z|The filter value used to query resources. Specify the time in the ISO 8601 standard in YYYY-MM-DDThh:mmZ format. The time must be in UTC. |
 |LockReason|String|No|financial|The reason why the EIP is locked. Valid values:
 
- -   **financial**: The EIP is locked due to overdue payments.
+-   **financial**: The EIP is locked due to overdue payments.
 -   **security**: The EIP is locked for security reasons. |
 |AssociatedInstanceType|String|No|EcsInstance|The type of the cloud resource with which you want to associate the EIP. Valid values:
 
- -   **EcsInstance**: an Elastic Compute Service \(ECS\) instance deployed in a virtual private cloud \(VPC\). This is the default value.
+-   **EcsInstance**: an Elastic Compute Service \(ECS\) instance deployed in a virtual private cloud \(VPC\). This is the default value.
 -   **SlbInstance**: a Server Load Balancer \(SLB\) instance in a VPC
 -   **Nat**: a NAT gateway
 -   **HaVip**: a high-availability virtual IP address \(HAVIP\)
@@ -70,10 +70,10 @@ You can associate only one EIP with each ECS instance, SLB instance, or HAVIP. Y
 |AssociatedInstanceId|String|No|i-2zebb08phyccdvf\*\*\*\*|The ID of the instance. |
 |ChargeType|String|No|PostPaid|The billing method of the EIP. Valid values:
 
- **PostPaid**: pay-as-you-go |
+**PostPaid**: pay-as-you-go |
 |DryRun|Boolean|No|false|Specify whether to precheck only this request. Valid values:
 
- -   **true**: The request is prechecked but resources are not queried. The system checks whether your AccessKey pair is valid, whether the RAM user is authorized, and whether required parameters are set. If the request fails to pass the precheck, the corresponding error is returned. If the request passes the precheck, the DryRunOperation error code is returned.
+-   **true**: The request is prechecked but resources are not queried. The system checks whether your AccessKey pair is valid, whether the RAM user is authorized, and whether required parameters are set. If the request fails to pass the precheck, the corresponding error is returned. If the request passes the precheck, the DryRunOperation error code is returned.
 -   **false**: The request is checked. This is the default value. If the request passes the precheck, a 2XX HTTP status code is returned and the resource is queried. |
 
 ## Response parameters
@@ -91,39 +91,39 @@ You can associate only one EIP with each ECS instance, SLB instance, or HAVIP. Y
 |BandwidthPackageType|String|CommonBandwidthPackage|The type of the bandwidth. Only **CommonBandwidthPackage** \(an EIP bandwidth plan\) is returned. |
 |BusinessStatus|String|Normal|The state of the EIP. Valid values:
 
- -   **Normal**: The EIP is working as expected.
+-   **Normal**: The EIP is working as expected.
 -   **FinancialLocked**: The EIP is locked. |
 |ChargeType|String|PostPaid|The billing method of the EIP. Valid values:
 
- -   **PrePaid**: subscription
+-   **PrePaid**: subscription
 -   **PostPaid**: pay-as-you-go |
 |DeletionProtection|Boolean|true|Indicates whether deletion protection is enabled. Valid values:
 
- -   **true**: enabled
+-   **true**: enabled
 -   **false**: disabled |
 |Descritpion|String|abc|The description of the EIP. |
 |EipBandwidth|String|101|The bandwidth value of the EIP when it is not associated with an EIP bandwidth plan. |
 |ExpiredTime|String|2019-04-29T02:00Z|The expiration date. The time follows the ISO 8601 standard and is displayed in UTC. Format: YYYY-MM-DDThh:mmZ. |
 |HDMonitorStatus|String|false|Indicates whether fine-grained monitoring is enabled for the EIP. Valid values:
 
- -   **false**: disabled
+-   **false**: disabled
 -   **true**: enabled |
 |HasReservationData|String|false|Indicates whether renewal data is included.
 
- This parameter returns **true** only when the parameter **IncludeReservationData** is set to **true**, and some orders have not taken effect. |
+This parameter returns **true** only when the parameter **IncludeReservationData** is set to **true**, and some orders have not taken effect. |
 |ISP|String|BGP|The Internet service provider \(ISP\). |
 |InstanceId|String|i-bp15zckdt37cdvf\*\*\*\*|The ID of the instance with which the EIP is associated. |
 |InstanceRegionId|String|cn-hangzhou|The region ID of the associated resource. |
 |InstanceType|String|EcsInstance|The type of the instance with which the EIP is associated. Valid values:
 
- -   **EcsInstance**: an ECS instance in a VPC
+-   **EcsInstance**: an ECS instance in a VPC
 -   **SlbInstance**: an SLB instance in a VPC
 -   **Nat**: a NAT gateway
 -   **HaVip**: an HAVIP
 -   **NetworkInterface**: a secondary ENI |
 |InternetChargeType|String|PayByBandwidth|The metering method of the EIP. Valid values:
 
- -   **PayByBandwidth**: pay-by-bandwidth
+-   **PayByBandwidth**: pay-by-bandwidth
 -   **PayByTraffic**: pay-by-data-transfer |
 |IpAddress|String|116.XX.XX.28|The IP address of the EIP. |
 |Name|String|test|The name of the EIP. |
@@ -132,35 +132,35 @@ You can associate only one EIP with each ECS instance, SLB instance, or HAVIP. Y
 |LockReason| | | |
 |LockReason|String|financial|The reason why the EIP is locked. Valid values:
 
- -   **financial**: The EIP is locked due to overdue payments.
+-   **financial**: The EIP is locked due to overdue payments.
 -   **security**: The EIP is locked for security reasons. |
 |RegionId|String|cn-hangzhou|The ID of the region to which the EIP belongs. |
 |ReservationActiveTime|String|2019-03-11T16:00:00Z|The time when the renewal takes effect. |
 |ReservationBandwidth|String|12|The bandwidth after the renewal takes effect. |
 |ReservationInternetChargeType|String|PayByBandwidth|The metering method of the renewal. Valid values:
 
- -   **PayByBandwidth**: pay-by-bandwidth
+-   **PayByBandwidth**: pay-by-bandwidth
 -   **PayByTraffic**: pay-by-data-transfer |
 |ReservationOrderType|String|RENEWCHANGE|The type of the renewal order. Valid values:
 
- -   **RENEWCHANGE**: upgrade or downgrade
+-   **RENEWCHANGE**: upgrade or downgrade
 -   **TEMP\_UPGRADE**: temporary upgrade
 -   **UPGRADE**: upgrade |
 |ResourceGroupId|String|rg-acfmxazcdxs\*\*\*\*|The ID of the resource group. |
 |SecondLimited|Boolean|false|Indicates whether level-2 throttling is configured.
 
- -   **true**: yes
+-   **true**: yes
 -   **false**: no |
 |SegmentInstanceId|String|eipsg-t4nr90yik5oy38xd\*\*\*\*|The IDs of the contiguous EIPs.
 
- This value is returned only when contiguous EIPs are specified. |
+This value is returned only when contiguous EIPs are specified. |
 |ServiceManaged|Integer|0|Indicates whether the resource is created by the service account. Valid values:
 
- -   **0**: no
+-   **0**: no
 -   **1**: yes |
 |Status|String|Associating|The status of the EIP. Valid values:
 
- -   **Associating**: The EIP is being associated.
+-   **Associating**: The EIP is being associated.
 -   **Unassociating**: The EIP is being disassociated.
 -   **InUse**: The EIP is allocated.
 -   **Available**:The EIP is available. |
