@@ -32,6 +32,11 @@ The following example describes how to purchase a BGP \(Multi-ISP\) Pro EIP that
 
         **BGP \(Multi-ISP\) Pro** is selected in this example.
 
+        -   **BGP \(Multi-ISP\)**: Up to 89 high-quality BGP lines are available worldwide. Direct connections can be established across all regions of mainland China through lines of the following Internet Service Providers \(ISPs\): China Telecom, China Unicom, China Mobile, China Mobile Tietong, China Netcom, China Education and Research Network \(CERNET\), National Radio and Television Administration, Dr. Peng Telecom & Media Group, and Founder Broadband Network.
+        -   **BGP\(PRO\)**: BGP \(Multi-ISP\) Pro optimizes cross-border data transmission to improve the connection quality for international services. Compared with BGP \(Multi-ISP\), when BGP \(Multi-ISP\) Pro provides services to clients in mainland China \(excluding data centers\), cross-border connections are established without using international ISP services. This reduces network latency.
+
+            **Note:** BGP \(Multi-ISP\) Pro is supported only in the China \(Hong Kong\) region.
+
     -   **Network Type**: Select a network type. **Public** is selected in this example.
     -   **Bandwidth Value**: Select the maximum bandwidth value as needed. **10 Mbit/s** is selected in this example.
     -   **Name**: Enter a name for the EIP.
