@@ -1,6 +1,6 @@
 # 释放EIP
 
-如果您不需要弹性公网IP EIP（Elastic IP Address）服务了，您可以释放EIP。释放后，EIP不再计费。
+如果您不需要弹性公网IP（Elastic IP Address，简称EIP）服务了，您可以释放EIP。释放后，EIP不再计费。
 
 要释放的EIP必须满足以下条件：
 
@@ -31,7 +31,7 @@
 
 2.  在顶部菜单栏处，选择EIP的地域。
 
-3.  在**弹性公网IP**页面，找到目标EIP，单击**操作**列下的**![更多操作](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3782129951/p140904.png)** \> **释放**。
+3.  在**弹性公网IP**页面，找到目标EIP，选择**操作**列下的**![更多操作](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3782129951/p140904.png)** \> **释放**。
 
 4.  在**释放弹性公网IP**对话框中，单击**确定**。
 
