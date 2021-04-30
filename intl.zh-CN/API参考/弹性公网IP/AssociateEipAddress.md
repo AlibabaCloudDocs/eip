@@ -1,15 +1,15 @@
 # AssociateEipAddress
 
-调用AssociateEipAddress接口将弹性公网IP（EIP）绑定到同地域的云产品实例上。
+调用AssociateEipAddress接口将弹性公网IP（Elastic IP Address，简称EIP）绑定到同地域的云产品实例上。
 
 ## API描述
 
 在调用本接口时，请注意：
 
--   EIP可绑定到同地域的专有网络ECS实例、专有网络的SLB实例、专有网络类型的辅助弹性网卡和NAT网关上。
--   如果您需要将EIP绑定到NAT网关上，确保在2017年11月3日之前账号下不存在NAT带宽包。
+-   EIP可绑定到同地域的专有网络类型的ECS实例、专有网络类型的SLB实例、专有网络类型的辅助弹性网卡和NAT网关上。
+-   如果您需要将EIP绑定到NAT网关上，确保在2017年11月03日之前账号下不存在NAT带宽包。
 
-    对于2017年11月3日之前账号下存在NAT带宽包的用户，如需使用EIP绑定NAT网关，请参见[为什么在NAT网关控制台不能绑定EIP](~~119768~~)中的操作步骤。
+    对于2017年11月03日之前账号下存在NAT带宽包的用户，如需使用EIP绑定NAT网关，请参见[为什么在NAT网关控制台不能绑定EIP](~~119768~~)中的操作步骤。
 
 
 ## 调试
@@ -36,7 +36,7 @@
 |InstanceRegionId|String|否|cn-hangzhou|要绑定EIP的实例所属地域的ID。
 
  **说明：** 仅在EIP加入到带宽共享性全球加速实例后，才需要填写该参数。 |
-|PrivateIpAddress|String|否|192.xx.xx.4|交换机网段内的一个IP地址。
+|PrivateIpAddress|String|否|192.1.XX.XX|交换机网段内的一个IP地址。
 
  如果不输入该参数，系统根据VPC ID和交换机ID自动分配一个私网IP地址。 |
 |Mode|String|否|NAT|绑定模式，取值：
@@ -45,16 +45,13 @@
 -   **MULTI\_BINDED**：多EIP网卡可见模式。
 -   **BINDED**：EIP网卡可见模式。
 
-**说明：** 该参数暂不支持传入 **BINDED**，如需设置，请前往控制台设置EIP网卡可见模式。详细信息，请参见[设置EIP网卡可见模式](~~98641~~)。
-
-
  仅**InstanceType**配置为**NetworkInterface**时，才需要配置该参数。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|C0FD0EED-F90D-4479-803D-DD62335357E5|请求ID。 |
+|RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0|请求ID。 |
 
 ## 示例
 
@@ -69,7 +66,7 @@ http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <AssociateEipAddressResponse>
@@ -77,7 +74,7 @@ http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
 </AssociateEipAddressResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 { 
