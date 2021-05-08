@@ -9,7 +9,7 @@
 -   EIP可绑定到同地域的专有网络类型的ECS实例、专有网络类型的SLB实例、专有网络类型的辅助弹性网卡和NAT网关上。
 -   如果您需要将EIP绑定到NAT网关上，确保在2017年11月03日之前账号下不存在NAT带宽包。
 
-    对于2017年11月03日之前账号下存在NAT带宽包的用户，如需使用EIP绑定NAT网关，请参见[为什么在NAT网关控制台不能绑定EIP](~~119768~~)中的操作步骤。
+    对于2017年11月03日之前账号下存在NAT带宽包的用户，如需使用EIP绑定NAT网关，请参见[为什么在NAT网关控制台不能绑定EIP](~~187955~~)中的操作步骤。
 
 
 ## 调试
@@ -46,6 +46,7 @@
 -   **BINDED**：EIP网卡可见模式。
 
  仅**InstanceType**配置为**NetworkInterface**时，才需要配置该参数。 |
+|ClientToken|String|否|0c593ea1-3bea-11e9-b96b-88e9fe63\*\*\*\*|保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。`ClientToken`只支持ASCII字符，且不能超过64个字符。 |
 
 ## 返回数据
 
@@ -58,7 +59,7 @@
 请求示例
 
 ```
-http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
+http(s)://[Endpoint]/?Action=AssociateEipAddress
 &AllocationId=eip-2zeerraiwb7ujsxdc****
 &InstanceId=i-2zebb08phyczzawe****
 &<公共请求参数>
@@ -70,14 +71,14 @@ http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
 
 ```
 <AssociateEipAddressResponse>
-      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </AssociateEipAddressResponse>
 ```
 
 `JSON`格式
 
 ```
-{ 
+{
     "RequestId": "0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
 }
 ```
@@ -103,6 +104,8 @@ http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
 |404|InvalidAllocationId.NotFound|Specified allocation ID is not found|指定的公网 IP 不存在，请您检查您填写的参数是否正确。|
 |400|InvalidParams.NotFound|instance not found|实例不存在。|
 |503|ServiceUnavailable|The request has failed due to a temporary failure of the server.|请求失败，因为临时服务器故障。|
+|400|OperationDenied.CloudBoxResourceExist|The operation is not allowed because there are resources related to the cloud box in VPC.|指定操作被禁止，因为vpc中存在云盒相关的资源。|
+|400|OperationDenied.CloudBoxVSwitchExist|The operation is not allowed because a cloud box type vSwitch exists in VPC.|指定操作被禁止，因为vpc中存在云盒类型的虚拟交换机。|
 
 访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
