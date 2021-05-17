@@ -23,9 +23,9 @@ After you call this operation, an EIP in the **Available** state is randomly all
 Default value: **5**. |
 |Period|Integer|No|1|The subscription duration of the EIP.
 
-If**PricingCycle** is set to **Month**, **Period** can be set from**1**to **9**.
+If **PricingCycle** is set to **Month**, **Period** can be set from**1**to **9**.
 
-If**PricingCycle** is set to **Year**, **Period** can be set from**1**to**5**.
+If **PricingCycle** is set to **Year**, **Period** can be set from**1**to**5**.
 
 This parameter is required when **InstanceChargeType** is set to **PrePaid**. If **InstanceChargeType** is set to **PostPaid**, ignore this parameter. |
 |ISP|String|No|BGP|The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
