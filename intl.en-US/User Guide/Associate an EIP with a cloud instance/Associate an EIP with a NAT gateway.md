@@ -2,7 +2,7 @@
 
 This topic describes how to associate an elastic IP address \(EIP\) with a NAT gateway. After you associate an EIP with a NAT gateway, you can create DNAT and SNAT entries for the EIP.
 
-A NAT gateway is created. For more information, see [Create NAT gateways](/intl.en-US/User Guide/Create NAT gateways.md)**Create a NAT gateway** in **Quick Start** of the
+A NAT gateway is created. For more information, see [Create NAT gateways](/intl.en-US/User Guide/Create NAT gateways.md) **Create a NAT gateway** in **Quick Start** of the
 
 1.  Log on to the [Elastic IP Address console](https://vpc.console.aliyun.com/eip).
 
@@ -19,7 +19,7 @@ A NAT gateway is created. For more information, see [Create NAT gateways](/intl.
 
     -   You had not purchased a NAT bandwidth plan before January 26, 2018 with the Alibaba Cloud account to which the NAT gateway belongs. If you did, associate the NAT bandwidth plan with the NAT gateway.
     -   The NAT gateway and EIP must be deployed in the same region.
-    -   You can associate a NAT gateway with at most 20 EIPs, among which at most 10 pay-by-data-transfer EIPs can be associated. If you want to associate more EIPs, submit a ticket to request a quota increase. For more information, see [Quota management](/intl.en-US/User Guide/Quota management.md). |
+    -   You can associate a NAT gateway with at most 20 EIPs, among which at most 10 pay-by-data-transfer EIPs can be associated. If you want to associate more EIPs, submit a ticket to request a quota increase. For more information, see [Manage quotas](/intl.en-US/User Guide/Manage quotas.md). |
 
 
 **Related topics**  
