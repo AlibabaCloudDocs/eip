@@ -11,8 +11,7 @@ You can call this operation to query a contiguous Elastic IP address group.
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|DescribeEipSegment|The operation that you want to perform. Set the value to **DescribeEipSegment**. |
-|RegionId|String|Yes|cn-hangzhou|The ID of the region to which the contiguous Elastic IP address group belongs. You can call the [DescribeRegions](~~36063~~)operation to query the region ID. |
-| | | | |The ID of the region to which the contiguous Elastic IP address group belongs. You can call the [DescribeRegions](~~36063~~) operation to query the region ID. |
+|RegionId|String|Yes|cn-hangzhou|The ID of the region to which the contiguous Elastic IP address group belongs. You can call the [DescribeRegions](~~36063~~) operation to query the region ID. |
 |ClientToken|String|No|02fb3da4-130e-11e9-8e44-001sdfg|The client token that is used to ensure the idempotence of the request. You can use the client to generate a token, but you must ensure that the token is unique among different requests. The token must be a maximum of 64 characters in length and can contain only ASCII characters. |
 |SegmentInstanceId|String|No|eipsg-2zett8ba055tbsxme\*\*\*\*|The ID of the instance to query. The contiguous Elastic IP address group is associated with the instance. |
 |PageNumber|Integer|No|1|The number of the page to return. Pages start from page 1. Default value: **1**. |
