@@ -38,7 +38,7 @@ Before you convert an automatically assigned public IP address of an ECS instanc
 -   During the conversion process, the public IP address can be retained for the ECS instance.
 -   The conversion does not change the billing method of the Internet bandwidth.
 -   After the public IP address is converted to an EIP for a VPC-connected ECS instance, the EIP cannot be converted back to the public IP address.
--   After the conversion, the EIP is billed independently, and a separate bill is generated. For more information about EIP billing, see[Overview](/intl.en-US/Pricing/Overview.md). In **User Center**, select [Usage Record](https://billing.console.aliyun.com/#/usage/record), and select to export the bill statements of the **Elastic IP**.
+-   After the conversion, the EIP is billed independently, and a separate bill is generated. For more information about EIP billing, see [Overview](/intl.en-US/Pricing/Overview.md). In **User Center**, select [Usage Record](https://billing.console.aliyun.com/#/usage/record), and select to export the bill statements of the **Elastic IP**.
 
 ## Procedure
 
