@@ -28,7 +28,7 @@ In **multi-EIP-to-ENI mode**, EIPs are displayed on the NIC. In multi-EIP-to-ENI
 
 3.  On the **Elastic IP Addresses** page, find the EIP that you want to associate, and click **Bind Resources** in the **Actions** column.
 
-4.  In the **Bind Elastic IP Address to Resources** dialog box, set the following parameters, and click**OK**.
+4.  In the **Bind Elastic IP Address to Resources** dialog box, set the following parameters, and click **OK**.
 
     |Parameter|Description|
     |---------|-----------|
