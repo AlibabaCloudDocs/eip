@@ -11,7 +11,7 @@ Queries elastic IP addresses \(EIPs\) created in a specific region.
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|DescribeEipAddresses|The operation that you want to perform. Set the value to **DescribeEipAddresses**. |
-|RegionId|String|Yes|cn-hangzhou|The region ID of the EIPs. You can call the [DescribeRegions](~~36063~~)operation to query the most recent region list. |
+|RegionId|String|Yes|cn-hangzhou|The region ID of the EIPs. You can call the [DescribeRegions](~~36063~~) operation to query the most recent region list. |
 |IncludeReservationData|Boolean|No|true|Specify whether to return data of orders that have not taken effect. Valid values:
 
 -   **false**: Data of orders that have not taken effect is not returned. This is the default value.
