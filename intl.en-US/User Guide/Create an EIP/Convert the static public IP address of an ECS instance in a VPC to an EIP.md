@@ -38,7 +38,7 @@ Before you convert the static public IP address of an ECS instance to an EIP, ta
 -   After the static public IP address is converted to an EIP, the EIP cannot be converted back to the static public IP address.
 -   During the conversion, the public IP address is preserved. After the conversion, the public IP address becomes the IP address of the EIP.
 -   After the conversion, the billing method of the Internet bandwidth that the ECS instance uses is not changed. You are charged on a pay-bay-data-transfer basis.
--   After the conversion, the unit price of Internet data transfer is not changed. The EIP is automatically associated with the ECS instance. You are not charged a configuration fee for the EIP. The billing of the EIP and the ECS instance are independent of each other. The system generates separate bills for the EIP and the ECS instance. For more information about EIP billing, see[Overview](/intl.en-US/Pricing/Overview.md). Go to **Billing Management**, click [Usage Records](https://billing.console.aliyun.com/#/usage/record), and export the bills of the **EIP**.
+-   After the conversion, the unit price of Internet data transfer is not changed. The EIP is automatically associated with the ECS instance. You are not charged a configuration fee for the EIP. The billing of the EIP and the ECS instance are independent of each other. The system generates separate bills for the EIP and the ECS instance. For more information about EIP billing, see [Overview](/intl.en-US/Pricing/Overview.md). Go to **Billing Management**, click [Usage Records](https://billing.console.aliyun.com/#/usage/record), and export the bills of the **EIP**.
 
 ## Procedure
 
