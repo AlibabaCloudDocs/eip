@@ -29,5 +29,5 @@ Alibaba Cloud provides daily quotas for EIP users. You are charged an associatio
 
 **Note:** The number of times that you can associate EIPs in a region within one day is five times the number of the EIPs that can be owned by your account. For more information about how to view the number of EIPs that can be owned by your account, see [Manage quotas](/intl.en-US/User Guide/Manage quotas.md).
 
-If your account can have at most 20 EIPs, you can associate EIPs 100 times in each region within one day free of charge. If you associate EIPs more than 100 times, you are chargedUSD 0.149 for each additional number of times that exceeds 100. For example, if you associate EIPs 101 times in a region within one day, the association fee isUSD 0.149. If you associate EIPs 110 times in a region within one day, the association fee isUSD 1.49.
+If your account can have at most 20 EIPs, you can associate EIPs 100 times in each region within one day free of charge. If you associate EIPs more than 100 times, you are charged USD 0.149 for each additional number of times that exceeds 100. For example, if you associate EIPs 101 times in a region within one day, the association fee is USD 0.149. If you associate EIPs 110 times in a region within one day, the association fee is USD 1.49.
 
