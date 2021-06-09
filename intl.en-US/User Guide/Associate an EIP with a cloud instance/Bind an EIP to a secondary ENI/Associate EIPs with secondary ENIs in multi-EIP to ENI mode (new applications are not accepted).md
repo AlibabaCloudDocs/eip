@@ -6,7 +6,7 @@ If you have already obtained the permissions to use the multi-EIP to ENI mode, y
 
 ## Prerequisites
 
--   A secondary ENI is created and deployed in a virtual private cloud \(VPC\). The secondary ENI and the EIPs that you want to associate are deployed in the same region. For more information, see [Create an ENI](/intl.en-US/Network/Elastic Network Interfaces/Create an ENI.md).
+-   A secondary ENI is created and deployed in a virtual private cloud \(VPC\). The secondary ENI and the EIPs that you want to associate are deployed in the same region. For more information, see [t9734.md\#](/intl.en-US/Network/Elastic Network Interfaces/Create an ENI.md).
 -   The secondary ENI is not associated with an Elastic Compute Service \(ECS\) instance.
 
     If the secondary ENI is associated with an ECS instance, you must disassociate the secondary ENI from the ECS instance before you can associate EIPs with the secondary ENI in multi-EIP to ENI mode. For more information, see [Unbind an ENI](/intl.en-US/Network/Elastic Network Interfaces/Unbind an ENI.md).
@@ -33,7 +33,7 @@ To resolve this issue, you can associate EIPs with a secondary ENI in **multi-EI
 
 3.  On the **Elastic IP Addresses** page, find the EIP that you want to associate and click **Bind Resources** in the **Actions** column.
 
-4.  In the **Bind Elastic IP Address to Resources** dialog box, set the following parameters and click**OK**.
+4.  In the **Bind Elastic IP Address to Resources** dialog box, set the following parameters and click **OK**.
 
     |Parameter|Description|
     |---------|-----------|
