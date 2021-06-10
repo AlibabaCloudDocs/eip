@@ -1,55 +1,47 @@
 # Overview
 
-You can associate elastic IP addresses \(EIPs\) with elastic network interfaces \(ENIs\). You can build a more stable, flexible, and scalable service with servers that use EIPs. Each server can be associated with multiple EIPs. This way, each server is assigned multiple public IP addresses.
+You can associate elastic IP addresses \(EIPs\) with elastic network interfaces \(ENIs\). You can associate EIPs with ENIs and associate the ENIs with an Elastic Compute Service \(ECS\) instance. This way, the ECS instance can use multiple EIPs. You can use EIPs to improve the service availability, flexibility, and scalability.
 
-Each ENI is assigned a private IP address. After you associate an EIP with an ENI, the ENI is capable of sending and receiving network traffic through both a private IP address and a public IP address. Alibaba Cloud provides a solution for migrating EIPs between two Elastic Compute Service \(ECS\) instances without affecting the reliability and availability of your workloads. If you migrate an ENI that is associated with an EIP from an ECS instance to another ECS instance, both the private and public IP addresses of the ENI are migrated.
+Each ENI is assigned a private IP address. After you associate an EIP with an ENI, both the private IP address and the EIP are available for the ENI. You can change the private IP address and public IP address of an ECS instance by replacing the secondary ENI that is associated with the ECS instance. When you replace the secondary ENI of an ECS instance, the reliability and availability of your service are not affected.
 
-![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0776838161/p10409.png)
+![Associate ENIs](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1006401261/p10409.png)
 
-You can associate an ECS instance with multiple ENIs. You can associate each ENI with an EIP. This way, the ECS instance has multiple public IP addresses. You can also use EIPs with security groups to control external access.
+You can associate multiple ENIs with an ECS instance. Make sure that an EIP is associated with each ENI. This way, the ECS instance can use multiple EIPs. The ECS instance can use the EIPs to provide Internet-facing services. You can configure security group rules for the ECS instance to control access from the Internet.
 
-![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0776838161/p10410.png)
+![Associate multiple ENIs](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1006401261/p10410.png)
 
 ## Association modes
 
-You can associate an ENI with an EIP in the following modes:
+You can associate an EIP with an ENI in one of the following two modes:
 
 -   NAT mode
 -   Cut-through mode
--   Multi-EIP-to-ENI mode
 
-**Note:**
+**Note:** The cut-through mode is supported in the following regions: China \(Hangzhou\), China \(Shanghai\), China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Hohhot\), China \(Shenzhen\), China \(Chengdu\), Singapore \(Singapore\), Indonesia \(Jakarta\), Germany \(Frankfurt\), UK \(London\), and US \(Virginia\).
 
--   The cut-through mode is supported in the following regions: China \(Hangzhou\), China \(Shanghai\), China Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Hohhot\), China \(Shenzhen\), China \(Chengdu\), Singapore \(Singapore\), Indonesia \(Jakarta\), Germany \(Frankfurt\), UK \(London\), and US \(Virginia\).
--   The multi-EIP-to-ENI mode is available to only users who have used this mode in public preview. The multi-EIP-to-ENI mode is supported in the following regions: China \(Shenzhen\), China \(Shanghai\), China \(Beijing\), China \(Zhangjiakou-Beijing Winter Olympics\), China \(Chengdu\), Singapore, Germany \(Frankfurt\), India \(Mumbai\), US \(Virginia\), and UK \(London\).
+The following table describes the differences between these modes.
 
-The following table lists the differences among these modes.
+|Item|NAT mode|Cut-through mode|
+|----|--------|----------------|
+|Whether the EIP is displayed in the ENI information of the operating system|No|Yes **Note:** You can run the ifconfig or ipconfig command to query the public IP address of the ENI. |
+|Types of ENIs that can be associated with EIPs|Primary and secondary ENIs|Secondary ENIs|
+|Number of EIPs that can be associated with a primary ENI|1|N/A|
+|Number of EIPs that can be associated with a secondary ENI|Depends on the number of private IP addresses of the secondary ENI**Note:** Each EIP is mapped to a private IP address of a secondary ENI. If a secondary ENI is assigned 10 private IP addresses, you can associate at most 10 EIPs with the secondary ENI.
 
-|Item|NAT mode|Cut-through mode|Multi-EIP-to-ENI mode|
-|----|--------|----------------|---------------------|
-|Whether the EIP is displayed on the ENI in the operating system|No|Yes **Note:** You can run the ifconfig or ipconfig command to query the public IP address of the ENI.
-
-|Yes**Note:** After you configure a static IP address in the operating system, you can run the ifconfig or ipconfig command to query the public IP address of the ENI. |
-|Types of ENIs that can be associated with EIPs|Primary and secondary ENIs.|Secondary ENIs.|Secondary ENIs.|
-|The maximum number of EIPs that can be associated with a primary ENI|1|EIPs cannot be associated with primary ENIs.|EIPs cannot be associated with primary ENIs.|
-|The maximum number of EIPs that can be associated with a secondary ENI|Based on the number of private IP addresses of the secondary ENI.**Note:** Each EIP is mapped to a private IP address of a secondary ENI. If a secondary ENI is assigned 10 private IP addresses, a maximum of 10 EIPs can be associated with the secondary ENI.
-
-|1**Note:** In cut-through mode, an EIP can be mapped to only the primary private IP address of a secondary ENI.
-
-|10**Note:** To request a quota increase, submit a ticket. |
-|Whether the secondary ENI supports private networks after an EIP is associated with a secondary ENI|Yes|No|Yes|
-|Supported protocols|When an EIP is deployed as a NAT application layer gateway \(ALG\), the following protocols are not supported: H.323, SIP, DNS, and RTSP.|EIPs in cut-through mode support all IP protocols, such as FTP, H.323, SIP, DNS, RTSP, and TFTP.|EIPs in cut-through mode support all IP protocols, such as FTP, H.323, SIP, DNS, RTSP, and TFTP.|
+|1**Note:** You can associate an EIP with only the primary private IP address of a secondary ENI in cut-through mode. |
+|Whether private network features of a secondary ENI are available after an EIP is associated with the secondary ENI|Yes|No|
+|Supported protocols|EIPs deployed as NAT application layer gateways \(ALGs\) do not support protocols such as H.323, Session Initiation Protocol \(SIP\), Domain Name System \(DNS\), Real Time Streaming Protocol \(RTSP\), and Trivial File Transfer Protocol \(TFTP\).|EIPs support all IP protocols, including FTP, H.323, SIP, DNS, RTSP, and TFTP.|
 
 ## FAQ
 
-**Does Alibaba Cloud charge EIPs that are associated with ENIs?**
+**Am I charged an instance fee for an EIP after I associate the EIP with a secondary ENI?**
 
 Yes.
 
-Only EIPs that are associated with ECS instances are free of charge. EIPs that are associated with other resources are charged.
+You are not charged an instance fee for an EIP only when you associate the EIP with an ECS instance. You are charged instance fees if you associate EIPs with other types of resources.
 
-**Are additional configurations required after I attach an ENI that is associated with an EIP to an ECS instance?**
+**Do I need to configure an ECS instance after I attach an ENI that is associated with an EIP to an ECS instance?**
 
--   If the ECS instance is deployed to provide external services, such as web services, you do not need to configure routes for the ECS instance or the VPC where the ECS instance is deployed. The ECS instance can provide services through the EIP.
--   If the ECS instance is deployed to access services on the Internet, you must modify the default route of the ECS instance or configure specific routes. The default route specifies that packets are forwarded to the Internet through the primary NIC of the ECS instance. You must adjust the priority of the routes before packets can be forwarded to the Internet through the ENI that is associated with the EIP. You can also configure specific routes to forward packets to the Internet through multiple ENIs or a randomly selected ENI to implement load balancing.
+-   If you want the ECS instance to provide Internet-facing services, such as web services, you do not need to configure routes for the ECS instance or the virtual private cloud \(VPC\) where the ECS instance is deployed. The ECS instance uses the EIP to provide services.
+-   If you want the ECS instance to access the Internet, you must configure the default route of the ECS instance or create specific routes for the ECS instance. By default, packets are transmitted from the primary ENI. You can modify route priorities to allow packets to access the Internet through the secondary ENI. You can also create specific routes to forward packets to the Internet through multiple ENIs or a random ENI to implement load balancing.
 
