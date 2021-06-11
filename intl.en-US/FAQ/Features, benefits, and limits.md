@@ -55,5 +55,5 @@ Yes. You can call the EIP API at most 500 times within one day. Subsequent API c
 
 ## Can I resolve the domain name of a website to an EIP?
 
-Yes. You can create a DNS record to resolve a domain name to an EIP or a private IP address. For more information, see[Create a DNS record for a website](https://www.alibabacloud.com/help/zh/doc-detail/106535.htm).
+Yes. You can create a DNS record to resolve a domain name to an EIP or a private IP address. For more information, see [Create a DNS record for a website](https://www.alibabacloud.com/help/zh/doc-detail/106535.htm).
 
