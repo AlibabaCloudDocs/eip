@@ -26,7 +26,7 @@ EIPs support the following line types: BGP \(Multi-ISP\) and BGP \(Multi-ISP\) P
 |1 Mbps|2 Mbps|3 Mbps|4 Mbps|5 Mbps|6 Mbit/s and higher \(n represents the bandwidth value\).|
 |----|:-----|:---------------------------------|
 |------|:-----|:-----|:-----|:-----|:--------------------------------------------------------|
-|China|China \(Hangzhou\), China \(Beijing\), China \(Zhangjiakou\), China \(Hohhot\), China \(Shenzhen\), China \(Shanghai\), China \(Chengdu\), and China \(Hong Kong\)|3.40|6.80|10.20|13.60|17.00|17.00+\(n-5\)× 11.83|
+|China|China \(Hangzhou\), China \(Beijing\), China \(Zhangjiakou\), China \(Hohhot\), China \(Shenzhen\), China \(Heyuan\), China \(Shanghai\), China \(Chengdu\), and China \(Hong Kong\)|3.40|6.80|10.20|13.60|17.00|17.00+\(n-5\)× 11.83|
 |China \(Qingdao\)|3.10|6.21|9.31|12.42|15.52|15.52+\(n-5\)×10.64|
 |Asia-Pacific|Singapore \(Singapore\), Australia \(Sydney\), Malaysia \(Kuala Lumpur\), and Indonesia \(Jakarta\)|3.40|6.80|10.20|13.60|17.00|17.00+\(n-5\)× 11.83|
 |Japan \(Tokyo\)|3.70|7.39|11.09|14.78|18.48|18.48+\(n-5\)× 12.42|
