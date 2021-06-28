@@ -77,6 +77,9 @@ BGP（多线）精品线路是一种优化海外回中国内地流量的公网�
 
  -   **true**：发送检查请求，不会查询资源状况。检查项包括AccessKey是否有效、RAM用户的授权情况和是否填写了必需参数。如果检查不通过，则返回对应错误。如果检查通过，会返回错误码DryRunOperation。
 -   **false**（默认值）：发送正常请求，通过检查后返回2xx HTTP状态码并直接查询资源状况。 |
+|EipName|String|否|EIP-01|EIP的名称。
+
+ 长度为2~128个字符，必须以字母或中文开头，可包含数字、下划线（\_）和短划线（-）。 |
 
 ## 返回数据
 
@@ -176,9 +179,9 @@ BGP（多线）精品线路是一种优化海外回中国内地流量的公网�
 请求示例
 
 ```
-https://vpc.aliyuncs.com/?Action=DescribeEipAddresses
+http(s)://[Endpoint]/?Action=DescribeEipAddresses
 &RegionId=cn-hangzhou
-&公共请求参数
+&<公共请求参数>
 ```
 
 正常返回示例
@@ -241,56 +244,7 @@ https://vpc.aliyuncs.com/?Action=DescribeEipAddresses
 `JSON`格式
 
 ```
-{
-    "TotalCount": 10,
-    "PageSize": 10,
-    "RequestId": "4EC47282-1B74-4534-BD0E-403F3EE64CAF",
-    "EipAddresses": {
-        "EipAddress": {
-            "HDMonitorStatus": false,
-            "ServiceManaged": 0,
-            "ResourceGroupId": "rg-acfmxazcdxs****",
-            "AllocationId": "eip-2zeerraiwb7ujcdvf****",
-            "SecondLimited": false,
-            "BusinessStatus": "Normal",
-            "Name": "test",
-            "SegmentInstanceId": "eipsg-t4nr90yik5oy38xd****",
-            "ReservationOrderType": "RENEWCHANGE",
-            "InstanceRegionId": "cn-hangzhou",
-            "ExpiredTime": "2019-04-29T02:00Z",
-            "Bandwidth": 5,
-            "BandwidthPackageId": "cbwp-bp1ego3i4j07ccdvf****",
-            "ReservationActiveTime": "2019-03-11T16:00:00Z",
-            "InstanceType": "EcsInstance",
-            "ReservationBandwidth": 12,
-            "Status": "Associating",
-            "InstanceId": "i-bp15zckdt37cdvf****",
-            "ISP": "BGP",
-            "HasReservationData": false,
-            "DeletionProtection": true,
-            "BandwidthPackageType": "CommonBandwidthPackage",
-            "BandwidthPackageBandwidth": 50,
-            "ReservationInternetChargeType": "PayByBandwidth",
-            "InternetChargeType": "PayByBandwidth",
-            "AllocationTime": "2019-04-23T01:37:38Z",
-            "Descritpion": "abc",
-            "EipBandwidth": 101,
-            "Netmode": "public",
-            "ChargeType": "PostPaid",
-            "IpAddress": "116.XX.XX.28",
-            "RegionId": "cn-hangzhou",
-            "OperationLocks": {
-                "LockReason": {
-                    "LockReason": "financial"
-                }
-            },
-            "AvailableRegions": {
-                "AvailableRegion": "cn-hangzhou"
-            }
-        }
-    },
-    "PageNumber": 10
-}
+{"TotalCount":"10","PageSize":"10","RequestId":"4EC47282-1B74-4534-BD0E-403F3EE64CAF","EipAddresses":{"EipAddress":[{"HDMonitorStatus":"false","ServiceManaged":"0","ResourceGroupId":"rg-acfmxazcdxs****","AllocationId":"eip-2zeerraiwb7ujcdvf****","SecondLimited":"false","BusinessStatus":"Normal","Name":"test","SegmentInstanceId":"eipsg-t4nr90yik5oy38xd****","ReservationOrderType":"RENEWCHANGE","InstanceRegionId":" cn-hangzhou","ExpiredTime":"2019-04-29T02:00Z","Bandwidth":"5","BandwidthPackageId":"cbwp-bp1ego3i4j07ccdvf****","ReservationActiveTime":"2019-03-11T16:00:00Z","InstanceType":"EcsInstance","ReservationBandwidth":"12","Status":"Associating","InstanceId":"i-bp15zckdt37cdvf****","ISP":"BGP","HasReservationData":"false","DeletionProtection":"true","BandwidthPackageType":"CommonBandwidthPackage","BandwidthPackageBandwidth":"50","ReservationInternetChargeType":"PayByBandwidth","InternetChargeType":"PayByBandwidth","AllocationTime":"2019-04-23T01:37:38Z","Descritpion":"abc","EipBandwidth":"101","Netmode":"public","ChargeType":"PostPaid","IpAddress":"116.XX.XX.28","RegionId":"cn-hangzhou","OperationLocks":{"LockReason":[{"LockReason":"financial"}]},"AvailableRegions":{"AvailableRegion":"cn-hangzhou"}}]},"PageNumber":"10"}
 ```
 
 ## 错误码
