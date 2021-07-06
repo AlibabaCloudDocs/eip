@@ -24,28 +24,28 @@ When you call this operation, take note of the following limits:
 |AllocationId|String|Yes|eip-2zeerraiwb7ujsxdc\*\*\*\*|The ID of the EIP to be associated with your cloud resource. |
 |InstanceId|String|Yes|i-2zebb08phyczzawe\*\*\*\*|The ID of the cloud resource with which the EIP is associated.
 
- NAT gateways, SLB instances, ECS instances, secondary ENIs, and high-availability virtual IP addresses \(HAVIPs\) are supported. |
+NAT gateways, SLB instances, ECS instances, secondary ENIs, and high-availability virtual IP addresses \(HAVIPs\) are supported. |
 |RegionId|String|Yes|cn-hangzhou|The ID of the region to which the EIP belongs. |
 |InstanceType|String|No|EcsInstance|The type of instance with which you want to associate the EIP. Valid values:
 
- -   **Nat**: a NAT gateway
+-   **Nat**: a NAT gateway
 -   **SlbInstance**: an SLB instance
--   **EcsInstance**: an ECS instance
+-   **EcsInstance** \(default\): an ECS instance
 -   **NetworkInterface**: a secondary ENI
 -   **HaVip**: an HAVIP |
 |InstanceRegionId|String|No|cn-hangzhou|The ID of the region where the cloud resource is deployed.
 
- **Note:** This parameter is required only if the EIP is associated with a shared-bandwidth Global Accelerator \(GA\) instance. |
+**Note:** This parameter is required only if the EIP is associated with a shared-bandwidth Global Accelerator \(GA\) instance. |
 |PrivateIpAddress|String|No|192.1.XX.XX|An IP address in the CIDR block of the vSwitch.
 
- If you do not set this parameter, the system allocates a private IP address based on the VPC ID and vSwitch ID. |
+If you do not set this parameter, the system allocates a private IP address based on the VPC ID and vSwitch ID. |
 |Mode|String|No|NAT|The mode in which you associate the EIP. Valid values:
 
- -   **NAT** \(default\): the standard NAT mode
+-   **NAT** \(default\): the standard NAT mode
 -   **MULTI\_BINDED**: the Multi-EIP to ENI mode
 -   **BINDED**: the cut-through mode
 
- This parameter is required only when **InstanceType** is set to **NetworkInterface**. |
+This parameter is required only when **InstanceType** is set to **NetworkInterface**. |
 |ClientToken|String|No|0c593ea1-3bea-11e9-b96b-88e9fe63\*\*\*\*|The client token that is used to ensure the idempotence of the request. You can use the client to generate the value, but you must ensure that it is unique among different requests. `ClientToken` can contain only ASCII characters. It must be 1 to 64 characters in length. |
 
 ## Response parameters
