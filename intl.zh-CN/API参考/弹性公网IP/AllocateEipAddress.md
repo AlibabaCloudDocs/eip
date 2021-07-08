@@ -36,7 +36,7 @@ BGP（多线）线路在全球有多达89条优质BGP线路，在中国内地的
 
 -   **BGP\_PRO**：BGP（多线）精品线路。
 
-BGP（多线）精品线路是一种优化海外回中国内地流量的公网线路，可以提高国际业务访问质量。相比普通BGP（多线）线路， BGP（多线）精品线路在为中国内地终端客户（不包括中国内地数据中心）提供服务时，通过底层网络直连回中国内地，无需绕行国际运营商出口，时延更低。
+BGP（多线）\_精品线路是一种优化海外回中国内地流量的公网线路，可以提高国际业务访问质量。相比普通BGP（多线）线路， BGP（多线）\_精品线路在为中国内地终端客户（不包括中国内地数据中心）提供服务时，通过国内运营商公网直连中国内地，时延更低。
 
 
  目前，全部地域都支持BGP（多线）线路EIP，仅中国（香港）地域支持BGP（多线）精品线路EIP。
@@ -104,34 +104,23 @@ http(s)://[Endpoint]/?Action=AllocateEipAddress
 `XML`格式
 
 ```
-<AllocateEipAddressResponse>
-  <ResourceGroupId>rg-acfmxazfdgdg****</ResourceGroupId>
-  <RequestId>4EC47282-1B74-4534-BD0E-403F3EE64CAF</RequestId>
-  <AllocationId>eip-25877c70gddh****</AllocationId>
-  <EipAddress>12.XX.XX.78</EipAddress>
-  <OrderId>10</OrderId>
-</AllocateEipAddressResponse>
+<ResourceGroupId>rg-acfmxazfdgdg****</ResourceGroupId>
+<RequestId>4EC47282-1B74-4534-BD0E-403F3EE64CAF</RequestId>
+<AllocationId>eip-25877c70gddh****</AllocationId>
+<EipAddress>12.XX.XX.78</EipAddress>
+<OrderId>10</OrderId>
 ```
 
 `JSON`格式
 
 ```
-{
-    "AllocateEipAddressResponse": {
-        "ResourceGroupId": "rg-acfmxazfdgdg****",
-        "RequestId": "4EC47282-1B74-4534-BD0E-403F3EE64CAF",
-        "AllocationId": "eip-25877c70gddh****",
-        "EipAddress": "12.XX.XX.78",
-        "OrderId": 10
-    }
-}
+{"ResourceGroupId":"rg-acfmxazfdgdg****","RequestId":"4EC47282-1B74-4534-BD0E-403F3EE64CAF","AllocationId":"eip-25877c70gddh****","EipAddress":"12.XX.XX.78","OrderId":"10"}
 ```
 
 ## 错误码
 
 |HttpCode|错误码|错误信息|描述|
 |--------|---|----|--|
-|403|Forbbiden|User not authorized to operate on the specified resource.|您没有权限操作该资源，请您申请操作权限后再试。|
 |400|QuotaExceeded.Eip|Elastic IP address quota exceeded|弹性公网 IP 的个数超过额度限制，如果您有更多额度的需求，请提交工单申请增加限额，建议您考虑使用NAT网关。|
 |400|InvalidParameter|Specified value of "InternetChargeType" is not valid|参数InternetChargeType的值不合法。|
 |400|InvalidParameter|Specified value of "Bandwidth" is not valid.|该带宽不合法。|
@@ -140,6 +129,8 @@ http(s)://[Endpoint]/?Action=AllocateEipAddress
 |400|ReserveIpFail|Reserve eip failed.|EIP预留失败。|
 |400|InvalidRegion.NotSupport|The specified region does not support.|该 RegionId 不支持此操作。|
 |400|InvalidResourceGroupId|The specified ResourceGroupId does not exist.|资源组ID不存在。|
+|400|ORDER.QUANTITY\_INVALID|User quota has exceeded the limit.|您当前保有的EIP数量已达上限，可前往配额管理提升EIP数量配额|
+|403|Forbbiden|User not authorized to operate on the specified resource.|您没有权限操作该资源，请您申请操作权限后再试。|
 |409|OperationConflict|Request was denied due to conflict with a previos request.|请求冲突，稍等一段时间重试，或者提交工单反馈。|
 
 访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
