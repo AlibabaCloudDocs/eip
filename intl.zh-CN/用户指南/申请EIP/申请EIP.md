@@ -6,7 +6,7 @@
 
 -   [申请新EIP](#section_f6y_iq4_xcz)
 -   [申请历史EIP](#section_umn_6gx_1x4)
--   [申请连续EIP](/intl.zh-CN/用户指南/申请EIP/申请连续EIP.md)
+-   [申请连续EIP](#section_d54_smc_eyb)
 
 ## 申请新EIP
 
