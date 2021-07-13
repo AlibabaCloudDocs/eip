@@ -83,7 +83,7 @@ EIP支持包年包月和按量付费两种商品类型：
 
 您可以一次申请多个连续的EIP，连续EIP可以提高网络管理的简便性。一个连续EIP组由多个连续的EIP组成，连续EIP与普通EIP（从阿里云IP售卖池中任意分配的EIP）类似，也可以绑定至专有网络类型的ECS实例、专有网络类型的私网SLB实例、专有网络类型的辅助弹性网卡、NAT网关和高可用虚拟IP上。连续EIP与云资源绑定后，云资源可以通过EIP进行通信。
 
-申请连续连续EIP，请了解以下信息：
+申请连续EIP，请了解以下信息：
 
 -   申请连续EIP功能需要申请白名单。如需使用，请[提交工单](https://selfservice.console.aliyun.com/ticket/createIndex.htm)。
 
