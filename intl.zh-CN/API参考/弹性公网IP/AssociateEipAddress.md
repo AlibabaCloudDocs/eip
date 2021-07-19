@@ -9,7 +9,7 @@
 -   EIP可绑定到同地域的专有网络类型的ECS实例、专有网络类型的SLB实例、专有网络类型的辅助弹性网卡和NAT网关上。
 -   如果您需要将EIP绑定到NAT网关上，确保在2017年11月03日之前账号下不存在NAT带宽包。
 
-    对于2017年11月03日之前账号下存在NAT带宽包的用户，如需使用EIP绑定NAT网关，请参见[为什么在NAT网关控制台不能绑定EIP](~~187955~~)中的操作步骤。
+    对于2017年11月03日之前账号下存在NAT带宽包的用户，如需使用EIP绑定NAT网关，请参见[为什么在NAT网关控制台不能绑定EIP](~~187955~~)。
 
 
 ## 调试
@@ -24,28 +24,28 @@
 |AllocationId|String|是|eip-2zeerraiwb7ujsxdc\*\*\*\*|绑定云产品实例的EIP的ID。 |
 |InstanceId|String|是|i-2zebb08phyczzawe\*\*\*\*|要绑定EIP的实例ID。
 
-支持输入NAT网关实例ID、负载均衡SLB实例ID、云服务器ECS实例ID、辅助弹性网卡实例ID、高可用虚拟IP实例ID。 |
+ 支持输入NAT网关实例ID、负载均衡SLB实例ID、云服务器ECS实例ID、辅助弹性网卡实例ID、高可用虚拟IP实例ID。 |
 |RegionId|String|是|cn-hangzhou|要绑定云产品实例的EIP所属的地域ID。 |
 |InstanceType|String|否|EcsInstance|要绑定EIP的实例的类型，取值：
 
--   **Nat**：NAT网关。
+ -   **Nat**：NAT网关。
 -   **SlbInstance**：负载均衡SLB。
 -   **EcsInstance**（默认值）：云服务器ECS。
 -   **NetworkInterface**：辅助弹性网卡。
 -   **HaVip**：高可用虚拟IP。 |
 |InstanceRegionId|String|否|cn-hangzhou|要绑定EIP的实例所属地域的ID。
 
-**说明：** 仅在EIP加入到带宽共享性全球加速实例后，才需要填写该参数。 |
+ **说明：** 仅在EIP加入到带宽共享型全球加速实例后，才需要填写该参数。 |
 |PrivateIpAddress|String|否|192.1.XX.XX|交换机网段内的一个IP地址。
 
-如果不输入该参数，系统根据VPC ID和交换机ID自动分配一个私网IP地址。 |
+ 如果不输入该参数，系统根据VPC ID和交换机ID自动分配一个私网IP地址。 |
 |Mode|String|否|NAT|绑定模式，取值：
 
--   **NAT**（默认值）：NAT模式（普通模式）。
+ -   **NAT**（默认值）：NAT模式（普通模式）。
 -   **MULTI\_BINDED**：多EIP网卡可见模式。
 -   **BINDED**：EIP网卡可见模式。
 
-仅**InstanceType**配置为**NetworkInterface**时，才需要配置该参数。 |
+ 仅**InstanceType**配置为**NetworkInterface**时，才需要配置该参数。 |
 |ClientToken|String|否|0c593ea1-3bea-11e9-b96b-88e9fe63\*\*\*\*|保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。`ClientToken`只支持ASCII字符，且不能超过64个字符。 |
 
 ## 返回数据
@@ -71,14 +71,16 @@ http(s)://[Endpoint]/?Action=AssociateEipAddress
 
 ```
 <AssociateEipAddressResponse>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+   <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </AssociateEipAddressResponse>
 ```
 
 `JSON`格式
 
 ```
-{"RequestId":"0ED8D006-F706-4D23-88ED-E11ED28DCAC0"}
+{
+    "RequestId": "0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
+}
 ```
 
 ## 错误码
