@@ -1,6 +1,10 @@
 # DescribeEipMonitorData
 
-调用DescribeEipMonitorData接口查看EIP的监控信息，最多查询30天内的数据，单次最多查询400个流量点的数据。
+调用DescribeEipMonitorData接口查看弹性公网IP（Elastic IP Address，简称EIP）的监控信息，最多查询30天内的数据，单次最多查询400个流量点的数据。
+
+## API描述
+
+为了提供更好的获取监控数据接口体验，建议您使用云监控（CloudMonitor）提供的统一接口DescribeMetricList查询EIP相关数据。更多信息，请参见[DescribeMetricList](~~205394~~)和[弹性公网IP相关数据](~~162874~~)。
 
 ## 调试
 
@@ -12,12 +16,12 @@
 |--|--|----|---|--|
 |Action|String|是|DescribeEipMonitorData|要执行的操作，取值： **DescribeEipMonitorData**。 |
 |AllocationId|String|是|eip-2zeerraiwb7uj6idcfv\*\*\*\*|EIP的实例ID。 |
-|EndTime|String|是|2020-01-05T03:05:10Z|获取数据的结束时间。使用UTC时间。按照ISO8601标准，格式为YYYY-MM-DDThh:mm:ssZ。例如，北京时间2013年01月10日20点0分0秒，表示为2013-01-10T12:00:00Z。
+|EndTime|String|是|2020-01-05T03:05:10Z|获取数据的结束时间。使用UTC时间。按照ISO8601标准，格式为`YYYY-MM-DDThh:mm:ssZ`。例如，北京时间2013年01月10日20点00分00秒，表示为`2013-01-10T12:00:00Z`。
 
- 如果秒不是00，则自动取下一分钟为结束时间点。 |
-|StartTime|String|是|2020-01-05T01:05:05Z|获取数据的起始时间。使用UTC时间。按照ISO8601标准，格式为YYYY-MM-DDThh:mm:ssZ。例如，北京时间2013年01月10日20点0分0秒，表示为2013-01-10T12:00:00Z。
+ 如果不是整分，则自动取下一分钟为结束时间点。 |
+|StartTime|String|是|2020-01-05T01:05:05Z|获取数据的起始时间。使用UTC时间。按照ISO8601标准，格式为`YYYY-MM-DDThh:mm:ssZ`。例如，北京时间2013年01月10日20点00分00秒，表示为`2013-01-10T12:00:00Z`。
 
- 如果秒不是00，则自动取下一分钟为起始时间点。 |
+ 如果不是整分，则自动取下一分钟为起始时间点。 |
 |RegionId|String|是|cn-hangzhou|EIP所属地域ID。 |
 |Period|Integer|否|60|每条监控数据的时间长度，取值：**60**（默认值） 、**300** 、 **900** 或 **3600**，单位为秒。
 
@@ -35,7 +39,7 @@
 |EipPackets|Integer|3434|包数量。 |
 |EipRX|Long|122|流入的流量。单位为Byte。 |
 |EipTX|Long|343|流出的带宽。单位为Byte。 |
-|TimeStamp|String|2020-01-21T09:50:23Z|查询监控信息的时间戳。ISO8601格式，如2020-01-21T09:50:23Z。 |
+|TimeStamp|String|2020-01-21T09:50:23Z|查询监控信息的时间戳。ISO8601格式，如`2020-01-21T09:50:23Z`。 |
 |RequestId|String|C8B26B44-0189-443E-9816-D951F59623A9|请求ID。 |
 
 ## 示例
@@ -55,7 +59,7 @@ http(s)://[Endpoint]/?Action=DescribeEipMonitorData
 `XML`格式
 
 ```
-<DescribeEipMonitorData>
+<DescribeEipMonitorDataResponse>
   <RequestId>C8B26B44-0189-443E-9816-D951F59623A9</RequestId>
   <EipMonitorDatas>
         <EipMonitorData>
@@ -67,24 +71,22 @@ http(s)://[Endpoint]/?Action=DescribeEipMonitorData
               <EipRX>122</EipRX>
         </EipMonitorData>
   </EipMonitorDatas>
-</DescribeEipMonitorData>
+</DescribeEipMonitorDataResponse>
 ```
 
 `JSON`格式
 
 ```
 {
-    "DescribeEipMonitorData": {
-        "RequestId": "C8B26B44-0189-443E-9816-D951F59623A9",
-        "EipMonitorDatas": {
-            "EipMonitorData": {
-                "EipPackets": 3434,
-                "EipBandwidth": 10,
-                "EipFlow": 465,
-                "EipTX": 343,
-                "TimeStamp": "2020-01-21T09:50:23Z",
-                "EipRX": 122
-            }
+    "RequestId": "C8B26B44-0189-443E-9816-D951F59623A9",
+    "EipMonitorDatas": {
+        "EipMonitorData": {
+            "EipPackets": 3434,
+            "EipBandwidth": 10,
+            "EipFlow": 465,
+            "EipTX": 343,
+            "TimeStamp": "2020-01-21T09:50:23Z",
+            "EipRX": 122
         }
     }
 }
